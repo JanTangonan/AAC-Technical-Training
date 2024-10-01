@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Row Color</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .highlight {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+<table border="1" id="myTable">
+    <tr>
+        <td>Row 1, Column 1</td>
+        <td>Row 1, Column 2</td>
+    </tr>
+    <tr>
+        <td>Row 2, Column 1</td>
+        <td>Row 2, Column 2</td>
+    </tr>
+    <tr>
+        <td>Row 3, Column 1</td>
+        <td>Row 3, Column 2</td>
+    </tr>
+</table>
+
+<script>
+    $(document).ready(function(){
+        // Add click event to each table row
+        $("#myTable tr").click(function(){
+            // Remove highlight class from all rows
+            $("#myTable tr").removeClass("highlight");
+            
+            // Add highlight class to the clicked row
+            $(this).addClass("highlight");
+        });
+    });
+</script>
+
+</body>
+</html>
