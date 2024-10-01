@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Row Data to Input Fields</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<table border="1" id="myTable">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+    </tr>
+    <tr>
+        <td>John Doe</td>
+        <td>25</td>
+        <td>New York</td>
+    </tr>
+    <tr>
+        <td>Jane Smith</td>
+        <td>30</td>
+        <td>Los Angeles</td>
+    </tr>
+    <tr>
+        <td>Mike Johnson</td>
+        <td>35</td>
+        <td>Chicago</td>
+    </tr>
+</table>
+
+<!-- Input fields to display table data -->
+<br>
+<label for="name">Name:</label>
+<input type="text" id="name" name="name"><br><br>
+
+<label for="age">Age:</label>
+<input type="text" id="age" name="age"><br><br>
+
+<label for="city">City:</label>
+<input type="text" id="city" name="city">
+
+<script>
+    $(document).ready(function(){
+        // Add click event to table rows
+        $("#myTable tr").click(function(){
+            // Get the text from each cell in the clicked row
+            var name = $(this).find("td:eq(0)").text(); // First cell (Name)
+            var age = $(this).find("td:eq(1)").text();  // Second cell (Age)
+            var city = $(this).find("td:eq(2)").text(); // Third cell (City)
+
+            // Set the values of the input fields
+            $("#name").val(name);
+            $("#age").val(age);
+            $("#city").val(city);
+        });
+    });
+</script>
+
+</body>
+</html>
