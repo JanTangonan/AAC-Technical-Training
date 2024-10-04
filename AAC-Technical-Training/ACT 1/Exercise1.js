@@ -14,7 +14,7 @@ $(document).ready(() => {
     });
 
     ///Date picker UI widget
-    $('#incedent-report-date').datepicker();
+    $('#incedentReportDate').datepicker();
 
     rowHighlight();
 
