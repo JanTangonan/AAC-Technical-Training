@@ -1,67 +1,82 @@
-<asp:GridView ID="GridView1" runat="server" AutoPostBack="True" 
-    OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
-    OnRowDataBound="GridView1_RowDataBound"
-    CssClass="gridview-table">
-    <Columns>
-        <asp:BoundField DataField="DepartmentCaseNumber" HeaderText="Dept Case #" />
-        <asp:BoundField DataField="LabCaseNumber" HeaderText="Lab Case #" />
-        <asp:BoundField DataField="ReportIncidentDate" HeaderText="Incident Date" />
-        <asp:BoundField DataField="Department" HeaderText="Department" />
-        <asp:BoundField DataField="Charge" HeaderText="Charge" />
-        <asp:TemplateField>
-            <ItemTemplate>
-                <!-- Edit Button -->
-                <asp:Button ID="btnEdit" runat="server" Text="Edit"
-                    OnClientClick="DisableOtherRows(this); return false;" 
-                    OnClick="btnEdit_Click" />
-                
-                <!-- Save Button -->
-                <asp:Button ID="btnSave" runat="server" Text="Save"
-                    OnClientClick="EnableAllRows(); return false;"
-                    OnClick="btnSave_Click" />
-                
-                <!-- Cancel Button -->
-                <asp:Button ID="btnCancel" runat="server" Text="Cancel"
-                    OnClientClick="EnableAllRows(); return false;"
-                    OnClick="btnCancel_Click" />
-            </ItemTemplate>
-        </asp:TemplateField>
-    </Columns>
-</asp:GridView>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Exercise2.aspx.cs" Inherits="AAC_Technical_Training.Exercise2 "
+    EnableEventValidation ="false"%>
 
-<script type="text/javascript">
-    function DisableOtherRows(editButton) {
-        // Get the parent row of the clicked Edit button
-        var selectedRow = editButton.closest('tr');
-        // Get all rows in the GridView
-        var allRows = document.querySelectorAll('#<%= GridView1.ClientID %> tr');
+<!DOCTYPE html>
 
-        // Loop through all rows and disable those that are not selected
-        allRows.forEach(function (row) {
-            if (row !== selectedRow) {
-                row.classList.add('disabled-row');
-                row.style.pointerEvents = "none";  // Disable mouse events
-                row.style.opacity = "0.5";  // Visually indicate disabled state
-            }
-        });
-    }
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Exercise2.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server" />
+        <asp:UpdatePanel runat="server" ID="UpdatePanel1">
+            <ContentTemplate>
+                <div>
+                    <h1>Recent Cases</h1>
+                    <!-- Recent Cases Table View using Grid View -->
+                    <asp:GridView ID="grdCasesTable" runat="server" AutoGenerateColumns="false" CssClass="grid" DataKeyNames="CASE_KEY"
+                        BorderStyle="None" BorderWidth="0px" BorderColor="Transparent" SelectedRowStyle-BackColor="#7FFFD4"
+                        OnRowCommand="grdCasesTable_RowCommand" AutoPostBack="true" OnRowDataBound="grdCasesTable_RowDataBound">
+                        <Columns>
+                            <asp:BoundField DataField="DEPARTMENT_CASE_NUMBER" HeaderText="Department Case #" />
+                            <asp:BoundField DataField="DEPARTMENT_NAME" HeaderText="Department" />
+                            <asp:BoundField DataField="CHARGE" HeaderText="Charge" />
+                            <asp:BoundField DataField="LAB_CASE" HeaderText="Lab Case #" />
+                            <asp:BoundField DataField="OFFENSE_DATE" HeaderText="Incident Report Date" DataFormatString="{0:yyyy-MM-dd}" />
+                        </Columns>
+                    </asp:GridView>
+                </div>
 
-    function EnableAllRows() {
-        // Get all rows in the GridView
-        var allRows = document.querySelectorAll('#<%= GridView1.ClientID %> tr');
+                <div>
+                    <fieldset>
+                        <legend>Case Report</legend>
+                        <!-- Department Case # -->
+                        <div class="form-group">
+                            <label>Department Case #</label>
+                            <asp:TextBox ID="txtDepartmentCaseNumber" runat="server" Enabled="false"></asp:TextBox>
+                            <asp:Label ID="lblDepartmentCaseNumberMessage" runat="server" ForeColor="Red" />
+                        </div>
 
-        // Loop through all rows and re-enable them
-        allRows.forEach(function (row) {
-            row.classList.remove('disabled-row');
-            row.style.pointerEvents = "";  // Re-enable mouse events
-            row.style.opacity = "1";  // Restore original appearance
-        });
-    }
-</script>
+                        <!-- Department -->
+                        <div class="form-group">
+                            <label>Department</label>
+                            <asp:DropDownList ID="ddlDepartment" runat="server" CssClass="ddlButtonGroup" Enabled="false">
+                            </asp:DropDownList>
+                        </div>
 
-<style>
-    .disabled-row {
-        pointer-events: none;
-        opacity: 0.5;
-    }
-</style>
+                        <!-- Charge -->
+                        <div class="form-group">
+                            <label>Charge</label>
+                            <asp:DropDownList ID="ddlCharge" runat="server" CssClass="ddlButtonGroup" Enabled="false">
+                            </asp:DropDownList>
+                        </div>
+
+                        <!-- Lab Case # -->
+                        <div class="form-group">
+                            <label>Lab Case #</label>
+                            <asp:TextBox ID="txtLabCaseNumber" runat="server" Enabled="false"></asp:TextBox> 
+                            <asp:Label ID="lblLabCaseNumberMessage" runat="server" ForeColor="Red" />
+                        </div>
+
+                        <!-- Report Incident Date -->
+                        <div class="form-group">
+                            <label>Report Incident Date</label>
+                            <asp:TextBox ID="txtReportIncidentDate" runat="server" Enabled="false"></asp:TextBox> 
+                            <asp:Label ID="lblReportIncidentDateMessage" runat="server" ForeColor="Red" />
+                        </div>
+
+                        <!-- Button group -->
+                        <div class="button-group">
+                            <asp:Button ID="btnEdit" runat="server" Text="Edit" UseSubmitBehavior="false" OnClick="btnEdit_Click"/>
+                            <asp:Button ID="btnSave" runat="server" Text="Save" Enabled="false" UseSubmitBehavior="false" Onclick="btnSave_Click"/>
+                            <asp:Button ID="btnCancel" runat="server" Text="Cancel" Enabled="false" UseSubmitBehavior="false" Onclick="btnCancel_Click"/>
+                        </div>
+                    </fieldset>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </form>
+</body>
+</html>

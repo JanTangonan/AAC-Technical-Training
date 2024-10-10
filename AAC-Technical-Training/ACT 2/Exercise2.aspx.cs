@@ -1,9 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -11,62 +8,207 @@ namespace AAC_Technical_Training
 {
     public partial class Exercise2 : System.Web.UI.Page
     {
+        /// Queries to be used for grid view and Dropdown lists
+        private string queryGridView1 = @"SELECT TOP 10 C.CASE_KEY, C.DEPARTMENT_CASE_NUMBER, D.DEPARTMENT_NAME, 
+                            O.OFFENSE_DESCRIPTION AS CHARGE, LAB_CASE, OFFENSE_DATE 
+                            FROM TV_LABCASE C 
+                            INNER JOIN TV_DEPTNAME D ON C.DEPARTMENT_CODE = D.DEPARTMENT_CODE 
+                            INNER JOIN TV_OFFENSE O ON C.OFFENSE_CODE = O.OFFENSE_CODE 
+                            ORDER BY CASE_DATE DESC";
+        private string queryDdlDept = "SELECT DEPARTMENT_NAME, DEPARTMENT_CODE FROM TV_DEPTNAME";
+        private string queryDdlOffense = "SELECT OFFENSE_DESCRIPTION, OFFENSE_CODE FROM TV_OFFENSE";
+
+        /// Field Names from tables TV_DEPTNAME and TV_OFFENSE
+        private string departmentDataTextField = "DEPARTMENT_NAME";
+        private string departmentDataValueField = "DEPARTMENT_CODE";
+        private string chargeDataTextField = "OFFENSE_DESCRIPTION";
+        private string chargeDataValueField = "OFFENSE_CODE";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                BindGridView();
+                BindGrid();
             }
         }
 
         protected void BindGrid()
         {
-            // Create a DataTable and add some sample data
-            DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[5] {
-                new DataColumn("DepartmentCaseNumber", typeof(string)),
-                new DataColumn("Department", typeof(string)),
-                new DataColumn("Charge", typeof(string)),
-                new DataColumn("LabCaseNumber", typeof(string)),
-                new DataColumn("IncidentReportDate", typeof(DateTime))
-            });
+            Bind(GetConnectionString(), queryGridView1, grdCasesTable);
+        }
 
-            // Adding some sample rows
-            dt.Rows.Add("DCN12345", "HR", "Charge A", "LCN5678", DateTime.Now.AddDays(-5));
-            dt.Rows.Add("DCN67890", "IT", "Charge B", "LCN9101", DateTime.Now.AddDays(-3));
-            dt.Rows.Add("DCN23456", "Finance", "Charge C", "LCN1121", DateTime.Now.AddDays(-7));
-            dt.Rows.Add("DCN23456", "Finance", "Charge C", "LCN1121", DateTime.Now.AddDays(-7));
-            dt.Rows.Add("DCN23456", "Finance", "Charge C", "LCN1121", DateTime.Now.AddDays(-7));
+        protected void grdCasesTable_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                if (ViewState["IsEditing"] == null || !(bool)ViewState["IsEditing"])
+                {
+                    e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(grdCasesTable, "Select$" + e.Row.RowIndex);
+                    e.Row.Attributes["style"] = "cursor:pointer";
+                }
+                else
+                {
+                    //disables non-selected rows
+                    if (grdCasesTable.SelectedIndex != e.Row.RowIndex)
+                    {
+                        e.Row.CssClass = "disabled";
+                    }
+                    else
+                    {
+                        e.Row.CssClass = "";
+                    }
+                }
+            }
+        }
 
-            // Bind the DataTable to the GridView
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
+        protected void grdCasesTable_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            //Binds drop down lists
+            Bind(GetConnectionString(), queryDdlDept, ddlDepartment, departmentDataTextField, departmentDataValueField);
+            Bind(GetConnectionString(), queryDdlOffense, ddlCharge, chargeDataTextField, chargeDataValueField);
+
+            if (e.CommandName == "Select")
+            {
+                //Display grid view row data into controls
+                int rowIndex = Convert.ToInt32(e.CommandArgument);
+                GridToControls(rowIndex);
+
+                BindGrid();
+            }
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            //Check if there are any selected element in the grid view
+            if (grdCasesTable.SelectedIndex >= 0)
+            {
+                //Set IsEditing to true to remove onclick function that triggers postbacks 
+                ViewState["IsEditing"] = true;
+                EnableControls(true);
+                BindGrid();
+                ClearLabelMessage();
+            }
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            //Set IsEditing to false to enable onclick function that triggers postbacks 
+            ViewState["IsEditing"] = false;
+
+            // Retrieve values from textboxes, dropdown lists, and DataKeyNames
+            string newDepartmentCaseNumber = txtDepartmentCaseNumber.Text;
+            string newDepartmentCode = ddlDepartment.SelectedValue;
+            string newOffenseCode = ddlCharge.SelectedValue;
+            string newLabCaseNumber = txtLabCaseNumber.Text;
+            string newReportIncidentDate = txtReportIncidentDate.Text.Trim();
+            string caseKey = grdCasesTable.SelectedDataKey.Value.ToString();
+
+            string dateFormat = "yyyy-MM-dd";
+            bool isValidDate = DateTime.TryParseExact(newReportIncidentDate, dateFormat,
+                        System.Globalization.CultureInfo.InvariantCulture,
+                        System.Globalization.DateTimeStyles.None, out DateTime parsedReportIncidentDate);
+
+            //txtReportIncidentDate validation
+            if (!isValidDate || string.IsNullOrWhiteSpace(newReportIncidentDate))
+            {
+                lblReportIncidentDateMessage.Text = "Please enter the date in the format yyyy-MM-dd.";
+                return;
+            }
+            // Update TV_LABCASE
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            {
+                connection.Open();
+
+                string updateLabcaseQuery = @"
+                    UPDATE TV_LABCASE
+                    SET 
+                        DEPARTMENT_CASE_NUMBER = @DepartmentCaseNumber,
+                        DEPARTMENT_CODE = @DepartmentCode,
+                        OFFENSE_CODE = @OffenseCode,
+                        LAB_CASE = @LabCase,
+                        OFFENSE_DATE = @OffenseDate
+                        WHERE CASE_KEY = @CaseKey";
+
+                try
+                {
+                    using (SqlCommand command = new SqlCommand(updateLabcaseQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@DepartmentCaseNumber", newDepartmentCaseNumber);
+                        command.Parameters.AddWithValue("@DepartmentCode", newDepartmentCode);
+                        command.Parameters.AddWithValue("@OffenseCode", newOffenseCode);
+                        command.Parameters.AddWithValue("@LabCase", newLabCaseNumber);
+                        command.Parameters.AddWithValue("@OffenseDate", parsedReportIncidentDate);
+                        command.Parameters.AddWithValue("@CaseKey", caseKey); //
+
+                        command.ExecuteNonQuery();
+                        lblLabCaseNumberMessage.Text = " ";
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    if (ex.Number == 2627)
+                    {
+                        lblLabCaseNumberMessage.Text = "Duplicate value entry. Please input different Lab Case";
+                        return;
+                    }
+                }
+
+                connection.Close();
+            }
+
+            lblReportIncidentDateMessage.Text = " ";
+
+            //Rebind Grid View
+            Bind(GetConnectionString(), queryGridView1, grdCasesTable);
+            EnableControls(false);
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            //Set IsEditing to false to enable onclick function that triggers postbacks 
+            ViewState["IsEditing"] = false;
+
+            //Display grid view table data to controls
+            int rowIndex = grdCasesTable.SelectedIndex;
+            GridToControls(rowIndex);
+
+            //Rebind grid view
+            Bind(GetConnectionString(), queryGridView1, grdCasesTable);
+
+            EnableControls(false);
+            ClearLabelMessage();
         }
 
         /// <summary>
-        /// Binds and displays data from DB to GridView
+        /// Data binder for grid and dropdownlist data from db
         /// </summary>
-        protected void BindGridView()
+        /// <param name="ConnectionString"></param>
+        /// <param name="query"></param>
+        /// <param name="control"></param>
+        /// <param name="textField"></param>
+        /// <param name="valueField"></param>
+        private void Bind(string ConnectionString, string query, Control control, string textField = "", string valueField = "")
         {
-            string connectionString = GetConnectionString();
-            string query = @"SELECT TOP 10 C.CASE_KEY, C.DEPARTMENT_CASE_NUMBER, D.DEPARTMENT_NAME, 
-                O.OFFENSE_DESCRIPTION AS CHARGE, LAB_CASE, OFFENSE_DATE 
-                FROM TV_LABCASE C 
-                INNER JOIN TV_DEPTNAME D ON C.DEPARTMENT_CODE = D.DEPARTMENT_CODE 
-                INNER JOIN TV_OFFENSE O ON C.OFFENSE_CODE = O.OFFENSE_CODE 
-                ORDER BY CASE_DATE DESC";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
                 SqlDataAdapter da = new SqlDataAdapter(command);
                 DataTable dt = new DataTable();
-
                 da.Fill(dt);
 
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
+                if (control is GridView gridView)
+                {
+                    gridView.DataSource = dt;
+                    gridView.DataBind();
+                }
+                else if (control is DropDownList dropDownList)
+                {
+                    dropDownList.DataSource = dt;
+                    dropDownList.DataTextField = textField;
+                    dropDownList.DataValueField = valueField;
+                    dropDownList.DataBind();
+                }
             }
         }
 
@@ -86,20 +228,65 @@ namespace AAC_Technical_Training
             return connectionString;
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Diplays grid view row data into controls e.g textboxes and dropdown lists
+        /// </summary>
+        /// <param name="rowIndex"></param>
+        private void GridToControls(int rowIndex)
         {
-            // Get the selected row
-            GridViewRow row = GridView1.SelectedRow;
+            GridViewRow row = grdCasesTable.Rows[rowIndex];
 
-            // Populate textboxes with the selected row's data
-            if (row != null)
+            string selectedDepartmentText = row.Cells[1].Text;
+            string selectedChargeText = row.Cells[2].Text;
+
+            txtDepartmentCaseNumber.Text = row.Cells[0].Text;
+            txtLabCaseNumber.Text = row.Cells[3].Text;
+            txtReportIncidentDate.Text = row.Cells[4].Text;
+
+            DdlSelector(ddlCharge, selectedChargeText);
+            DdlSelector(ddlDepartment, selectedDepartmentText);
+        }
+
+        /// <summary>
+        /// Selects dropdown text value based on selected text value from the grid
+        /// </summary>
+        /// <param name="ddlControl"></param>
+        /// <param name="textToSelect"></param>
+        private void DdlSelector(DropDownList ddlControl, string textToSelect)
+        {
+            ListItem selectedItem = ddlControl.Items.FindByText(textToSelect);
+            if (selectedItem != null)
             {
-                ddlDepertmentCaseNumber.Text = row.Cells[1].Text; // Adjust the index according to your GridView structure
-                txtDepertment.Text = row.Cells[2].Text;
-                ddlCharge.Text = row.Cells[3].Text;
-                txtLabCaseNumber.Text = row.Cells[4].Text;
-                txtReportIncidentDate.Text = row.Cells[5].Text; // Make sure the index corresponds to the right column
+                ddlControl.ClearSelection();
+                selectedItem.Selected = true;
             }
+        }
+
+        /// <summary>
+        /// Enables controls e.g textboxes, dropdown lists, and buttons
+        /// </summary>
+        /// <param name="enable"></param>
+        private void EnableControls(bool enable)
+        {
+            btnSave.Enabled = enable;
+            btnCancel.Enabled = enable;
+
+            txtDepartmentCaseNumber.Enabled = enable;
+            txtLabCaseNumber.Enabled = enable;
+            txtReportIncidentDate.Enabled = enable;
+
+            ddlCharge.Enabled = enable;
+            ddlDepartment.Enabled = enable;
+
+            btnEdit.Enabled = !enable;
+        }
+        /// <summary>
+        /// Clears label messages for txtLabCaseNumber and txtReportIncidentDate
+        /// </summary>
+        private void ClearLabelMessage()
+        {
+            lblLabCaseNumberMessage.Text = " ";
+            lblReportIncidentDateMessage.Text = " ";
         }
     }
 }
