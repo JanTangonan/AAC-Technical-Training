@@ -1,0 +1,1 @@
+PLCQuery qryInvOfficer = new PLCQuery("SELECT CASE_MANAGER, CASE_ANALYST FROM TV_LABCASE WHERE CASE_KEY = " + PLCSession.PLCGlobalCaseKey);
