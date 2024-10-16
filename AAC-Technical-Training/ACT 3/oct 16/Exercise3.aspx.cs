@@ -13,12 +13,12 @@ namespace AAC_Technical_Training
     public partial class Exercise3 : System.Web.UI.Page
     {
         ///// Queries to be used for grid view and Dropdown lists
-        //private string queryGridView1 = @"SELECT TOP 10 C.CASE_KEY, C.DEPARTMENT_CASE_NUMBER, D.DEPARTMENT_NAME, 
-        //                    O.OFFENSE_DESCRIPTION AS CHARGE, LAB_CASE, OFFENSE_DATE 
-        //                    FROM TV_LABCASE C 
-        //                    INNER JOIN TV_DEPTNAME D ON C.DEPARTMENT_CODE = D.DEPARTMENT_CODE 
-        //                    INNER JOIN TV_OFFENSE O ON C.OFFENSE_CODE = O.OFFENSE_CODE 
-        //                    ORDER BY CASE_DATE DESC";
+        private string queryGridView1 = @"SELECT TOP 10 C.CASE_KEY, C.DEPARTMENT_CASE_NUMBER, D.DEPARTMENT_NAME, 
+                            O.OFFENSE_DESCRIPTION AS CHARGE, LAB_CASE, OFFENSE_DATE 
+                            FROM TV_LABCASE C 
+                            INNER JOIN TV_DEPTNAME D ON C.DEPARTMENT_CODE = D.DEPARTMENT_CODE 
+                            INNER JOIN TV_OFFENSE O ON C.OFFENSE_CODE = O.OFFENSE_CODE 
+                            ORDER BY CASE_DATE DESC";
         //private string queryDdlDept = "SELECT DEPARTMENT_NAME, DEPARTMENT_CODE FROM TV_DEPTNAME";
         //private string queryDdlOffense = "SELECT OFFENSE_DESCRIPTION, OFFENSE_CODE FROM TV_OFFENSE";
 
@@ -54,8 +54,30 @@ namespace AAC_Technical_Training
 
         }
 
-        protected void PLCDBPanel1_PLCDBPanelButtonClick(object sender, EventArgs e)
+        protected void PLCDBPanel1_PLCDBPanelButtonClick(object sender, PLCButtonClickEventArgs e)
         {
+            if (e.button_name == "EDIT")
+            {
+
+            }
+
+            if (e.button_name == "SAVE")
+            {
+                if (e.button_action == "BEFORE")
+                {
+                    grdCasesTable.InitializePLCDBGrid();
+                }
+
+                if (e.button_action == "AFTER")
+                    {
+                    grdCasesTable.InitializePLCDBGrid();
+                }
+            }
+
+            if (e.button_name == "CANCEL")
+            {
+
+            }
         }
 
         private void PopulatePanelFields()
@@ -75,6 +97,8 @@ namespace AAC_Technical_Training
                                             ORDER BY CASE_DATE DESC";
             grdCasesTable.InitializePLCDBGrid();
         }
+
+
         protected void PLCDBPanel1_PLCDBPanelSetDefaultRecord(object sender, PLCDBPanelSetDefaultRecordEventArgs e)
         {
             //e.SetNewRecordValues("DEPARTMENT_CASE_NUMBER", string.Empty);
