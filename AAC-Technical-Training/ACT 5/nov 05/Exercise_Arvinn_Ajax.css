@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.cases-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+    text-align: left;
+}
+
+.cases-table th, .cases-table td {
+    padding: 5px;
+}
+
+.cases-table th {
+    background-color: #5A7A9C;
+    color: #F2F2F2;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-table tr {
+    margin-bottom: 0;
+}
+
+.form-table select {
+    width: 600px;
+    height: 22px;
+}
+
+.form-buttons {
+    margin: 10px;
+}
+
+.form-buttons button {
+    height: 30px;
+    width: 100px;
+    font-size: 14px;
+}
+
+label {
+    width: 20%;
+    font-size: 14px;
+}
+
+input {
+    height: 20px
+}
+
+#dialog p {
+    text-align: center;
+}
+
+/* Row higlight */
+.table-row-color {
+    background-color: gray;
+    color: white;
+}
+
+/* Disable clicking */
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.highlighted {
+    background-color: yellow; /* Change this to any highlight color you prefer */
+}
