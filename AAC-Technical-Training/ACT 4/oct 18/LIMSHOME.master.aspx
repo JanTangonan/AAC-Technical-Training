@@ -11,7 +11,7 @@
 <html>
 <head runat="server">
     <meta http-equiv="Page-Enter" content="blendTrans(Duration=0.10)" />
-    <script src="<%# ResolveUrl("~/support/DockingPanel.js") %>" type="text/JavaScript" language="JavaScript"></script>
+    <!-- <script src="<%# ResolveUrl("~/support/DockingPanel.js") %>" type="text/JavaScript" language="JavaScript"></script> -->
     <link href="<%# ResolveUrl("~/BEASTiLIMS.css?rev=" + PLCSession.CurrentRev) %>" type="text/css" rel="stylesheet" />
 
     <uc5:PLCPageHead runat="server" ID="pagehead1" include="codehead,plcdbpanel,jquery,utility,jquery-ui,codemultipick" />
