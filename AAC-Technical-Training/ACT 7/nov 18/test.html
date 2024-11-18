@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Plugin Implementation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .grid-header, .grid-row {
+            display: flex;
+        }
+        .grid-column, .grid-cell {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        .control-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .control-input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .btn {
+            margin-right: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my-grid"></div>
+    <div class="my-controls"></div>
+    <div class="my-buttons"></div>
+
+    <script>
+        // Include plugin code here (shown in the previous response)
+        (function($) {
+            // Grid Panel Plugin
+            $.fn.gridPanel = function(options) {
+                var settings = $.extend({
+                    columns: [],
+                    data: [],
+                    rowClick: null
+                }, options);
+
+                return this.each(function() {
+                    var $grid = $(this);
+                    $grid.empty(); // Clear existing content
+
+                    // Create a header
+                    var $header = $("<div>").addClass("grid-header");
+                    settings.columns.forEach(function(column) {
+                        $header.append($("<div>").addClass("grid-column").text(column));
+                    });
+                    $grid.append($header);
+
+                    // Create rows
+                    settings.data.forEach(function(row) {
+                        var $row = $("<div>").addClass("grid-row");
+                        settings.columns.forEach(function(column) {
+                            $row.append($("<div>").addClass("grid-cell").text(row[column]));
+                        });
+                        $row.on("click", function() {
+                            if (typeof settings.rowClick === "function") {
+                                settings.rowClick(row);
+                            }
+                        });
+                        $grid.append($row);
+                    });
+                });
+            };
+
+            // Control Panel Plugin
+            $.fn.controlPanel = function(options) {
+                var settings = $.extend({
+                    controls: []
+                }, options);
+
+                return this.each(function() {
+                    var $panel = $(this);
+                    $panel.empty();
+
+                    settings.controls.forEach(function(control) {
+                        var $label = $("<label>").text(control.label).addClass("control-label");
+                        var $input = $("<input>")
+                            .attr("type", control.type)
+                            .addClass("control-input")
+                            .attr("id", control.id);
+                        $panel.append($label).append($input);
+                    });
+                });
+            };
+
+            // Button Panel Plugin
+            $.fn.buttonPanel = function(options) {
+                var settings = $.extend({
+                    buttons: []
+                }, options);
+
+                return this.each(function() {
+                    var $panel = $(this);
+                    $panel.empty();
+
+                    settings.buttons.forEach(function(button) {
+                        var $btn = $("<button>")
+                            .text(button.label)
+                            .addClass("btn")
+                            .on("click", button.action);
+                        $panel.append($btn);
+                    });
+                });
+            };
+        })(jQuery);
+
+        // Initialize Plugins
+        $(document).ready(function() {
+            // Grid Panel Initialization
+            $(".my-grid").gridPanel({
+                columns: ["Name", "Age", "Department"],
+                data: [
+                    { Name: "John", Age: 25, Department: "HR" },
+                    { Name: "Jane", Age: 30, Department: "Finance" }
+                ],
+                rowClick: function(rowData) {
+                    $("#txtName").val(rowData.Name);
+                    $("#txtAge").val(rowData.Age);
+                    $("#txtDepartment").val(rowData.Department);
+                }
+            });
+
+            // Control Panel Initialization
+            $(".my-controls").controlPanel({
+                controls: [
+                    { label: "Name", type: "text", id: "txtName" },
+                    { label: "Age", type: "number", id: "txtAge" },
+                    { label: "Department", type: "text", id: "txtDepartment" }
+                ]
+            });
+
+            // Button Panel Initialization
+            $(".my-buttons").buttonPanel({
+                buttons: [
+                    {
+                        label: "Save",
+                        action: function() {
+                            const name = $("#txtName").val();
+                            const age = $("#txtAge").val();
+                            const department = $("#txtDepartment").val();
+                            alert(`Saved: ${name}, ${age}, ${department}`);
+                        }
+                    },
+                    {
+                        label: "Cancel",
+                        action: function() {
+                            $("#txtName").val("");
+                            $("#txtAge").val("");
+                            $("#txtDepartment").val("");
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
