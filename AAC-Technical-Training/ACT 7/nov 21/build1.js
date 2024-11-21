@@ -1,26 +1,35 @@
 (function ($) {
-    //GRID PLUGIN
+    /// GRID PLUGIN ///
     $.fn.DbGrid = function (options) {
         // Default settings
         const settings = $.extend({
             data: [],
-            columns: []
+            columns: [],
+            onRendered: null 
         }, options);
 
         const $container = $(this);
         let selectedRecord = null;
 
-        // Initialize the grid
         function init() {
+            /// <summary>Initialize the grid</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
             renderGrid();
             SelectRow();
+
+            /// execute onRendered function lastly
+            if (typeof settings.onRendered === "function") {
+                settings.onRendered();
+            }
         }
 
-        // Render the grid table
         function renderGrid() {
+            /// <summary>Render the grid table</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
             const table = $('<table id="gridView" class="db-grid"></table>');
 
-            // Generate table headers from column definitions
             const thead = $('<thead><tr></tr></thead>');
             settings.columns.forEach(col => {
                 const th = $(`<th>${col.title}</th>`);
@@ -28,13 +37,11 @@
             });
             table.append(thead);
 
-            // Generate table body
             const tbody = $('<tbody></tbody>');
             settings.data.forEach(item => {
                 const row = $('<tr></tr>');
                 row.data('record', item);
 
-                // Populate row cells based on columns
                 settings.columns.forEach(col => {
                     const cellValue = item[col.name] || '';
                     row.append(`<td>${cellValue}</td>`);
@@ -47,39 +54,44 @@
             $container.empty().append(table);
         }
 
-        // Bind events for row selection and interaction
         function SelectRow() {
+            /// <summary>Bind events for row selection and interaction</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
             $('#gridView').on('click', 'tr', function () {
                 $(this).addClass('selected').siblings().removeClass('selected');
                 selectedRecord = $(this).data('record');
-                console.log(selectedRecord);
             });
         }
 
-        // Public method to enable edit mode
         this.editMode = function () {
-            $('#gridView').removeClass('disabled'); // Enable interactions
-            console.log("Grid is now in edit mode.");
+            /// <summary>Enable edit mode - enables grid table and enables interactions</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
+            $('#gridView').removeClass('disabled');  
         };
 
-        // Public method to enable browse mode
         this.browseMode = function () {
-            $('#gridView').addClass('disabled'); // Disable interactions
-            console.log("Grid is now in browse mode.");
+            /// <summary>Enable browse mode - disables grid table and disables interactions</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
+            $('#gridView').addClass('disabled');  
         };
 
-        // Function to get the currently selected record
         this.getSelectedRecord = function () {
+            /// <summary>Returns currently selected record</summary>
+            /// <param>selectedRecord</param>
+            /// <return type = "void">Void.</return>
             return selectedRecord;
         };
 
-        // Initialize the plugin
+        /// Initialize the plugin
         init();
 
         return this;
     };
 
-    //PANEL PLUGIN
+    /// PANEL PLUGIN ///
     $.fn.dbPanel = function (options) {
         // Default settings
         const settings = $.extend({
@@ -88,20 +100,24 @@
 
         const $container = $(this);
 
-        // Initialize the panel
         function init() {
+            /// <summary>Initialize the panel</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
             renderControls();
         }
 
-        // Function to render controls based on the configuration
         function renderControls() {
+            /// <summary>Renders controls based on the configuration</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
             settings.controls.forEach(control => {
-                const $formGroup = $('<div class="form-group"></div>');
+                const $formGroup = $('<div class="control-row"></div>');
                 let $label;
                 let $input;
 
                 if (control.type !== 'hidden') {
-                    $label = $(`<label>${control.label}</label>`);
+                    $label = $(`<label class="control-label">${control.label}</label>`);
                 }
 
                 // Create input elements based on control type
@@ -117,17 +133,15 @@
                     $input = $(`<input type="hidden" id="${control.id}" class="control-input">`);
                 }
 
-                if ($label) {
-                    $formGroup.append($label);
-                }
-
                 $formGroup.append($label).append($input);
                 $container.append($formGroup);
             });
         }
 
-        //Function to fetch data from WebMethod and bind to the dropdown
         function fetchDropdownData(url, $dropdown, valueField, textField) {
+            /// <summary>Fetch data from WebMethod and bind to the dropdown</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
             $.ajax({
                 type: "POST",
                 url: url,
@@ -147,16 +161,20 @@
             });
         }
 
-        // Function to bind data to a dropdown
         function bindDropdown($dropdown, options) {
+            /// <summary>Binds data to a dropdown</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
             $dropdown.empty(); // Clear existing options
             options.forEach(option => {
                 $dropdown.append(`<option value="${option.value}">${option.text}</option>`);
             });
         }
 
-        // Function to toggle control enable/disable
         function toggleControls(enabled) {
+            /// <summary>Toggles control enable/disable</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
             settings.controls.forEach(control => {
                 const $control = $(`#${control.id}`);
                 if (enabled) {
@@ -167,45 +185,50 @@
             });
         }
 
-        // Enable edit mode
         this.editMode = function () {
+            /// <summary>Enable edit mode</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
             toggleControls(true);
-            console.log("Control panel is now in edit mode.");
         };
 
-        // Enable browse mode
         this.browseMode = function () {
+            /// <summary>Enable browse mode</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
             toggleControls(false);
-            console.log("Control panel is now in browse mode.");
         };
 
         this.loadData = function (record) {
+            /// <summary>Load data into control panel using record data</summary>
+            /// <param></param>
+            /// <return type = "void">Void.</return>
             if (record) {
                 settings.controls.forEach(control => {
                     const fieldId = `#${control.id}`;
                     const value = record[control.dataField];
-                    console.log(`Populating field ${fieldId} with value: ${value}`);
-
 
                     if (control.type === 'text' || control.type === 'hidden') {
                         $(fieldId).val(value);
                     } else if (control.type === 'dropdown') {
-                        $(fieldId).val(value).change(); // Trigger change to update dropdowns if needed
+                        $(fieldId).val(value).change();
                     }
                 });
             }
         };
 
         this.getData = function () {
+            /// <summary>Returns updated control panel input data</summary>
+            /// <param>formData </param>
+            /// <return type = "void">Void.</return>
             formData = {};
             settings.controls.forEach(control => {
                 formData[control.id] = $(`#${control.id}`).val();
             });
             return formData;
-            console.log(formData);
         };
 
-        // Initialize the plugin
+        /// Initialize the plugin
         init();
 
         return this;
@@ -215,51 +238,54 @@
 
 
 $(document).ready(function () {
-    // Grid Panel Initialization
-
-    var gridData = null;
-    
-    $('#txtIncidentReportDate').datepicker({
-        maxDate: 0
-    });
-
-    $('#btnEdit').click(function () {
-        edit();
-    });
-
-    $('#btnSave').click(function () {
-        saveUpdate();
-    });
-
-    $('#btnCancel').click(function () {
-        cancelUpdate();
-    })
+    /// Grid Panel Initialization
+    let grid = null;
 
     function handleResponse(response) {
-        // Parse the response and assign it to the global variable
-        gridData = JSON.parse(response.d);
-
-        console.log(gridData); 
-        initializeGrid();
+        /// <summary>Parse the response and assign it to the global variable.</summary>
+        /// <param>response </param>
+        /// <return type = "void">Void.</return>
+        var gridData = JSON.parse(response.d);
+        initializeGrid(gridData);
     }
 
-    function initializeGrid() {
-        // Assign the grid to the global variable
+    function initializeGrid(data) {
+        /// <summary>Initialize the grid and uses the parsed data</summary>
+        /// <param>data</param>
+        /// <return type = "void">Void.</return>
         grid = $(".dbgCasesTable").DbGrid({
-            data: gridData,
+            data: data,
             columns: [
                 { name: "DEPARTMENT_CASE_NUMBER", title: "Department Case #" },
                 { name: "DEPARTMENT_NAME", title: "Department" },
                 { name: "CHARGE", title: "Charge" },
                 { name: "LAB_CASE", title: "Lab Case #" },
                 { name: "OFFENSE_DATE", title: "Incident Report Date" }
-            ]
-        });
+            ],
+            onRendered: function () {
+                /// <summary>Selects first row of grid upon start of page.</summary>
+                /// <param></param>
+                /// <return type = "void">Void.</return>
+                $(".dbgCasesTable").off('click', 'tr').on('click', 'tr', function () {
+                    const selectedRecord = $(this).data('record');
+                    if (selectedRecord) {
+                        controlPanel.loadData(selectedRecord); 
+                    }
+                });
 
-        console.log("Grid initialized:", grid);
+                /// trigger click for the first row
+                const $firstRow = $(".dbgCasesTable tbody tr:first");
+                if ($firstRow.length > 0) {
+                    $firstRow.addClass('selected').trigger('click');
+                }
+            }
+        });
     }
 
     function bindCasesTable() {
+        /// <summary>Fetches response from web method and passes to the grid.</summary>
+        /// <param></param>
+        /// <return type = "void">Void.</return>
         $.ajax({
             type: "POST",
             url: "Exercise_Arvinn_AjaxWS.asmx/GetTopCases", // Replace with your actual WebForm URL
@@ -274,7 +300,7 @@ $(document).ready(function () {
         });
     }
     
-    // Control Panel Initialization
+    /// Control Panel Initialization
     const controlPanel = $('.dbControlPanel').dbPanel({
         controls: [
             { type: 'hidden', id: 'hndCaseKey', dataField: 'CASE_KEY' },
@@ -302,32 +328,38 @@ $(document).ready(function () {
         ]
     });
 
+    /// Datepicker Widget setup
+    $('#txtIncidentReportDate').datepicker({
+        maxDate: 0
+    });
+
+    $('#txtIncidentReportDate').on('keydown paste', function (e) {
+        e.preventDefault();
+    });
+
     bindCasesTable();
     controlPanel.browseMode();
-    selectFirstRow();
 
+    /// Row Click event setup
     $(".dbgCasesTable").on('click', 'tr', function () {
-        var selectedRecord = grid.getSelectedRecord();
-        console.log(selectedRecord);
+        const selectedRecord = grid.getData();
         if (selectedRecord) {
             controlPanel.loadData(selectedRecord);
         }
     });
 
-    
+    /// Button panel setup
+    $('#btnEdit').click(function () {
+        edit();
+    });
 
-    // Select the first row programmatically
-    function selectFirstRow() {
-        const $firstRow = $(".dbgCasesTable").find('tbody tr:first');
-        console.log($firstRow.length);
-        if ($firstRow.length > 0) {
-            $firstRow.addClass('selected').siblings().removeClass('selected');
-            console.log($firstRow.length);
-            // Trigger the row click event for consistency
-            $firstRow.trigger('click');
-            console.log($firstRow);
-        }
-    }
+    $('#btnSave').click(function () {
+        saveUpdate();
+    });
+
+    $('#btnCancel').click(function () {
+        cancelUpdate();
+    })
 
     function edit() {
         /// <summary>Enables input elements to edit table row data.</summary>
@@ -352,8 +384,6 @@ $(document).ready(function () {
             OFFENSE_DATE: controlPanelData.txtIncidentReportDate
         };
 
-        console.log(updatedData);
-
         $.ajax({
             type: "POST",
             url: "Exercise_Arvinn_AjaxWS.asmx/SaveData",
@@ -362,10 +392,10 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
                 alert("Input Saved");
-
                 bindCasesTable();
             },
             error: function (error) {
+                alert("Input Not Saved: Error Detected");
                 console.error("Error saving data:", error);
             }
         });
@@ -394,11 +424,10 @@ $(document).ready(function () {
     }
 
     function restoreInitialValue() {
-        /// <summary>Restores initial row value.</summary>
+        /// <summary>Restores row value to the controls.</summary>
         /// <param>None.</param>
         /// <return type = "void">Void.</return>
         var selectedRecord = grid.getSelectedRecord();
-        console.log(selectedRecord);
         if (selectedRecord) {
             controlPanel.loadData(selectedRecord);
         }
