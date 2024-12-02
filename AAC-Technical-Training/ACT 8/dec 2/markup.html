@@ -1,0 +1,32 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/LIMSHOME.master" AutoEventWireup="true" CodeBehind="Exercise_Arvin_Plugin2.aspx.cs" Inherits="BEASTiLIMS.Exercise_Arvin_Plugin2" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <meta charset="utf-8" />
+    <title>Recent Cases</title>
+    <link rel="stylesheet" type="text/css" href="Exercise_Arvin_Plugin.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cp" runat="server">
+    <h1>Recent Cases</h1>
+    <div class="dbgCasesTable"></div>
+
+    <!--Field set cosists of inputs and buttons-->
+    <fieldset>
+        <legend>Case Report</legend>
+        <div class="dbpCasesControls"></div>
+        <div class="form-buttons">
+            <button id="btnEdit" type="button">Edit</button>
+            <button id="btnSave" type="button" disabled>Save</button>
+            <button id="btnCancel" type="button" disabled>Cancel</button>
+        </div>
+    </fieldset>
+
+    <!--jquery dependencies-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+    <script src="Exercise_Arvin_Plugin2.js"></script>
+    <script src="jquery.dbgrid.arvin.js"></script>
+    <script src="jquery.dbpanel.arvin.js"></script>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="foot" runat="server">
+</asp:Content>
