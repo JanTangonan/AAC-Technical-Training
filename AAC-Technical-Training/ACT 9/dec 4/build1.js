@@ -1,4 +1,6 @@
 <table id="tblGrid"
+    // data-read="./Exercise_Arvin_Plugin2WS.asmx/GetTopCases"
+
     data-read="Exercise_Arvin_Plugin2WS.asmx/GetTopCases"
     data-columns='[
                    { "name": "DEPARTMENT_CASE_NUMBER", "title": "Department Case #" },
