@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dynamicGrid th {
+    background-color: #5A7A9C;
+    color: #F2F2F2;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.dynamicGrid tr.selected {
+    background-color: gray;
+    color: white;
+}
+
+.dynamicGrid label {
+    display: block;
+}
+
+.form-buttons button {
+    height: 40px;
+    width: 130px;
+    font-size: 12px;
+}
+
+.form-buttons {
+    margin: 10px;
+}
+
+fieldset {
+    display: block; /* Ensure the fieldset is displayed */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Add a border for visibility */
+}
+
+/* Disable clicking */
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
