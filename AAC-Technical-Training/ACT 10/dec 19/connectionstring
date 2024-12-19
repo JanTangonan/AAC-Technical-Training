@@ -1,0 +1,1 @@
+Provider=SQLOLEDB;Data Source=AACSERVER2019\MSSQL2019;Initial Catalog=VENTURA_DEV;User ID=VENTURA_DEV;Password=ventura_dev;Application Name=LIMS-6fbd64ca-3964-4f31-8fee-569fb2573a44;
