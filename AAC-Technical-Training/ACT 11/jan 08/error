@@ -1,0 +1,17 @@
+ System.Web.Services.Protocols.SoapException: Server was unable to process request. ---> 
+ System.NullReferenceException: Object reference not set to an instance of an object. at PLCCONTROLS.PLCSessionVars.CallDefaultErrorPage() 
+ in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy (3)\PLCCONTROLS\PLC_SessionVars.cs:line 2100 at PLCCONTROLS.PLCSessionVars.GetDBConn(String connStr) 
+ in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy (3)\PLCCONTROLS\PLC_SessionVars.cs:line 2470 at PLCCONTROLS.PLCSession.GetDBConn(String cstr) 
+ in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy (3)\PLCCONTROLS\PLC_SessionVars.cs:line 939 at PLCCONTROLS.PLCQuery.GetDBConnection(String connectionString, Boolean isNewConnection) 
+ in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy (3)\PLCCONTROLS\PLC_Query.cs:line 3774 at PLCCONTROLS.PLCQuery.GetDBConnection(String connectionString) 
+ in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy (3)\PLCCONTROLS\PLC_Query.cs:line 3788 at PLCCONTROLS.PLCQuery.Open(String connStr, Boolean withKey) 
+ in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy (3)\PLCCONTROLS\PLC_Query.cs:line 1100 at PLCCONTROLS.PLCQuery.OpenReadOnly() 
+ in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy (3)\PLCCONTROLS\PLC_Query.cs:line 859 at PLCCONTROLS.PLCSessionVars.GetWebConfiguration(String code) 
+ in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy (3)\PLCCONTROLS\PLC_SessionVars.cs:line 11674 at PLCCONTROLS.PLCSession.GetWebConfiguration(String code) 
+ in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy (3)\PLCCONTROLS\PLC_SessionVars.cs:line 1586 at PLCGlobals.PLCDBGlobal.GetCrystalReportResponse(String reportname, String selectionformula, String reporttitle, String formstr, String cinfo, String reportcomments, Boolean autoPrint, String paramfields, String format, String globalAnalyst, String customReportKey, String caseKey, String examKey, String globalLabCode) 
+ in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy (3)\PLCGLOBALS\PLCDBGlobal.cs:line 9881 at PLCWebCommon.PLCWebMethods.LoadCrystalReport(String reportname, String selectionformula, String reporttitle, String formstr, String cinfo, String reportcomments, String paramlist, String format, String globalAnalyst, String customReportKey, String caseKey, String examKey, String globalLabCode) 
+ in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy (3)\BEASTiLIMS\PLCWEBCOMMON\PLCWebMethods.asmx.cs:line 3112 --- End of inner exception stack trace ---
+
+ System.NullReferenceException: 'Object reference not set to an instance of an object.'
+
+PLCCONTROLS.PLCSessionVars.ThePage(...) returned null.
