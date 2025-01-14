@@ -1,0 +1,13 @@
+Ticket #1069 - Create sub-item on new LABITEM record
+
+Please create a database table trigger that meets the customer requirements below:
+
+    - on insert of new item, create subitem.                    // 
+    - new flag: TV_ITEMTYPE.AUTO_CREATE_SUBITEM set to T        // create new column then set to T
+
+Logic based on Items tab > Sample                               // search for this (i still have no idea what is this)
+
+make sure to audit log                                          // search for this (i still have no idea what is this)
+    - AudtiLog.aspx / AuditLog.aspx.cs
+    - 
+
