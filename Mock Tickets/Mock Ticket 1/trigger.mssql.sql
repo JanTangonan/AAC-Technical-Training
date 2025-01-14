@@ -1,0 +1,18 @@
+CREATE TRIGGER trg_create_subitem
+ON TV_LABITEM
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO SUBITEM (PARENT_ITEM_ID, SUBITEM_DETAILS)
+    SELECT ITEM_ID, 'Default Subitem Details'
+    FROM inserted
+    WHERE AUTO_CREATE_SUBITEM = 'T';
+
+    -- Insert audit log
+    INSERT INTO TV_AUDITLOG (LogTimestamp, LogMessage)
+    SELECT CURRENT_TIMESTAMP, 'Subitem created for ITEM_ID: ' + CAST(ITEM_ID AS VARCHAR(50))
+    FROM inserted
+    WHERE AUTO_CREATE_SUBITEM = 'T';
+END;
