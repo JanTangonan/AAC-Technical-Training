@@ -11,3 +11,21 @@ make sure to audit log                                          // search for th
     - AudtiLog.aspx / AuditLog.aspx.cs
     - 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IDEA
+	create a flag in TV_ITEMTYP.AUTO_CREATE_SUBITEM this will serve as storage 
+	check if TV_ITEMTYPE.AUTO_CREATE_SUBITEM  = T
+	then new item will create subitem
+	and log to TV_AUDITLOG (used existing)
+
+
+TESTING
+-- Insert a new item into TV_LABITEM
+INSERT INTO TV_LABITEM (Evidence_Control_Number, ITEM_TYPE, ITEM_DESCRIPTION)
+VALUES ('ECN12345', 'SampleType', 'Sample Item Description');
+
+-- Check if the sub-item is created
+SELECT * FROM TV_LABITEM WHERE PARENT_ECN = 'ECN12345';
+
+-- Check the audit log
+SELECT * FROM TV_AUDITLOG WHERE ADDITIONAL_INFORMATION LIKE '%ECN12345%';
