@@ -5,8 +5,9 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    INSERT INTO SUBITEM (PARENT_ITEM_ID, SUBITEM_DETAILS)
-    SELECT ITEM_ID, 'Default Subitem Details'
+    -- Insert sub-item into TV_LABITEM
+    INSERT INTO TV_LABITEM (PARENT_ITEM_ID, ITEM_DETAILS, AUTO_CREATE_SUBITEM)
+    SELECT ITEM_ID, 'Default Subitem Details', 'F'
     FROM inserted
     WHERE AUTO_CREATE_SUBITEM = 'T';
 
