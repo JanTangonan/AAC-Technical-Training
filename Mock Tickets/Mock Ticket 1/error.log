@@ -1,0 +1,37 @@
+error 1
+Msg 515, Level 16, State 2, Procedure LABITEM_CREATE_SUBITEM, Line 8 [Batch Start Line 5]
+Cannot insert the value NULL into column 'EVIDENCE_CONTROL_NUMBER', table 'VENTURA_DEV.dbo.TV_LABITEM'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+Completion time: 2025-01-16T11:31:18.1049402+08:00
+
+fix: added EVIDENCE_CONTROL_NUMBER to the insert statement for the new subitem
+
+----------------------------------------------------------------------------------------------------------------------
+error 2
+Msg 206, Level 16, State 2, Procedure LABITEM_CREATE_SUBITEM, Line 8 [Batch Start Line 0]
+Operand type clash: uniqueidentifier is incompatible with int
+
+Completion time: 2025-01-16T11:42:49.9457219+08:00
+
+fix: change NEWVAL() to LABITEM_SEQ
+
+----------------------------------------------------------------------------------------------------------------------
+
+error 3
+Msg 208, Level 16, State 1, Procedure LABITEM_CREATE_SUBITEM, Line 8 [Batch Start Line 5]
+Invalid object name 'LABITEM_SEQ'.
+
+Completion time: 2025-01-16T13:23:13.3053365+08:00
+
+fix: used exsiting stored proc NEXVAL since LABITEM_SEQ is existing to SEQUENCE TABLE
+
+----------------------------------------------------------------------------------------------------------------------
+error 4
+Msg 515, Level 16, State 2, Line 6
+Cannot insert the value NULL into column 'EVIDENCE_CONTROL_NUMBER', table 'VENTURA_DEV.dbo.TV_LABITEM'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+
+Completion time: 2025-01-16T14:08:27.3622245+08:00
+
+fix: did not test using db insert statement , instead tested using webapplication by creating new lab item on ITEMS TAB
