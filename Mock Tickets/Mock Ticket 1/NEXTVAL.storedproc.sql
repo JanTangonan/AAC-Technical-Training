@@ -1,0 +1,37 @@
+USE [VENTURA_DEV]
+GO
+/****** Object:  StoredProcedure [dbo].[NEXTVAL]    Script Date: 1/16/2025 1:30:32 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[NEXTVAL] 
+    @SEQUENCE_NAME varchar(40), 
+    @results int out
+AS
+begin
+	set @results = -1
+	DECLARE @OutputTbl TABLE (NEXT_VAL INT)
+
+
+		IF @SEQUENCE_NAME='AUDITLOG_SEQ'
+			BEGIN
+				INSERT AUDITLOG_SEQ Output inserted.CURR_VALUE into @OutputTbl(Next_val) Default Values
+	   
+				SELECT @results = NEXT_VAL from @OutputTbl
+			END
+		ELSE   
+			BEGIN 
+				INSERT INTO SEQUENCES (SEQUENCE_NAME, CURR_VALUE)
+					SELECT @SEQUENCE_NAME, 0
+						WHERE NOT EXISTS (SELECT 1 FROM SEQUENCES WHERE SEQUENCE_NAME = @SEQUENCE_NAME)
+
+				UPDATE SEQUENCES WITH (ROWLOCK)
+				SET    @results = CURR_VALUE = CURR_VALUE + 1
+				WHERE  SEQUENCE_NAME = @SEQUENCE_NAME
+		END;
+	RETURN @results
+
+end
+

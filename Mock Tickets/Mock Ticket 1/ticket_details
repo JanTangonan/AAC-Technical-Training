@@ -11,7 +11,7 @@ make sure to audit log                                          // search for th
     - AudtiLog.aspx / AuditLog.aspx.cs
     - 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
 IDEA
 	create a flag in TV_ITEMTYP.AUTO_CREATE_SUBITEM this will serve as storage 
 	check if TV_ITEMTYPE.AUTO_CREATE_SUBITEM  = T
@@ -29,3 +29,22 @@ SELECT * FROM TV_LABITEM WHERE PARENT_ECN = 'ECN12345';
 
 -- Check the audit log
 SELECT * FROM TV_AUDITLOG WHERE ADDITIONAL_INFORMATION LIKE '%ECN12345%';
+
+
+----------------------------------------------------------------------------------------------------------------------
+DROP TRIGGER [dbo].[LABITEM_CREATE_SUBITEM];
+
+-- Step 1: Insert a new record into TV_LABITEM
+INSERT INTO TV_LABITEM (EVIDENCE_CONTROL_NUMBER, ITEM_TYPE, ITEM_DESCRIPTION)
+VALUES ('99999', 'FAACC', 'Firearm Accessories');
+
+-- Step 2: Verify the sub-item creation
+SELECT * FROM TV_LABITEM WHERE PARENT_ECN = 'ECN12345';
+
+-- Step 3: Check the audit log
+SELECT * FROM TV_AUDITLOG WHERE ADDITIONAL_INFORMATION LIKE '%ECN12345%';
+
+----------------------------------------------------------------------------------------------------------------------
+UPDATE TV_ITEMTYPE SET AUTO_CREATE_SUBITEM = 'T' WHERE ITEM_TYPE = 'FAACC'
+
+
