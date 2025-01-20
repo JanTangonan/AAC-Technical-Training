@@ -1,0 +1,16 @@
+Ticket Description:
+
+Customer wants their agencies to provide the following data elements when they prelog.
+    - Add the option in TV_DEPCTRL and TV_LABCTRL5 to show/hide these fields.
+    - If the value is 'T' then it will show the field. If F/NULL then it will hide the field.
+
+Prelog V2 CasePrelog?:
+
+TV_SUBMNAME.COMMENTS (Prompt = Comments) Flag: TV_DEPTCTRL.USES_NAME_COMMENTS VARCHAR(1)
+
+The field values must be imported into QC and be populated into TV_LABNAME.
+QC:
+
+TV_LABNAME.COMMENTS(Prompt = Comments) Flag: TV_LABCTRL5.USES_NAME_COMMENTS VARCHAR(1)
+
+The field must look like the Description field from Items grid.
