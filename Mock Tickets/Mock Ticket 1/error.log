@@ -1,3 +1,6 @@
+----------------------------------------------------------------------------------------------------------------------
+MSSQL ERRORS
+----------------------------------------------------------------------------------------------------------------------
 error 1
 Msg 515, Level 16, State 2, Procedure LABITEM_CREATE_SUBITEM, Line 8 [Batch Start Line 5]
 Cannot insert the value NULL into column 'EVIDENCE_CONTROL_NUMBER', table 'VENTURA_DEV.dbo.TV_LABITEM'; column does not allow nulls. INSERT fails.
@@ -35,3 +38,38 @@ The statement has been terminated.
 Completion time: 2025-01-16T14:08:27.3622245+08:00
 
 fix: did not test using db insert statement , instead tested using webapplication by creating new lab item on ITEMS TAB
+
+
+----------------------------------------------------------------------------------------------------------------------
+ORACLE ERRORS
+----------------------------------------------------------------------------------------------------------------------
+error 1
+01/17/2025 12:50:25 (842)  : <p/>********** PLC Application Error **********<p/>LIMS Version : Master Build 1.1-17-2025-NET4.0.30319<p/>Error Message : Cannot ExecuteNonQuery - Exception: ORA-04091: table NJSPDEV.LABITEM is mutating, trigger/function may not see it
+ORA-06512: at &quot;NJSPDEV.LABITEM_CREATE_SUBITEM&quot;, line 8
+ORA-04088: error during execution of trigger &#39;NJSPDEV.LABITEM_CREATE_SUBITEM&#39;<p/>Error Page Title : LIMS Error<p/>Session ID : ey54xfwi5uilmpiodcwaty1d<p/>Error URL : http://localhost:58034/TAB4Items.aspx<p/>Error Database: ORACLE<p/>Error Proc : PLCQuery.Post(insert)<p/>Error SQL : SELECT * FROM TV_LABITEM WHERE 0 = 1<p/>Error USER : WICK<p/>Error CASE : TEST<p/>*******************************************<p/><p/>
+
+fix: added PRAGMA AUTONOMOUS_TRANSACTION to the trigger
+
+----------------------------------------------------------------------------------------------------------------------
+error 2
+01/17/2025 15:02:39 (045)  : <p/>********** PLC Application Error **********<p/>LIMS Version : Master Build 1.1-17-2025-NET4.0.30319<p/>Error Message : Cannot ExecuteNonQuery - Exception: ORA-00036: maximum number of recursive SQL levels (50) exceeded
+ORA-06512: at &quot;NJSPDEV.LABITEM_CREATE_SUBITEM&quot;, line 6
+ORA-04088: error during execution of trigger &#39;NJSPDEV.LABITEM_CREATE_SUBITEM&#39;
+ORA-06512: at &quot;NJSPDEV.LABITEM_CREATE_SUBITEM&quot;, line 9
+ORA-04088: error during execution of trigger &#39;NJSPDEV.LABITEM_CREATE_SUBITEM&#39;
+ORA-06512: at &quot;NJSPDEV.LABITEM_CREATE_SUBITEM&quot;, line 9
+ORA-04088: error during execution of trigger &#39;NJSPDEV.LABITEM_CREATE_SUBITEM&#39;
+ORA-06512: at &quot;NJSPDEV.LABITEM_CREATE_SUBITEM&quot;, line 9
+ORA-04088: error during execution of trigger &#39;NJSPDEV.LABITEM_CREATE_SUBITEM&#39;
+ORA-06512: at &quot;NJSPDEV.LABITEM_CREATE_SUBITEM&quot;, line 9
+ORA-04088: error during execution of trigger &#39;NJSPDEV.LABITEM_CREATE_SUBITEM&#39;
+ORA-06512: at &quot;NJSPDEV.LABITEM_CREATE_SUBITEM&quot;, line 9
+ORA-04088: error during execution of trigger &#39;NJSPDEV.LABITEM_CREATE_SUBITEM&#39;
+ORA-06512: at &quot;NJSPDEV.LABITEM_CREATE_SUBITEM&quot;, line 9
+ORA-04088: error during execution of trigger &#39;NJSPDEV.LABITEM_CREATE_SUBITEM&#39;
+ORA-06512: at &quot;NJSPDEV.LABIT<p/>Error Page Title : LIMS Error<p/>Session ID : 1tubebn13gdfvaxh2kb4wrlx<p/>Error URL : http://localhost:58034/TAB4Items.aspx<p/>Error Database: ORACLE<p/>Error Proc : PLCQuery.Post(insert)<p/>Error SQL : SELECT * FROM TV_LABITEM WHERE 0 = 1<p/>Error USER : WICK<p/>Error CASE : TEST<p/>*******************************************<p/><p/>
+
+fix: due to PRAGMA AUTONOMOUS_TRANSACTION, the trigger was calling itself recursively, added an if statement to check "Parenet ECN" if the 
+    item is a subitem or not
+
+----------------------------------------------------------------------------------------------------------------------
