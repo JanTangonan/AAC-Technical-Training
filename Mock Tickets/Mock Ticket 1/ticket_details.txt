@@ -18,19 +18,6 @@ IDEA
 	then new item will create subitem
 	and log to TV_AUDITLOG (used existing)
 
-
-TESTING
--- Insert a new item into TV_LABITEM
-INSERT INTO TV_LABITEM (Evidence_Control_Number, ITEM_TYPE, ITEM_DESCRIPTION)
-VALUES ('ECN12345', 'SampleType', 'Sample Item Description');
-
--- Check if the sub-item is created
-SELECT * FROM TV_LABITEM WHERE PARENT_ECN = 'ECN12345';
-
--- Check the audit log
-SELECT * FROM TV_AUDITLOG WHERE ADDITIONAL_INFORMATION LIKE '%ECN12345%';
-
-
 ----------------------------------------------------------------------------------------------------------------------
 DROP TRIGGER [dbo].[LABITEM_CREATE_SUBITEM];
 
@@ -46,5 +33,17 @@ SELECT * FROM TV_AUDITLOG WHERE ADDITIONAL_INFORMATION LIKE '%ECN12345%';
 
 ----------------------------------------------------------------------------------------------------------------------
 UPDATE TV_ITEMTYPE SET AUTO_CREATE_SUBITEM = 'T' WHERE ITEM_TYPE = 'FAACC'
+
+----------------------------------------------------------------------------------------------------------------------
+CODE REVIEW
+----------------------------------------------------------------------------------------------------------------------
+1. In MSSQL, use VARCHAR and not CHAR when creating columns.  
+    - recreate column flag
+2. Do not always execute insert statement when it is flag based. This will also be the case on other flag-based features of our LIMS.
+    - create if statement in trigger
+3. Please refer to LIMS on how it creates sub item.
+    There are missing key fields on the trigger.
+    - learn how to create sub item on LIMS then check missing key fields
+
 
 
