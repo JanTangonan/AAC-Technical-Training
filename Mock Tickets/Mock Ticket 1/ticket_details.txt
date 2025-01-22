@@ -35,7 +35,7 @@ SELECT * FROM TV_AUDITLOG WHERE ADDITIONAL_INFORMATION LIKE '%ECN12345%';
 UPDATE TV_ITEMTYPE SET AUTO_CREATE_SUBITEM = 'T' WHERE ITEM_TYPE = 'FAACC'
 
 ----------------------------------------------------------------------------------------------------------------------
-CODE REVIEW
+CODE REVIEW 1
 ----------------------------------------------------------------------------------------------------------------------
 1. In MSSQL, use VARCHAR and not CHAR when creating columns.  
     - recreate column flag
@@ -45,5 +45,11 @@ CODE REVIEW
     There are missing key fields on the trigger.
     - learn how to create sub item on LIMS then check missing key fields
 
-
-
+----------------------------------------------------------------------------------------------------------------------
+CODE REVIEW 2
+----------------------------------------------------------------------------------------------------------------------
+1. In MSSQL, user VARCHAR instead of NVARCHAR.
+2. Simplify IF statement for readability. Refer on .Net code on how to check lab flags.
+3. Do direct insert of record. No need to join.
+4. Lab Item Number can be alphabet or alphanumeric. Current logic will not work.
+5. Remove DEFAULT on alter statement. By default, no default value unless requested.
