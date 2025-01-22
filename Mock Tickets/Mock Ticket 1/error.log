@@ -73,3 +73,7 @@ fix: due to PRAGMA AUTONOMOUS_TRANSACTION, the trigger was calling itself recurs
     item is a subitem or not
 
 ----------------------------------------------------------------------------------------------------------------------
+
+error 3
+Error(12,9): PL/SQL: Statement ignored
+Error(12,12): PLS-00204: function or pseudo-column 'EXISTS' may be used inside a SQL statement only
