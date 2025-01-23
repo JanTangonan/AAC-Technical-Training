@@ -13,14 +13,15 @@ make sure to audit log                                          // search for th
 
 ----------------------------------------------------------------------------------------------------------------------
 IDEA
+----------------------------------------------------------------------------------------------------------------------
 	create a flag in TV_ITEMTYP.AUTO_CREATE_SUBITEM this will serve as storage 
 	check if TV_ITEMTYPE.AUTO_CREATE_SUBITEM  = T
 	then new item will create subitem
 	and log to TV_AUDITLOG (used existing)
 
 ----------------------------------------------------------------------------------------------------------------------
-DROP TRIGGER [dbo].[LABITEM_CREATE_SUBITEM];
-
+TESTING 
+----------------------------------------------------------------------------------------------------------------------
 -- Step 1: Insert a new record into TV_LABITEM
 INSERT INTO TV_LABITEM (EVIDENCE_CONTROL_NUMBER, ITEM_TYPE, ITEM_DESCRIPTION)
 VALUES ('99999', 'FAACC', 'Firearm Accessories');
@@ -32,7 +33,21 @@ SELECT * FROM TV_LABITEM WHERE PARENT_ECN = 'ECN12345';
 SELECT * FROM TV_AUDITLOG WHERE ADDITIONAL_INFORMATION LIKE '%ECN12345%';
 
 ----------------------------------------------------------------------------------------------------------------------
+QUERIES
+----------------------------------------------------------------------------------------------------------------------
+ORACLE
+select * from LABITEM order by "Evidence Control Number" desc fetch first 100 rows only;
+select * from AUDITLOG order by "Log Stamp" desc fetch first 100 rows only;
+select * from ITEMTYPE where "Auto Create Subitem" = 'T';
+select * from ITEMTYPE
+
+MSQL
+DROP TRIGGER [dbo].[LABITEM_CREATE_SUBITEM];
 UPDATE TV_ITEMTYPE SET AUTO_CREATE_SUBITEM = 'T' WHERE ITEM_TYPE = 'FAACC'
+
+select ITEM_TYPE, DESCRIPTION, AUTO_CREATE_SUBITEM from TV_ITEMTYPE where ITEM_TYPE = 'FAACC'
+select TOP 100 * from TV_AUDITLOG order by TIME_STAMP desc
+select TOP 100 * from TV_LABITEM order by EVIDENCE_CONTROL_NUMBER desc
 
 ----------------------------------------------------------------------------------------------------------------------
 CODE REVIEW 1

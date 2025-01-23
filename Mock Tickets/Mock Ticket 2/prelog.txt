@@ -1,0 +1,11 @@
+Investigating Agency        :   Allenhurst PD
+Inv. Officer Lookup         :   Alex Feder
+Offense Date                :   01/01/2025
+County of Offense           :   ESSEX
+Submitted By                :   Alex Feder
+Case Type                   :   Suicide
+Case Officer Key            :   Alex Feder
+Alt. Case Agent             :   Amarie Almelon
+Agency Case Number          :   APD-2025-000001
+Offense                     :   Suicide
+Incident/Offense Number     :   2306
