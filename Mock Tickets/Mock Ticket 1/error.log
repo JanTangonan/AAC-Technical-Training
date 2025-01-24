@@ -77,3 +77,9 @@ fix: due to PRAGMA AUTONOMOUS_TRANSACTION, the trigger was calling itself recurs
 error 3
 Error(12,9): PL/SQL: Statement ignored
 Error(12,12): PLS-00204: function or pseudo-column 'EXISTS' may be used inside a SQL statement only
+
+----------------------------------------------------------------------------------------------------------------------
+error 4
+01/24/2025 17:37:20 (961)  : <p/>********** PLC Application Error **********<p/>LIMS Version : Master Build 1.1-24-2025-NET4.0.30319<p/>Error Message : Cannot ExecuteNonQuery - Exception: ORA-04091: table NJSPDEV.LABITEM is mutating, trigger/function may not see it
+ORA-06512: at &quot;NJSPDEV.LABITEM_CREATE_SUBITEM&quot;, line 31
+ORA-04088: error during execution of trigger &#39;NJSPDEV.LABITEM_CREATE_SUBITEM&#39;<p/>Error Page Title : LIMS Error<p/>Session ID : wfc4eingw4lba40ypydx5ce4<p/>Error URL : http://localhost:58034/TAB4Items.aspx<p/>Error Database: ORACLE<p/>Error Proc : PLCQuery.Post(insert)<p/>Error SQL : SELECT * FROM TV_LABITEM WHERE 0 = 1<p/>Error USER : MIKE<p/>Error CASE :

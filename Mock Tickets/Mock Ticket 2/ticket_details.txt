@@ -14,3 +14,8 @@ QC:
     - TV_LABNAME.COMMENTS(Prompt = Comments) Flag: TV_LABCTRL5.USES_NAME_COMMENTS VARCHAR(1)
         - create new flag TV_LABCTRL5.USES_NAME_COMMENTS
     - The field must look like the Description field from Items grid.
+
+----------------------------------------------------------------------------------------------------------------------
+IDEA
+----------------------------------------------------------------------------------------------------------------------
+    - add column for 

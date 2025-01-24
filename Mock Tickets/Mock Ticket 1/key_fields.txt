@@ -23,3 +23,34 @@ PROCESS_DATE
 PROCESS
 SEIZED_FOR_BIOLOGY
 ETRACK_INVENTORY_ID
+
+TV_LABSTAT
+STATUS_KEY              - from SEQUENCES table
+EVIDENCE_CONTROL_NUMBER - from I table
+CASE_KEY
+BATCH_SEQUENCE          - from SEQUENCES table
+STATUS_CODE             - from I table (CUSTODY_OF)
+LOCKER                  - from I table (LOCATION)
+STATUS_DATE             - thisdate
+STATUS_TIME             - DateTime.Now;
+SOURCE                  - DateTime.Now.ToLocalTime();
+ENTRY_ANALYST           - from I table
+ENTERED_BY              
+ENTRY_TIME              -
+ENTRY_TIME_STAMP        - from System.DateTime.Now
+
+STATUS_KEY              - from SEQUENCES table
+CASE_KEY                - from I table
+EVIDENCE_CONTROL_NUMBER - from I table
+STATUS_DATE             - from I table (CUSTODY_DATE)
+STATUS_TIME             - from I table (PROCESS_DATE)
+ENTRY_TIME              - from I table (ENTRY_TIME_STAMP)
+ENTERED_BY              - from I table (ENTRY_ANALYST)
+STATUS_CODE             - from I table (CUSTODY_OF)
+LOCKER                  - from I table (LOCATION)
+BATCH_SEQUENCE          - from SEQUENCES table
+CONTAINER_KEY           - from I table
+ENTRY_ANALYST           - from I table
+ENTRY_TIME_STAMP        - from I table
+PARENT_ECN              - from I table
+DEPARTMENT_CODE         - from I table
