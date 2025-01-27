@@ -10,6 +10,7 @@ Prelog V2 CasePrelog?:
     - TV_SUBMNAME.COMMENTS (Prompt = Comments) Flag: TV_DEPTCTRL.USES_NAME_COMMENTS VARCHAR(1)
         - create new flag TV_DEPTCTRL.USES_NAME_COMMENTS
     - The field values must be imported into QC and be populated into TV_LABNAME.
+        - there 
 QC:
     - TV_LABNAME.COMMENTS(Prompt = Comments) Flag: TV_LABCTRL5.USES_NAME_COMMENTS VARCHAR(1)
         - create new flag TV_LABCTRL5.USES_NAME_COMMENTS
@@ -18,4 +19,4 @@ QC:
 ----------------------------------------------------------------------------------------------------------------------
 IDEA
 ----------------------------------------------------------------------------------------------------------------------
-    - add column for 
+    - add column as flag for TV_DEPTCTRL and TV_LABCTRL5 to show/hide these fields 
