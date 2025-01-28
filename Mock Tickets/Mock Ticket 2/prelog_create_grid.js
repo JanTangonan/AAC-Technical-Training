@@ -1,3 +1,27 @@
+//-------------------------- PRELOG NAMES AND ITEMS GRID ---------------------------//
+    
+// grid creator
+function CreateGrid() { 
+    CreateNamesGrid(true, 20, false, "NameEntryList");
+    CreateItemsGrid(true, 20, false, "ItemEntryList");
+    CreateExistingItemsGrid(true, 20, false, "SubmittedItemEntryList");
+    CreateExistingNamesGrid(true, 20, false, "ExistingNamesEntryList");
+    CreateDistributionGrid(true, 20, false, "DistributionEntryList");
+    BindScrollOnGrid();
+}
+
+// the 2 functions below are triggered when 'More Fields' link is clicked 
+function AddMoreFieldsNameEntryList() {
+    CreateNamesGrid(false, 10, false, "NameEntryList");
+    return false;
+}
+
+function AddMoreFieldsItemEntryList() {
+    CreateItemsGrid(false, 10, false, "ItemEntryList");
+    return false;
+
+}
+
 // creates the Names Grid by script
 function CreateNamesGrid(onLoad, genLimit, clearGrid, parentTableID) {
     var namesTable = $("#" + parentTableID);
@@ -371,4 +395,14 @@ function AddNameRow(tbl, setClear) {
         HideColumn(tdBleeding);
         HideColumn(tdTransfused);
     }
+}
+
+/* hides any id'D table column element */
+function HideColumn($th, $td, $input) {
+    if (IsDefined($th))
+        SetAttribute($th, null, null, { "display": "none" }, true);
+    if (IsDefined($td))
+        SetAttribute($td, null, null, { "display": "none" }, true);
+    if (IsDefined($input))
+        SetAttribute($input, null, null, { "display": "none" }, true);
 }
