@@ -72,6 +72,8 @@ function CreateNamesGrid(onLoad, genLimit, clearGrid, parentTableID) {
         var thArrestNumber = $("<th/>", { scope: "col" }).html("Arrest #");
         var thStatus = $("<th/>", { scope: "col" }).html("Status");
 
+        var thNameComments = $("<th/>", { scope: "col" }).html(GetCasePrelogSysPrompt("CasePrelog.thNameComments", "Comments"));
+
         trHeader.append(thDeleteRow);
         trHeader.append(thNameType);
         trHeader.append(thLastName);

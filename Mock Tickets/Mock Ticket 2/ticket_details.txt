@@ -20,3 +20,39 @@ QC:
 IDEA
 ----------------------------------------------------------------------------------------------------------------------
     - add column as flag for TV_DEPTCTRL and TV_LABCTRL5 to show/hide these fields 
+    - let's say user will add prelog this should be searchable in qc. fields inserted in prelog should be 
+        populated in qc. So if we add new column in prelog it should be also populated in qc. 
+
+        checked how prelog is saved - ajax post - uses webmethod that posts on TV_SUBMTRAN
+        function ajaxObj(targetURL, execFunctionOnSuccess, execFunctionOnError, typeOfResponse, dataForSending) {
+            $.ajax({
+                url: targetURL,
+                success: execFunctionOnSuccess,
+                error: execFunctionOnError,
+                dataType: typeOfResponse,
+                data: dataForSending,
+                type: "POST"
+            });
+        }
+
+    - try using the exising Comment - remove the flag USES_COMMENTS
+----------------------------------------------------------------------------------------------------------------------
+QUESTIONS
+----------------------------------------------------------------------------------------------------------------------
+    - clarify if we need to create new column "Comments" for LABNAME and SUBMNAME
+    - ask if we can use the USES_QC_COMMENTS flag instead if creating new flag
+    - how does TV_SUBMNAME and TV_LABNAME gets populated since SubmitPrelog function saves prelog to TV_SUBMTRAN
+
+
+----------------------------------------------------------------------------------------------------------------------
+OBSERVATION
+----------------------------------------------------------------------------------------------------------------------
+    - upon creation of prelog, it saved on TV_SUBMTRAN names are not saved here and when checked using QCAdvance names
+    are loaded. this means that there are other table where the names are saved.
+
+    - upon checking TV_SUBMNAME, this is where the names are saved.
+
+    - checked TV_LABNAME and names are 
+
+    -checked existing comment - thComments and tried using it, on frontend it was displayed but when tested it did not
+    saved the input data to the comment element. 
