@@ -3,17 +3,20 @@ Ticket #30001 – New column in Names grid
 Ticket Description:
 
 Customer wants their agencies to provide the following data elements when they prelog.
-    - Add the option in TV_DEPTCTRL and TV_LABCTRL5 to show/hide these fields.
+    - Add the option in TV_DEPTCTRL(For Prelog) and TV_AUTHCODE(For LIMS) to show/hide these fields.
     - If the value is 'T' then it will show the field. If F/NULL then it will hide the field.
 
 Prelog V2 CasePrelog?:
     - TV_SUBMNAME.COMMENTS (Prompt = Comments) Flag: TV_DEPTCTRL.USES_NAME_COMMENTS VARCHAR(1)
         - create new flag TV_DEPTCTRL.USES_NAME_COMMENTS
-    - The field values must be imported into QC and be populated into TV_LABNAME.
+    - The field values must be imported into QC and be populated into TV_LABNAME
         - there 
 QC:
-    - TV_LABNAME.COMMENTS(Prompt = Comments) Flag: TV_LABCTRL5.USES_NAME_COMMENTS VARCHAR(1)
-        - create new flag TV_LABCTRL5.USES_NAME_COMMENTS
+    - TV_LABNAME.COMMENTS(Prompt = Comments) Flag: Useroption QCNAMECOM
+    * Note: For useroptions, you may insert this code in TV_AUTHCODE. Please refer to existing values for the format.
+    * To configure, navigate to: Dashboard left side menu > Admin > Configuration > User grup button (on the lower part of the page) 
+      > Per group view link > then search for useroption code and configure for group code of the analyst.
+        - create new flag TV_AUTHCODE 
     - The field must look like the Description field from Items grid.
 
 ----------------------------------------------------------------------------------------------------------------------
@@ -56,3 +59,23 @@ OBSERVATION
 
     -checked existing comment - thComments and tried using it, on frontend it was displayed but when tested it did not
     saved the input data to the comment element. 
+
+    - flags are fetched from server side to client side using GetDeptCtrlJSON() function. this function can be located
+    in behind code. 
+
+----------------------------------------------------------------------------------------------------------------------
+MUST DO
+----------------------------------------------------------------------------------------------------------------------
+    - learn how names data is saved on TV_SUBMNAME then by that we can learn how to save commnets in COMMENTS field
+        - SaveNames() function is responsible for ssaving names on TV_SUBMNAME and COMMENTS field is included 
+        possible error is that the front end is unable to catch the COMMENTS field  - fixed 
+
+        - double check frontend on how to capture data from COMMENTS field
+            - not certain about the fix but COMMENTS are now saved in TV_SUBMNAME
+
+    - learn how QC fetches data from TV_SUBMNAME
+    - try making use of the exisiting comments field in QC
+
+for this week I completed mock ticket 1 and currently started working on mock ticket 2 where Customer wants to add a 
+new column in the Names grid on prelog and qc. this will require me to create an option for TV_DEPTCTRL and TV_AUTHCODE.
+if option is set to T this will prompt the field else it will hide the field. this is still in progress. 
