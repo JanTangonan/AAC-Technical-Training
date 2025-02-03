@@ -1,0 +1,5 @@
+error 1
+Save error.--HTTP error: 500, Internal Server Error, ResponseText= From: PLCQUERY.Post(insert) AppMsg: 
+Cannot ExecuteNonQuery SQL: Select * from TV_ANALQUIC Where CASE_KEY = 1056002 And CASE_OFFICER = '' 
+ExMsg: ORA-01400: cannot insert NULL into ("NJSPDEV"."ANALQUIC"."Case Officer") 
+ERROR SQL: INSERT INTO TV_ANALQUIC(CASE_KEY,OPEN_DATE) Values ('1056002',to_date('3-Feb-2025 11:50:49','DD-MON-YYYY HH24:MI:SS'))

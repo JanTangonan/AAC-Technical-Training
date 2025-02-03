@@ -63,6 +63,10 @@ OBSERVATION
     - flags are fetched from server side to client side using GetDeptCtrlJSON() function. this function can be located
     in behind code. 
 
+    - if name is submitted you cant search it on prelog search, else you can search in search popup
+
+    _userOption = {"QC_STARTFIELD":"True"};
+
 ----------------------------------------------------------------------------------------------------------------------
 MUST DO
 ----------------------------------------------------------------------------------------------------------------------
@@ -75,6 +79,21 @@ MUST DO
 
     - learn how QC fetches data from TV_SUBMNAME
     - try making use of the exisiting comments field in QC
+
+    - learn how names are saved to TV_LABNAME
+    - learn how to setup options in config
+
+----------------------------------------------------------------------------------------------------------------------
+AFFECTED PAGES
+----------------------------------------------------------------------------------------------------------------------
+    - QuickCreate_Advanced.aspx
+    - QuickCreate_Advanced.aspx.cs
+    - QuickCreate.js
+    - CasePrelog.aspx
+    - CasePrelog.aspx.cs
+    - CasePrelog.js
+    - QCAdvancedUtil.cs
+
 
 for this week I completed mock ticket 1 and currently started working on mock ticket 2 where Customer wants to add a 
 new column in the Names grid on prelog and qc. this will require me to create an option for TV_DEPTCTRL and TV_AUTHCODE.
