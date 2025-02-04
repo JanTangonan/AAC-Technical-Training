@@ -86,10 +86,8 @@ MUST DO
 ----------------------------------------------------------------------------------------------------------------------
 AFFECTED PAGES
 ----------------------------------------------------------------------------------------------------------------------
-    - QuickCreate_Advanced.aspx
     - QuickCreate_Advanced.aspx.cs
     - QuickCreate.js
-    - CasePrelog.aspx
     - CasePrelog.aspx.cs
     - CasePrelog.js
     - QCAdvancedUtil.cs
