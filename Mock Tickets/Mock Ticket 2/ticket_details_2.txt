@@ -1,0 +1,16 @@
+PROCESS FLOW
+    - Generate names grid on prelog and qc          > this can be found on js fields
+    - Data from names grid will be passed using AJAX POST to a webmethod
+    - Webmethod will save data to TV_SUBMNAME
+    - Webmethod will save prelog to TV_SUBMTRAN
+
+    - Qc will load prelog using AJAX POST
+    - QCAdvancedUtil will handle saving to TV_LABNAME
+
+
+REQUIRED 
+    - 
+
+// Collection of required fields
+var nameReqFields = ["NAME_TYPE_CODE", "LAST_NAME"];
+
