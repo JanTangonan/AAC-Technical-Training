@@ -1,0 +1,46 @@
+CreateExistingNamesGrid
+
+CreateNamesGrid
+
+//Mock Ticket #30001 – New column in Names grid
+var $thComments = $("<th/>", { scope: "col" }).html(GetQCSysPrompt("QuickCreate_Advanced.thComments", "Comments" + (GetLabCtrl("USES_QC_COMMENTS") === "R" ? reqField : "")));
+$trHead.append($thComments);
+
+if (GetLabCtrl("USES_QC_COMMENTS") !== "T" && GetLabCtrl("USES_QC_COMMENTS") !== "R")
+    HideColumn($thComments);
+
+var $tdComments = $("<td/>");
+var $inputComments      = $("<input/>", { id: "NAME_COMMENTS" + istr, type: "text", readonly: "readonly" }).css("width", "200px").addClass("readonly");;
+var $txtComments        = $("<textarea/>", { id: "$COMMENTS" + istr }).css("display", "none");
+var $btnEditComments = $("<input/>", { title: "Edit", id: "NAME_COMMENT_BTN" + istr, type: "image", src: "Images/edit-text.png", style: "width:22px;" });
+$tdComments.append($inputComments);
+$tdComments.append($txtComments);
+$tdComments.append($btnEditComments);
+$tr.append($tdComments);
+
+if (GetLabCtrl("USES_QC_COMMENTS") !== "T" && GetLabCtrl("USES_QC_COMMENTS") !== "R")
+    HideColumn($tdComments);
+
+initExpandTextBox($inputComments, $txtComments, $btnEditComments, "Comment");
+    $inputRefText.bind("change", checkNameRefTextRequired);
+
+LoadNamesGrid
+var $inputComments = $("input#NAME_COMMENTS" + istr);
+SetClientField($inputComments.attr("id"), "");
+SetClientField($inputComments.attr("id"), row.COMMENTS);
+
+
+GetPrelogNamesForResubmission
+GetEditedExistingNamesJSON
+
+
+QuickCreate_Advanced.aspx.cs   
+    LoadSecondSubmissionNames()
+
+QCAdvanced.js
+    GetEditedExistingNamesJSON()
+
+QCAdvanced_util.js
+    SubmitQc()
+    ValidateExistingNames()
+    ValidateNamesGrid()

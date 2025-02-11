@@ -1,0 +1,8 @@
+CASE 1
+    if row has input and required field is empty then validation to input required field must be displayed - passed
+
+CASE 2
+    if row has input and required field has input then validation is not required
+
+CASE 3
+    if row has empty input and required field is empty then validation is not required

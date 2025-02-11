@@ -3,3 +3,16 @@ Save error.--HTTP error: 500, Internal Server Error, ResponseText= From: PLCQUER
 Cannot ExecuteNonQuery SQL: Select * from TV_ANALQUIC Where CASE_KEY = 1056002 And CASE_OFFICER = '' 
 ExMsg: ORA-01400: cannot insert NULL into ("NJSPDEV"."ANALQUIC"."Case Officer") 
 ERROR SQL: INSERT INTO TV_ANALQUIC(CASE_KEY,OPEN_DATE) Values ('1056002',to_date('3-Feb-2025 11:50:49','DD-MON-YYYY HH24:MI:SS'))
+
+error 2
+
+Save error.--HTTP error: 500, Internal Server Error, ResponseText= From: PLCQUERY.Post(insert) 
+AppMsg: Cannot ExecuteNonQuery SQL: Select * from TV_ANALQUIC Where CASE_KEY = 1056028 And CASE_OFFICER = '' 
+ExMsg: ORA-01400: cannot insert NULL into ("NJSPDEV"."ANALQUIC"."Case Officer") 
+ERROR SQL: INSERT INTO TV_ANALQUIC(CASE_KEY,OPEN_DATE) Values ('1056028',to_date('6-Feb-2025 09:46:56','DD-MON-YYYY HH24:MI:SS'))
+
+error 3
+	A server-side error occurred.
+Error: From: PLCQUERY.Post(insert) AppMsg: Cannot ExecuteNonQuery SQL: SELECT * FROM TV_SUBMTRAN WHERE 0 = 1 ExMsg: ORA-00001: unique constraint (NJSPDEV.SUBMTRAN_X0) 
+violated ERROR SQL: INSERT INTO TV_SUBMTRAN(DEPARTMENT_CODE,SUBMISSION_NUMBER,DEPARTMENT_CASE_NUMBER,ENTRY_TIME_STAMP,CASE_OFFICER,OFFENSE_CODE,CASE_TYPE,JURISDICTION_CODE,CASE_OFFICER_KEY,SUBMITTING_OFFICER_KEY,PRELOG_SEQUENCE,CASE_DEPARTMENT_CODE,OFFICER_KEY) Values ('0130100','1','APD-00005',to_date('6-Feb-2025 10:19:03','DD-MON-YYYY HH24:MI:SS'),'267438','7751','03','BER','267438','267438','4737','0130100','267438')
+----
