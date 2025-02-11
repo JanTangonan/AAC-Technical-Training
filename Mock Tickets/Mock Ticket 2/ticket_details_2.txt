@@ -14,3 +14,12 @@ REQUIRED
 // Collection of required fields
 var nameReqFields = ["NAME_TYPE_CODE", "LAST_NAME"];
 
+
+If  existing flag TV_DEPTCTRL.USES_COMMENTS is 'R', make the comments field required. 
+It should indicate that the field is required on save without user input from the field.
+
+If existing flag TV_LABCTRL5.USES_QC_COMMENTS is 'R', make the comments field required. This should validate and display a required field popup on save without user input. You may check other existing validations in QC for your reference. 
+
+In addition, please also check that the user input from comments field in Prelog gets imported to QC then gets inserted to TV_LABNAME on create.
+When flag value is T, it should display the field like it used to without requiring user input.
+When the flag value is F/NULL, the field must neither be displayed nor required.
