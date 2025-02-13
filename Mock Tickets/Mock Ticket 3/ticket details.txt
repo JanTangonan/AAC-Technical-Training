@@ -1,0 +1,21 @@
+Ticket Description:
+Customer is requesting enhancements on the ChemInv header. Get the text from a stored procedure if it exists in the database.
+
+If the chem category is C (Chemical/Purchased Reagent) or R (Prepared Reagent), check if the asset type is consumable (TV_ASSETTYP.CREATE_INITIAL_RECEIPT = T). 
+    If it is consumable, the stored proc should return [QUANTITY] [QUANTITY_UNITS] of the chemical [ASSETTYP.DESCRIPTION] stored in [LOT_NUMBER]. 
+    If not, then return A [ASSETTYP.DESCRIPTION] chemical stored in [LOT_NUMBER].
+
+If the chem category is F (Firearms), return A [CALIBER.DESCRIPTION] [MANUINFO.NAME] [ASSETTYP.DESCRIPTION], model [INSTRUMENT_MODEL_NUMBER].
+
+If the chem category is I (Instrument), return Instrument [ASSETTYP.DESCRIPTION]. If the next scheduled service in TV_CALINST is within 1 month, add Must be calibrated in [CALINST.NEXT_DATE].
+
+If the chem category is D (Drug Standard), return a brief list of custodies the asset has been transferred (e.g East County - General Storage Lockers >> Analysts - Mike Evans). If the header is too long, cut it off at some point using …
+
+Use the current behavior from FORMAT_HEADING for other chem category.
+
+if CHEM_CATEGORY = C 
+    if TV_ASSETTYP.CREATE_INITIAL_RECEIPT = T
+        return 
+            [QUANTITY]          
+            [QUANTITY_UNITS]    
+            

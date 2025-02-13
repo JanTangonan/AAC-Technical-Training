@@ -35,12 +35,34 @@ GetEditedExistingNamesJSON
 
 
 QuickCreate_Advanced.aspx.cs   
-    LoadSecondSubmissionNames()
+    LoadSecondSubmissionNames() -- not needed
 
 QCAdvanced.js
     GetEditedExistingNamesJSON()
 
-QCAdvanced_util.js
+QCAdvancedUtil.cs
     SubmitQc()
     ValidateExistingNames()
     ValidateNamesGrid()
+
+    LoadSecondSubmissionExistingNames() - needed
+
+PLCWebMethods.asmx.cs
+    GetPrelogNamesForResubmission() - not needed
+
+
+Issues 2
+QCAdvanced.js
+    AddExistingNameRow()
+    CreateExistingNamesGrid()
+    GetEditedExistingNamesJSON 
+
+
+James	    Freedom fighter
+Kamaboko	sun breather
+Jackson	    Demon lord
+Xiao	    Young patriarch of the great Xiao clan
+Yang	    Saint of Aries divine cadre
+Arquelul	
+Uchiha	
+Kuzan	    Former marine admiral
