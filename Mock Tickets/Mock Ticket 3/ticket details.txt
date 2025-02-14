@@ -7,15 +7,122 @@ If the chem category is C (Chemical/Purchased Reagent) or R (Prepared Reagent), 
 
 If the chem category is F (Firearms), return A [CALIBER.DESCRIPTION] [MANUINFO.NAME] [ASSETTYP.DESCRIPTION], model [INSTRUMENT_MODEL_NUMBER].
 
-If the chem category is I (Instrument), return Instrument [ASSETTYP.DESCRIPTION]. If the next scheduled service in TV_CALINST is within 1 month, add Must be calibrated in [CALINST.NEXT_DATE].
+If the chem category is I (Instrument), return Instrument [ASSETTYP.DESCRIPTION]. 
+    If the next scheduled service in TV_CALINST is within 1 month, add Must be calibrated in [CALINST.NEXT_DATE].
 
-If the chem category is D (Drug Standard), return a brief list of custodies the asset has been transferred (e.g East County - General Storage Lockers >> Analysts - Mike Evans). If the header is too long, cut it off at some point using …
+If the chem category is D (Drug Standard), return a brief list of custodies the asset has been transferred (e.g East County - General Storage Lockers >> Analysts - Mike Evans). 
+    If the header is too long, cut it off at some point using …
 
 Use the current behavior from FORMAT_HEADING for other chem category.
 
-if CHEM_CATEGORY = C 
-    if TV_ASSETTYP.CREATE_INITIAL_RECEIPT = T
-        return 
-            [QUANTITY]          
-            [QUANTITY_UNITS]    
-            
+
+DECLARE 
+    @chem_control_number varchar(10),
+    @chem_category varchar(1)
+
+SELECT
+    ASSET_CLASS = @chem_category
+FROM TV_CHEMINV
+WHERE CHEM_CONTROL_NUMBER = @chem_control_number
+
+IF @chem_category = C || R          -- ASSET_CLASS
+    DECLARE
+        @assettype_create_initial_receipt varchar(1)
+    
+    SELECT 
+        CREATE_INITIAL_RECEIPT = @assettype_create_initial_receipt
+    FROM TV_ASSETTYP
+    WHERE CODE = (SELECT ASSET_CLASS FROM TV_CHEMINV WHERE CHEM_CONTROL_NUMBER = @chem_control_number)
+    
+    IF @assettype_create_initial_receipt = T -- TV_ASSETTYP.CREATE_INITIAL_RECEIPT
+        DECLARE 
+            @quantity decimal(18, 2),
+            @quantity_units varchar(max)
+
+        SELECT
+            QUANTITY = @quantity,
+            QUANTITY_UNITS = @quantity_units
+        FROM TV_CHEMINV
+        WHERE CHEM_CONTROL_NUMBER = @chem_control_number
+
+        RETURN             
+            @quantity,           --[QUANTITY]          
+            @quantity_units     --[QUANTITY_UNITS]    
+    else 
+        DECLARE
+            @assettyp_description varchar(max),
+            @lot_number varchar(max)
+
+        SELECT
+            B.DESCRIPTION = @assettyp_description,
+            LOT_NUMBER = @lot_number
+        FROM TV_CHEMINV A
+        JOIN TV_ASSETTYP    B ON A.ASSET_TYPE = B.CODE
+        WHERE CHEM_CONTROL_NUMBER = @chem_control_number
+
+        RETURN
+            @assettyp_description,       --[ASSETTYP.DESCRIPTION]
+            @lot_number                 --[LOT_NUMBER]
+
+
+IF @chem_category = F               -- ASSET_CLASS
+    DECLARE
+        @caliber_description varchar(max),
+        @manuinfo_name varchar(max),
+        @instrument_model_number varchar(max),
+        @assettype_description varchar(max)
+
+    SELECT I.*, 
+        C.DESCRIPTION = @caliber_description, 
+        M.NAME = @manuinfo_name, 
+        I.INSTRUMENT_MODEL_NUMBER = @instrument_model_number
+        T.DESCRIPTION  = @assettyp_description
+    FROM TV_CHEMINV I
+    JOIN TV_MANUINFO M ON I.MANUFACTURER_NAME = M.CODE
+    JOIN TV_CALIBER C ON I.CALIBER = C.CODE
+    JOIN TV_ASSETTYP T ON I.ASSET_TYPE = T.CODE 
+    WHERE CHEM_CONTROL_NUMBER = @chem_control_number
+
+    RETURN
+        @caliber_description,        --[CALIBER.DESCRIPTION]
+        @manuinfo_name,              --[MANUINFO.NAME]
+        @assettyp_description,       --[ASSETTYP.DESCRIPTION]
+        @instrument_model_number    --[INSTRUMENT_MODEL_NUMBER]
+
+
+IF @chem_category = I               -- ASSET_CLASS
+    DECLARE
+        @calinst_next_date date,
+        @assettyp_description varchar(max)
+        
+    SELECT
+        A.NEXT_DATE = @calinst_next_date  
+        C.DESCRIPTION = @assettyp_description
+    FROM TV_CALINST A
+    JOIN TV_CHEMINV B on A.CHEM_CONTROL_NUMBER = B.CHEM_CONTROL_NUMBER
+    JOIN TV_ASSETTYP C on B.ASSET_CLASS = C.ASSET_CLASS
+    where CHEM_CONTROL_NUMBER = @chem_control_number
+
+    RETURN
+        @assettyp_description
+
+        IF @calinst_next_date < 1 month
+            RETURN
+                Must be calibrated in @calinst_next_date .
+
+
+IF @chem_category = D                   -- ASSET_CLASS
+    DECLARE 
+        @custcode_description varchar(max),
+        @analyst_name varchar(max)
+
+    SELECT
+        B.DESCRIPTION = @custcode_description,
+        C.NAME = @analyst_name
+    FROM TV_CHEMINV A
+    JOIN TV_CUSTCODE    B on A.CURRENT_STATUS = B.CUSTODY_TYPE
+    JOIN TV_ANALYST     C on A.CURRENT_LOCATION = C.ANALYST
+    WHERE TV_CHEMSTAT.CHEM_CONTROL_NUMBER = @chem_control_number
+
+    RETURN                                                                  -- sample output: (East County - General Storage Lockers >> Analysts - Mike Evans)
+        custcode_description - General Storage Lockers >> Analysts - [TV_ANALYST.NAME]
