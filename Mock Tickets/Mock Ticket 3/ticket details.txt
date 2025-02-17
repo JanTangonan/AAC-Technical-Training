@@ -17,8 +17,9 @@ Use the current behavior from FORMAT_HEADING for other chem category.
 
 
 DECLARE 
-    @chem_control_number varchar(10),
+    @chem_control_number varchar(10),       -- input parameter
     @chem_category varchar(1)
+    @output_string                          -- output parameter               
 
 SELECT
     ASSET_CLASS = @chem_category
@@ -46,8 +47,10 @@ IF @chem_category = C || R          -- ASSET_CLASS
         WHERE CHEM_CONTROL_NUMBER = @chem_control_number
 
         RETURN             
-            @quantity,           --[QUANTITY]          
+        @output_string = 
+            @quantity, --[QUANTITY], 
             @quantity_units     --[QUANTITY_UNITS]    
+
     else 
         DECLARE
             @assettyp_description varchar(max),
@@ -61,6 +64,7 @@ IF @chem_category = C || R          -- ASSET_CLASS
         WHERE CHEM_CONTROL_NUMBER = @chem_control_number
 
         RETURN
+        @output_string = 
             @assettyp_description,       --[ASSETTYP.DESCRIPTION]
             @lot_number                 --[LOT_NUMBER]
 
@@ -84,6 +88,7 @@ IF @chem_category = F               -- ASSET_CLASS
     WHERE CHEM_CONTROL_NUMBER = @chem_control_number
 
     RETURN
+    @output_string = 
         @caliber_description,        --[CALIBER.DESCRIPTION]
         @manuinfo_name,              --[MANUINFO.NAME]
         @assettyp_description,       --[ASSETTYP.DESCRIPTION]
@@ -104,10 +109,12 @@ IF @chem_category = I               -- ASSET_CLASS
     where CHEM_CONTROL_NUMBER = @chem_control_number
 
     RETURN
+    @output_string = 
         @assettyp_description
 
         IF @calinst_next_date < 1 month
             RETURN
+            @output_string +=
                 Must be calibrated in @calinst_next_date .
 
 
@@ -125,4 +132,6 @@ IF @chem_category = D                   -- ASSET_CLASS
     WHERE TV_CHEMSTAT.CHEM_CONTROL_NUMBER = @chem_control_number
 
     RETURN                                                                  -- sample output: (East County - General Storage Lockers >> Analysts - Mike Evans)
+    @output_string = 
         custcode_description - General Storage Lockers >> Analysts - [TV_ANALYST.NAME]
+
