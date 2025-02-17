@@ -1,0 +1,17 @@
+02/17/2025 16:47:40 (299)  : CONNECT TIME: 0
+02/17/2025 16:47:40 (300)  : SELECT ID, VALUE_RES, ENCRYPTED, STORED_PROC_ENCRYPT FROM TV_WEBCONFIG WHERE CODE = 'WEBLOG'
+02/17/2025 16:47:40 (304)  : QUERY TIME: 4.997
+02/17/2025 16:47:40 (305)  : URL:http://localhost:58034/ChemInv/TAB1ChemInfo.aspx
+02/17/2025 16:47:40 (306)  : Exception Message:Conversion failed when converting date and/or time from character string.
+02/17/2025 16:47:40 (306)  : Stacktrace:   
+   at PLCCONTROLS.PLCQuery.ExecuteProcedure_Main(String procedureName, String customConnectionString) in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy Copy - Copy\PLCCONTROLS\PLC_Query.cs:line 469
+   at PLCCONTROLS.PLCQuery.ExecuteProcedure(String procedureName) in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy Copy - Copy\PLCCONTROLS\PLC_Query.cs:line 429
+   at PLCGlobals.PLCDBGlobal.GenerateChemInvHeader(Int32 chemControlNo) in C:\Users\AAC\Desktop\BEASTiLIMS_Master - Copy Copy - Copy\PLCGLOBALS\PLCDBGlobal.cs:line 10744
+   at ChemInv.CHEMINVHOME.SetChemInvHeader(String chemControlNo)
+   at ChemInv.CHEMINVHOME.InitializePLCDBPanels(Boolean refreshData)
+   at ChemInv.CHEMINVHOME.Page_Load(Object sender, EventArgs e)
+   at System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   at System.Web.UI.Control.OnLoad(EventArgs e)
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Control.LoadRecursive()
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
