@@ -7,7 +7,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 ALTER PROCEDURE [dbo].[CHEMINV_GET_HEADER]
     @chem_control_number VARCHAR(10),
-    @output_header VARCHAR(50) OUTPUT
+    @output_header VARCHAR(100) OUTPUT
 AS
 BEGIN
     DECLARE @chem_category CHAR(1)
@@ -39,6 +39,13 @@ BEGIN
 			JOIN TV_ASSETTYP B ON A.ASSET_TYPE = B.CODE
             WHERE CHEM_CONTROL_NUMBER = @chem_control_number
 
+			-- check if empty query result
+			IF @quantity IS NULL AND @quantity_units IS NULL AND @assettyp_description_t IS NULL AND @lot_number_t IS NULL
+            BEGIN
+                SET @output_header = 'No data found for control number: ' + @chem_control_number;
+                RETURN;
+            END
+
             SET @output_header = CAST(@quantity AS VARCHAR) + ' ' + @quantity_units + ' of the chemical ' + @assettyp_description_t + ' stored in ' + @lot_number_t
         END
         ELSE
@@ -51,6 +58,13 @@ BEGIN
             FROM TV_CHEMINV A
             JOIN TV_ASSETTYP B ON A.ASSET_TYPE = B.CODE
             WHERE CHEM_CONTROL_NUMBER = @chem_control_number
+
+			-- check if empty query result
+			IF @assettyp_description IS NULL AND @lot_number IS NULL
+            BEGIN
+                SET @output_header = 'No data found for control number: ' + @chem_control_number;
+                RETURN;
+            END
 
             SET @output_header = 'A ' + @assettyp_description + ' chemical stored in ' + @lot_number
         END
@@ -72,11 +86,14 @@ BEGIN
         JOIN TV_ASSETTYP T ON I.ASSET_TYPE = T.CODE
         WHERE CHEM_CONTROL_NUMBER = @chem_control_number
 
-        SET @output_header = 'A ' + @caliber_description + ' ' + @manuinfo_name + ' ' + @assettype_description + ', model ' + @instrument_model_number
-        IF LEN(@output_header) > 50
+		-- check if empty query result
+		IF @caliber_description IS NULL AND @manuinfo_name IS NULL AND @instrument_model_number IS NULL AND @assettype_description IS NULL
         BEGIN
-            SET @output_header = @output_header + '...'
+            SET @output_header = 'No data found for control number: ' + @chem_control_number;
+            RETURN;
         END
+
+        SET @output_header = 'A ' + @caliber_description + ' ' + @manuinfo_name + ' ' + @assettype_description + ', model ' + @instrument_model_number
     END
     ELSE IF @chem_category = 'I'
     BEGIN
@@ -89,6 +106,13 @@ BEGIN
         JOIN TV_CHEMINV B ON A.CHEMICAL_CONTROL_NUMBER = B.CHEM_CONTROL_NUMBER
         JOIN TV_ASSETTYP C ON B.ASSET_CLASS = C.ASSET_CLASS
         WHERE CHEM_CONTROL_NUMBER = @chem_control_number
+		
+		-- check if empty query result
+		IF @calinst_next_date IS NULL AND @assettyp_description_instr IS NULL
+		BEGIN
+			SET @output_header = 'No data found for control number: ' + @chem_control_number;
+			RETURN;
+		END
 
         SET @output_header = 'Instrument ' + @assettyp_description_instr
 
@@ -109,7 +133,18 @@ BEGIN
         JOIN TV_ANALYST C ON A.CURRENT_LOCATION = C.ANALYST
         WHERE A.CHEM_CONTROL_NUMBER = @chem_control_number
 
+		-- check if empty query result
+		IF @custcode_description IS NULL AND @analyst_name IS NULL
+        BEGIN
+            SET @output_header = 'No data found for control number: ' + @chem_control_number;
+            RETURN;
+        END
+
         SET @output_header = @custcode_description + ' - General Storage Lockers >> Analysts - ' + @analyst_name
+		IF LEN(@output_header) > 49
+        BEGIN
+            SET @output_header = LEFT(@output_header, 99) + '...'
+        END
     END
     ELSE
     BEGIN
@@ -126,6 +161,13 @@ BEGIN
         JOIN TV_ASSETTYP B ON A.ASSET_TYPE = B.CODE
         WHERE A.CHEM_CONTROL_NUMBER = @chem_control_number
 
-        SET @output_header = 'Name: ' + @type_desc + ', Type: ' + @asset_type + ', Tracking #: ' + @barcode + ', Quantity Remaining: ' + CAST(@qty AS VARCHAR) + ', Images: {null}, Docs: {null}'
+		-- check if empty query result
+		IF @type_desc IS NULL AND @asset_type IS NULL AND @barcode IS NULL AND @qty IS NULL
+        BEGIN
+            SET @output_header = 'No data found for control number: ' + @chem_control_number;
+            RETURN;
+        END
+
+        SET @output_header = 'Name: ' + @type_desc + ', Type: ' + @asset_type + ', Tracking #: ' + @barcode + ', Quantity Remaining: ' + CAST(@qty AS VARCHAR)
     END
 END
