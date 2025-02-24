@@ -1,0 +1,22 @@
+AssignmentNotes.aspx
+    divNotePlaceholder
+
+    GetCustomNotes()        // retrieve the custom notes from the database
+    RenderNotes()           // renders the tabs and contents for the custom notes
+
+    PLCWebCommon/PLCWebMethods.asmx/GetExaminationNoteFields    // webmethod
+
+AssignmentNotes.aspx.cs
+
+select * from TV_NOTESETUP
+
+EXAM_CODE	    TAB_RES	        ORDER_RES
+BIO	            BP1	            1
+BIO	            BP2	            1
+BIO	            Comments	    2
+BIO	            Statistics	    3
+
+DIS             Magic Textboxes 1
+DIS             Comments        2
+DIS             Copycat         3
+DIS             Just normal     4

@@ -1,0 +1,41 @@
+Welcome to ABC Space station. On your first day, they want us to add these new tabs in the Assignment Notes page for a new "DIS" section assignments.
+The assignment notes page should have the following tabs in this order:
+
+1. Tab Name -> Magic Textboxes
+    Contains 4 fields:
+    - First field
+        Label -> "1st"
+        Type  -> Textbox
+        On type, it will add the typed value as the first and last text of the "3rd" field.
+    - Second field
+        Label -> "2nd"
+        Type  -> Textbox
+        On type, it will add the typed value on the middle of the "3rd" field.
+    - Third field
+        Label -> "3rd"
+        Type  -> Textbox
+        Enabled -> False.
+
+2. Tab Name -> Comments
+    - The common comment tab
+
+3. Tab Name -> Copycat
+    Contains 2 fields:
+    - First field.
+        Label -> Copy
+        Type  -> Textbox
+        Enabled -> False
+        It should have the value of the "3rd" field in the “Magic Textboxes” Tab.
+    - Second field.
+        Label -> Date
+        Type  -> Date time textbox.
+
+4. Tab Name -> Just normal
+    Contains 2 fields:
+    - First field:
+        Label -> "How many dogs do you have?"
+        Type  -> Textbox
+    - Second field:
+        Label -> "Do not select ‘No’."
+        Type  -> Combobox
+        Options -> "No", "NoNo", "NoNoNo"
