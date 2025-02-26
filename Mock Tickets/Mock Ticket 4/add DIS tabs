@@ -1,0 +1,25 @@
+INSERT INTO TV_NOTESETUP (
+    EXAM_CODE,
+    TAB_RES,
+    ORDER_RES
+) VALUES 
+(
+    'DIS',
+    'MgcTxtBx',
+    '1'
+),
+(
+    'DIS',
+    'Comments',
+    '2'
+),
+(
+    'DIS',
+    'Copycat',
+    '3'
+),
+(
+    'DIS',
+    'JustNormal',
+    '4'
+);

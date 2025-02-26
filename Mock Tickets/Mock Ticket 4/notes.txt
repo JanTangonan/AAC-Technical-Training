@@ -3,12 +3,20 @@ AssignmentNotes.aspx
 
     GetCustomNotes()        // retrieve the custom notes from the database
     RenderNotes()           // renders the tabs and contents for the custom notes
+    CreateTabContents()
+    CreateNoteControls()
 
     PLCWebCommon/PLCWebMethods.asmx/GetExaminationNoteFields    // webmethod
 
-AssignmentNotes.aspx.cs
+    SaveNotes()
+    SaveSuccessCallback()
+    PLCWebCommon/PLCWebMethods.asmx/SaveExaminationNotes
 
-select * from TV_NOTESETUP
+PLCWebMethods.asmx.cs
+    GetCustomNotesDetails(string pstrCustomGroup, pstrSection)
+    GetSavedAnswer(string pstrCaseKey, string pstrExamKey, string pstrStatCode)
+------------------------------------------------------------------------------------------------------------------------------------------------
+select * from TV_NOTESETUP  // table name
 
 EXAM_CODE	    TAB_RES	        ORDER_RES
 BIO	            BP1	            1
@@ -20,3 +28,64 @@ DIS             Magic Textboxes 1
 DIS             Comments        2
 DIS             Copycat         3
 DIS             Just normal     4
+
+select * from TV_STATLIST      
+
+SECTION
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+CASE_ASSIGNMENTS - grid name
+
+SELECT 
+    E.CASE_KEY, 
+    E.EXAM_KEY, 
+    E.SEQUENCE,
+    E.SECTION, 
+    E.PROSECUTOR_NAME, 
+    substring(A.NAME, 1, 20) "ANALYST_ASSIGNED", 
+    FORMATDATE(E.DATE_ASSIGNED) "DATE_ASSIGNED", 
+    E.STATUS, FORMATDATE(E.DRAFT_DATE) "DRAFT_DATE" 
+FROM TV_LABEXAM E 
+LEFT OUTER JOIN TV_ANALYST A ON E.ANALYST_ASSIGNED = A.ANALYST 
+WHERE E.CASE_KEY = (param)CASE_KEY(/param)
+ORDER BY E.EXAM_KEY
+
+
+Sequence	Section	Analyst Assigned	Date Assigned	Status	Prosecutor Name
+1           CS      Mike Evans          02/24/2025      1
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+SELECT 
+    STAT_CODE, 
+    DESCRIPTION, 
+    USER_RES, 
+    OPTIONS, 
+    CHECK_LIST, 
+    NOT_REQUIRED, 
+    DEFAULT_VALUE, 
+    PICTURE,
+
+    GROUP_RES,
+    WEIGHT_FACTOR,
+    SECTION
+FROM TV_STATLIST 
+WHERE SECTION = '{0}' 
+AND LOWER(GROUP_RES) = '{1}' 
+AND (UPPER(ACTIVE) <> 'F' OR ACTIVE IS NULL) 
+ORDER BY USER_RES
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+SELECT 
+    TEXT 
+FROM TV_STATS 
+WHERE CASE_KEY = {0} 
+AND EXAM_KEY = {1} 
+AND STAT_CODE = '{2}'", 
+pstrCaseKey, pstrExamKey, pstrStatCode
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+SELECT * FROM TV_LABASSIGN
+
+LAB-CASE: 25-000042
+LAB-CASE: 25-000043 - no lab assign 
+LAB-CASE: 25-000044 - no lab assign 

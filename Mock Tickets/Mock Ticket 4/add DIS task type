@@ -1,0 +1,11 @@
+INSERT INTO TV_TASKTYPE(
+    TASK_TYPE,
+    DESCRIPTION,
+    SECTION,
+    SERVICE_REQUEST
+) VALUES (
+    'ABC Space Station',
+    'ABC Space Station Service Request',
+    'DIS',
+    '*'
+);
