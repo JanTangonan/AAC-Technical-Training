@@ -1,3 +1,12 @@
 UPDATE TV_LABEXAM
-set ANALYST_ASSIGNED = 'MIKE'
+set ANALYST_ASSIGNED = 'MIKE',
+    ASSIGNED_BY = 'MIKE'
 where SECTION = 'DIS'
+
+--
+UPDATE LABEXAM
+SET "Analyst Assigned" = 'MIKE',
+    "Assigned By" = 'MIKE'
+WHERE "Section" = 'DIS';
+COMMIT;
+
