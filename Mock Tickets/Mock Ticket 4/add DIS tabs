@@ -3,23 +3,38 @@ INSERT INTO TV_NOTESETUP (
     TAB_RES,
     ORDER_RES
 ) VALUES 
-(
-    'DIS',
-    'MgcTxtBx',
-    '1'
-),
-(
-    'DIS',
-    'Comments',
-    '2'
-),
-(
-    'DIS',
-    'Copycat',
-    '3'
-),
-(
-    'DIS',
-    'JustNormal',
-    '4'
-);
+('DIS','MgcTxtBx','1'),
+('DIS','Comments','2'),
+('DIS','Copycat','3'),
+('DIS','JustNormal','4');
+
+--
+INSERT INTO NOTESETUP (
+    "Exam Code",
+    "Tab Res",
+    "Order Res"
+) VALUES 
+    ('DIS', 'MgcTxtBx', '1');
+    
+INSERT INTO NOTESETUP (
+    "Exam Code",
+    "Tab Res",
+    "Order Res"
+) VALUES 
+    ('DIS', 'Comments', '2');
+    
+INSERT INTO NOTESETUP (
+    "Exam Code",
+    "Tab Res",
+    "Order Res"
+) VALUES 
+    ('DIS', 'Copycat', '3');
+    
+INSERT INTO NOTESETUP (
+    "Exam Code",
+    "Tab Res",
+    "Order Res"
+) VALUES 
+    ('DIS', 'JustNormal', '4');
+  
+COMMIT;

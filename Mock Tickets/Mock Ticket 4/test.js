@@ -225,3 +225,84 @@ if (refControls.length > 0) {
         });
     }, 100);
 }
+
+//
+// creates a textbox control
+function CreateTextbox(pstrId, pstrDescription, pstrAnswer, pblnRequired, statDefaultValue, statPictureMask, referenceControl, enableControl) {
+    var strTextbox = CreateLabel(pstrId, pstrDescription, pblnRequired);
+    var refControls = referenceControl ? referenceControl.split(',').map(s => 'ans' + s.trim()) : [];
+    var isReadonly = enableControl === "F";
+    var readonlyClass = isReadonly ? "readonly-textbox" : "";
+
+    strTextbox += `<input type='text' id='${pstrId}' class='${readonlyClass}'`;
+
+    if (isReadonly) {
+        strTextbox += " readonly";
+    }
+
+    if ($("[id$='hdnCompleted']").val() == "T" && $("[id$='hdnEditAppr']").val() != "T") 
+        strTextbox += " disabled ";
+
+    if (pblnRequired)
+        strTextbox += " class='required' ";
+
+    strTextbox += " barcodescanhere='' onkeyup='DenyEnterKey();' ";
+
+    var isSetToUpperCase = statPictureMask && statPictureMask.indexOf("X") > -1;
+
+    if (pstrAnswer !== "") {
+        if (isSetToUpperCase) pstrAnswer = pstrAnswer.toUpperCase();
+        strTextbox += ` value='${pstrAnswer}'`;
+    } else {
+        console.log(statDefaultValue);
+        if (statDefaultValue) {
+            if (isSetToUpperCase) statDefaultValue = statDefaultValue.toUpperCase();
+            strTextbox += ` value='${statDefaultValue}'`;
+        }
+    }
+
+    console.log("REFERENCE CONTROLS: " + referenceControl);
+    console.log("REFERENCE CONTROLS: " + refControls);
+
+    if (statPictureMask) {
+        strTextbox += ` data-stat-mask='${statPictureMask}'`;
+    }
+
+    strTextbox += "> <br/>";
+
+    if (refControls.length > 0) {
+        var refSelector = refControls.map(id => `#${id}`).join(',');
+
+        setTimeout(() => {
+            $(document).on('input', refSelector, function () {
+                var values = refControls.map(id => $('#' + id).val() || '');
+    
+                var combinedValue;
+                if (pstrId === 'ansSTDIS3' && values.length === 2) { 
+                    // Apply format for STDIR3
+                    combinedValue = `${values[0]}${values[1]}${values[0]}`;
+                } else {
+                    // Default behavior: join all values
+                    combinedValue = values.join('');
+                }
+
+                console.log(`Updating ${pstrId} with combined value:`, combinedValue);
+                $('#' + pstrId).val(combinedValue).trigger('input'); // Ensure dependent fields update
+            });
+        }, 100);
+    }
+
+
+    console.log(strTextbox);
+    return strTextbox;
+}
+
+// CSS styles to make readonly fields visually disabled
+const style = document.createElement('style');
+style.innerHTML = `
+    .readonly-textbox {
+        background-color: #D3D3D3;
+        cursor: not-allowed;
+    }
+`;
+document.head.appendChild(style);

@@ -4,8 +4,23 @@ INSERT INTO TV_TASKTYPE(
     SECTION,
     SERVICE_REQUEST
 ) VALUES (
-    'ABC Space Station',
+    'ABCSSR',
     'ABC Space Station Service Request',
     'DIS',
     '*'
 );
+
+--
+INSERT INTO TASKTYPE (
+    "Task Type",
+    "Description",
+    "Section",
+    "Service Request"
+) VALUES (
+    'ABCSSR',
+    'ABC Space Station Service Request',
+    'DIS',
+    '*'
+);
+
+COMMIT;

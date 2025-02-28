@@ -5,7 +5,128 @@ INSERT INTO TV_STATLIST(
     USER_RES,
     GROUP_RES,
     OPTIONS,
-    PICTURE
-) VALUES (
-    
-);
+    PICTURE,
+    REFERENCE_CONTROL,
+    ENABLE_CONTROL
+) VALUES 
+    ('DIS', 'STDIS1', '1st', '1', 'MGCTXTBX', NULL, NULL, NULL, NULL),
+    ('DIS', 'STDIS2', '2nd', '2', 'MGCTXTBX', NULL, NULL, NULL, NULL),
+    ('DIS', 'STDIS3', '3rd', '3', 'MGCTXTBX', NULL, NULL, 'STDIS1, STDIS2', 'F'),
+    ('DIS', 'STDIS4', 'Copy', '4', 'COPYCAT', NULL, NULL, 'STDIS3', 'F'),
+    ('DIS', 'STDIS5', 'Date', '5', 'COPYCAT', NULL, 'mm/dd/yy', NULL, NULL),
+    ('DIS', 'STDIS6', 'How many dogs do you have?', '6', 'JUSTNORMAL', NULL, NULL, NULL, NULL),
+    ('DIS', 'STDIS7', 'Do not select ‘No’.', '7', 'JUSTNORMAL', 'No, NoNo, NoNoNo', NULL,  NULL, NULL);
+
+--
+INSERT INTO STATLIST (
+    "Section",
+    "Stat Code",
+    "Description",
+    "User Res",
+    "Group Res",
+    "Options",
+    "Picture",
+    "Reference Control",
+    "Enable Control"
+) VALUES 
+    ('DIS', 'STDIS1', '1st', '1', 'MGCTXTBX', NULL, NULL, NULL, NULL),
+    ('DIS', 'STDIS2', '2nd', '2', 'MGCTXTBX', NULL, NULL, NULL, NULL),
+    ('DIS', 'STDIS3', '3rd', '3', 'MGCTXTBX', NULL, NULL, 'STDIS1, STDIS2', 'F'),
+    ('DIS', 'STDIS4', 'Copy', '4', 'COPYCAT', NULL, NULL, 'STDIS3', 'F'),
+    ('DIS', 'STDIS5', 'Date', '5', 'COPYCAT', NULL, 'mm/dd/yy', NULL, NULL),
+    ('DIS', 'STDIS6', 'How many dogs do you have?', '6', 'JUSTNORMAL', NULL, NULL, NULL, NULL),
+    ('DIS', 'STDIS7', 'Do not select ‘No’.', '7', 'JUSTNORMAL', 'No, NoNo, NoNoNo', NULL, NULL, NULL);
+
+--
+INSERT INTO STATLIST (
+    "SECTION",
+    "STATCODE",
+    "DESCRIPTION",
+    "USER",
+    "GROUP",
+    "Options",
+    "Picture",
+    "Reference Control",
+    "Enable Control"
+) VALUES 
+    ('DIS', 'STDIS1', '1st', '1', 'MGCTXTBX', NULL, NULL, NULL, NULL);
+
+INSERT INTO STATLIST (
+    "SECTION",
+    "STATCODE",
+    "DESCRIPTION",
+    "USER",
+    "GROUP",
+    "Options",
+    "Picture",
+    "Reference Control",
+    "Enable Control"
+) VALUES 
+    ('DIS', 'STDIS2', '2nd', '2', 'MGCTXTBX', NULL, NULL, NULL, NULL);
+
+INSERT INTO STATLIST (
+    "SECTION",
+    "STATCODE",
+    "DESCRIPTION",
+    "USER",
+    "GROUP",
+    "Options",
+    "Picture",
+    "Reference Control",
+    "Enable Control"
+) VALUES 
+    ('DIS', 'STDIS3', '3rd', '3', 'MGCTXTBX', NULL, NULL, 'STDIS1, STDIS2', 'F');
+
+INSERT INTO STATLIST (
+    "SECTION",
+    "STATCODE",
+    "DESCRIPTION",
+    "USER",
+    "GROUP",
+    "Options",
+    "Picture",
+    "Reference Control",
+    "Enable Control"
+) VALUES 
+    ('DIS', 'STDIS4', 'Copy', '4', 'COPYCAT', NULL, NULL, 'STDIS3', 'F');
+
+INSERT INTO STATLIST (
+    "SECTION",
+    "STATCODE",
+    "DESCRIPTION",
+    "USER",
+    "GROUP",
+    "Options",
+    "Picture",
+    "Reference Control",
+    "Enable Control"
+) VALUES 
+    ('DIS', 'STDIS5', 'Date', '5', 'COPYCAT', NULL, 'mm/dd/yy', NULL, NULL);
+
+INSERT INTO STATLIST (
+    "SECTION",
+    "STATCODE",
+    "DESCRIPTION",
+    "USER",
+    "GROUP",
+    "Options",
+    "Picture",
+    "Reference Control",
+    "Enable Control"
+) VALUES 
+    ('DIS', 'STDIS6', 'How many dogs do you have?', '6', 'JUSTNORMAL', NULL, NULL, NULL, NULL);
+
+INSERT INTO STATLIST (
+    "SECTION",
+    "STATCODE",
+    "DESCRIPTION",
+    "USER",
+    "GROUP",
+    "Options",
+    "Picture",
+    "Reference Control",
+    "Enable Control"
+) VALUES 
+    ('DIS', 'STDIS7', 'Do not select ‘No’.', '7', 'JUSTNORMAL', 'No, NoNo, NoNoNo', NULL, NULL, NULL);
+
+COMMIT;
