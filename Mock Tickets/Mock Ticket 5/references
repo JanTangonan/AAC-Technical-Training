@@ -1,0 +1,2 @@
+if (!IsUserOptionSet("QCNAMECOM"))
+    HideColumn($thComments);

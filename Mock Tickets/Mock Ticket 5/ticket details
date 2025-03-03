@@ -1,0 +1,8 @@
+Add a new Search > Analyst screen. Visibility of the menu is based on ANALSEARCH user option.
+
+Save the search field values on click of search, the values should be restored when going back to this search screen.
+
+Enhance button panel to have a built-in Search and Clear buttons. Make sure to support the new buttons in the click event handler.
+    - On click of search, it should get the search criteria from the linked DBPanel in PLCButtonPanel.PLCTargetControlID and apply it to the linked PLCDBGrid via PLCButtonPanel.PLCTargetDBGridID.
+    - On click of Clear button, it should clear the linked DBPanel and PLCDBGrid.
+    - Make sure to use existing PLCDBPanel functions if available.
