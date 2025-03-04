@@ -1,0 +1,21 @@
+UC_MainMenu.ascx
+    SideMenu                                            -- added new menu item for Analyst Search under LIMS Search
+        <asp:MenuItem Text="$Menu_LIMS_Search_Analyst" Value="Analyst" NavigateUrl="~/AnalystSearch.aspx"></asp:MenuItem>
+
+UC_MainMenu.ascx.cs
+    SetMenuItems()          
+        if (!PLCSession.CheckUserOption("ANALSEARCH"))  -- added to check if ANALSEARCH user option is enabled or disabled
+
+PLC_SessionVars.cs
+    DefaultLocalizedTextValue
+        {"Menu_LIMS_Search_Analyst", "Analyst"},        -- added to have a default text value
+
+PLCButtonPanel.cs  
+    PLCShowSearchButtons()                              -- added to new property to show Analyst search and clear buttons
+    dynactrl()                                          --
+        if (PLCShowSearchButtons)
+AnalystSearch.aspx                                      -- added new page for Analyst Search
+AnalystSearch.aspx.cs                                   
+
+TV_AUTHCODE
+    'ANALSEARCH', 'Analyst Search', '0', 'Program Access/PRELIMS/Web'       -- added to be used as user option for Analyst Search button

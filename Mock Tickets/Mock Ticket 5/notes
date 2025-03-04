@@ -1,0 +1,4 @@
+AUTHORITY_CODE	DESCRIPTION	USER_RES	TREE
+ITEMTRACK	Access Item Tracker	0	Program Access/PRELIMS/Web
+
+select * from TV_AUTHCODE

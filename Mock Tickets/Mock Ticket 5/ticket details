@@ -1,4 +1,4 @@
-Add a new Search > Analyst screen. Visibility of the menu is based on ANALSEARCH user option.
+Add a new Search > Analyst screen. Visibility of the menu is based on ANALSEARCH user option. - done
 
 Save the search field values on click of search, the values should be restored when going back to this search screen.
 
