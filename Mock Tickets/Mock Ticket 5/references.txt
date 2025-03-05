@@ -1,0 +1,53 @@
+if (!IsUserOptionSet("QCNAMECOM"))
+    HideColumn($thComments);
+
+    private Dictionary<string, string> GetParameterValue()
+        {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+            string searchCriteria = string.Empty;
+            string reportComments = string.Empty;
+
+            Dictionary<string, OrderedDictionary> tables = new Dictionary<string, OrderedDictionary>();
+
+            PLCHelperFunctions SearchHelper = new PLCHelperFunctions();
+            tables = SearchHelper.GetTablesAndAlias(dbgContainerSearch.PLCGridName);
+
+            if (tables.Count == 0)
+            {
+                tables.Add("TV_LABCASE", new OrderedDictionary { { String.Empty, "L" } });
+                tables.Add("TV_CONTAINER", new OrderedDictionary { { String.Empty, "C" } });
+                tables.Add("TV_CUSTCODE", new OrderedDictionary { { String.Empty, "CC" } });
+                tables.Add("TV_CUSTLOC", new OrderedDictionary { { String.Empty, "CL" } });
+            }
+
+            var fields = dbpContainerSearch.GetPanelFieldRecs();
+
+            foreach (var panelrecs in fields)
+            {
+                string tableName = panelrecs.tblname;
+                string fieldName = panelrecs.fldname;
+                string prompt = panelrecs.prompt;
+                string mask = panelrecs.editmask.ToUpper();
+                string codeTable = panelrecs.codetable;
+                bool usesLikeSearch = panelrecs.usesLikeSearch;
+
+                string searchValue = dbpContainerSearch.GetFieldValue(tableName, fieldName, prompt).Trim();
+                string searchDesc = dbpContainerSearch.GetFieldDesc(tableName, fieldName);
+
+                if (!string.IsNullOrEmpty(searchValue))
+                {
+                    if (!string.IsNullOrEmpty(reportComments))
+                        reportComments += ", ";
+
+                    searchCriteria += PLCGlobals.PLCCommon.instance.GetWhereClauseByType(tableName, fieldName,
+                        prompt, mask, codeTable, searchValue, tables, usesLikeSearch);
+                    reportComments += PLCGlobals.PLCCommon.instance.GetReportCommentsByType(prompt, mask, 
+                        codeTable, searchValue, searchDesc, usesLikeSearch);
+                }
+            }
+
+            parameters["searchCriteria"] = searchCriteria;
+            parameters["reportComments"] = reportComments;
+
+            return parameters;
+        }

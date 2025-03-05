@@ -14,6 +14,9 @@ PLCButtonPanel.cs
     PLCShowSearchButtons()                              -- added to new property to show Analyst search and clear buttons
     dynactrl()                                          --
         if (PLCShowSearchButtons)
+    
+    protected void searchbutton_Click(object sender, EventArgs e)
+    protected void clearbutton_Click(object sender, EventArgs e)
 AnalystSearch.aspx                                      -- added new page for Analyst Search
 AnalystSearch.aspx.cs                                   
 
