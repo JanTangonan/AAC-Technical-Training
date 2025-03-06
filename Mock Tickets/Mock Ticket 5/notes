@@ -3,17 +3,39 @@ ITEMTRACK	Access Item Tracker	0	Program Access/PRELIMS/Web
 
 select * from TV_AUTHCODE
 
+CaseSearch.aspx.cs
+    GetByCaseSQLSelectCommand()
+
+ContainerSearch.aspx.cs
+    SearchContainer()
+
+DashBoard.aspx.cs
+    ProcessSearchCase(PLCDBPanel pdbpSearchPanel, PLCDBGrid pgrdSearchResults)
+
+
+GetTablesAndAlias()
+    'SELECT * FROM TV_DBGRIDHD WHERE GRID_NAME = 'SEARCH_BY_NAME'
+    
+
 
 DBPANEL
+
 DBGRID
+    DBGRID.SQL_STRING > FALLBACK        //Fallback incase Gridname is non existent
+    DBGRID.SQL_STRING > CONFIGURED      //Gridname is configured from TV_DBGRIDHD
+
 
 BPANEL > SEARCH BUTTON (TARGET_CONTROL_ID, TARGET_DBGRID_ID)
     DBPANEL PANEL = FIND_CONTROL(TARGET_CONTROL_ID)
-    GET_PANEL_VALUES(PANEL.NAME)
-        
+    GET_PANEL_VALUES(PANEL.NAME, OUT PANEL_VALUES)
+    CREATE_WHERE_CLAUSE(PANEL_VALUES, OUT WHERE_CLAUSE)
+        check if GRID.SQL_STRING is configured
+        then no need for
+    SAVE_WHERE_CLAUSE(WHERE_CLAUSE)
 
     DBGRID GRID = FIND_CONTROL(TARGET_DBGRID_ID)
-    GRID.
+    GRID.ADDITIONAL_SQL_STATEMENT(WHERE_CLAUSE)
+    GRID.INITIALIZE_DBGRID()
 
 BPANEL > CLEAR BUTTON (TARGET_CONTROL_ID, TARGET_DBGRID_ID)
     DBPANEL PANEL = FIND_CONTROL(TARGET_CONTROL_ID)

@@ -1,0 +1,184 @@
+private void SaveSearchParameters()
+{
+    int viewIndex = MultiView1.ActiveViewIndex;
+    CodeHead chReference = (CodeHead)LoadControl("~/PLCWebCommon/CodeHead.ascx");
+
+    if (Session["CaseSearchParameters"] != null)
+        SearchParameters = (Dictionary<int, Dictionary<string, KeyValuePair<CtrlType, string>>>)Session["CaseSearchParameters"];
+
+    Dictionary<string, KeyValuePair<CtrlType, string>> controlCollection =
+        new Dictionary<string, KeyValuePair<CtrlType, string>>();
+
+    // Clear existing search parameters
+    if ((SearchParameters.Count > 0) && SearchParameters.ContainsKey(viewIndex))
+        SearchParameters.Remove(viewIndex);
+
+    // Loop through the chosen view controls
+    foreach (Control pnlCtrl in MultiView1.Views[viewIndex].Controls)
+    {
+        if (pnlCtrl.GetType() == typeof(Panel))
+        {
+            foreach (Control ctrl in ((Panel)pnlCtrl).Controls)
+            {
+                if (ctrl.GetType() == typeof(TextBox))
+                {
+                    TextBox txtControl = (TextBox)ctrl;
+                    controlCollection.Add(txtControl.ID, new KeyValuePair<CtrlType, string>(CtrlType.TextBox, txtControl.Text));
+                }
+
+                if (ctrl.GetType() == typeof(PlaceHolder))
+                {
+                    CodeHead chControl = (CodeHead)FindRecursivelyByType(chReference.GetType(), ctrl.Controls);
+                    if (chControl != null)
+                        controlCollection.Add(chControl.ID, new KeyValuePair<CtrlType, string>(CtrlType.CodeHead, chControl.GetValue()));
+                }
+            }
+        }
+    }
+    SearchParameters.Add(viewIndex, controlCollection);
+    Session["CaseSearchParameters"] = SearchParameters;
+}
+
+//
+private bool GetByCaseSQLSelectCommand()
+{
+    string sqlSelect = string.Empty;
+    string sqlFrom = string.Empty;
+    string sqlWhere = string.Empty;
+    string sSelectCriteria = string.Empty;
+    Dictionary<string, OrderedDictionary> tables = new Dictionary<string, OrderedDictionary>();
+
+    string gridStatus = GetViewStateGridMode(CaseSearch.GridName_Case);
+    switch (gridStatus)
+    {
+        case defaultQuery:
+            sqlSelect = "SELECT DISTINCT L.CASE_KEY, L.CASE_DATE AS \"Case Date\", D.DEPARTMENT_NAME AS \"" + PLCSessionVars1.GetLabCtrl("DEPARTMENT_TEXT") + "\", " +
+                        "L.DEPARTMENT_CASE_NUMBER AS \"" + PLCSessionVars1.GetLabCtrl("DEPT_CASE_TEXT") +
+                        "\", L.LAB_CASE AS \"" + PLCSessionVars1.GetLabCtrl("LAB_CASE_TEXT") + "\", A.NAME AS \"Case Officer\", " +
+                        "L.OFFENSE_DATE AS \"Offense Date\", O.OFFENSE_DESCRIPTION AS \"Offense Description\" " +
+                        "FROM TV_LABCASE L LEFT OUTER JOIN TV_DEPTNAME D ON D.DEPARTMENT_CODE = L.DEPARTMENT_CODE " +
+                        "LEFT OUTER JOIN TV_ANALYST A ON A.ANALYST = L.CASE_MANAGER " +
+                        "LEFT OUTER JOIN TV_OFFENSE O ON O.OFFENSE_CODE = L.OFFENSE_CODE";
+
+            sqlWhere = " WHERE 1 = 1 ";
+            tables = GetTablesAndAlias(true);
+            break;
+        case gridHD:
+        case gridHDandDL:
+            tables = GetTablesAndAlias(false);
+            break;
+        default:
+            break;
+    }
+
+    Dictionary<string, string> searchParameters = new Dictionary<string, string>();
+
+    PLCQuery plcParams = new PLCQuery();
+    plcParams.SQL = "SELECT TABLE_NAME, FIELD_NAME, PROMPT, EDIT_MASK, CODE_TABLE, LIKE_SEARCH, AUTO_WILDCARD_SEARCH FROM TV_DBPANEL WHERE PANEL_NAME = 'SEARCH_BY_CASE' AND ((REMOVE_FROM_SCREEN <> 'T') OR (REMOVE_FROM_SCREEN IS NULL)) ORDER BY SEQUENCE ASC";
+    plcParams.Open();
+    if (plcParams.HasData())
+    {
+        int counter = 1;
+        string tableName = string.Empty;
+        string fieldName = string.Empty;
+        string prompt = string.Empty;
+        string mask = string.Empty;
+        string codeTable = string.Empty;
+        string searchValue = string.Empty;
+        string searchDesc = string.Empty;
+        bool likeSearch = false;
+        bool autoWildCardSearch = false;
+
+        DataTable parameters = plcParams.PLCDataTable;
+        foreach (DataRow parameter in parameters.Rows)
+        {
+            tableName = parameter[colSEARCH.TableName.GetHashCode()].ToString().Trim();
+            if (tableName.Trim() == "")
+                continue;
+
+            fieldName = parameter[colSEARCH.FieldName.GetHashCode()].ToString().Trim();
+            prompt = parameter[colSEARCH.Prompt.GetHashCode()].ToString().Trim();
+            mask = parameter[colSEARCH.EditMask.GetHashCode()].ToString().Trim().ToUpper();
+            codeTable = parameter[colSEARCH.CodeTable.GetHashCode()].ToString().Trim();
+            likeSearch = parameter[colSEARCH.LikeSearch.GetHashCode()].ToString() == "T";
+            autoWildCardSearch = parameter[colSEARCH.AutoWildCardSearch.GetHashCode()].ToString().ToUpper() == "T";
+
+            searchValue = dbpSEARCHBYCASE.GetFieldValue(tableName, fieldName, prompt).Trim();
+
+
+
+            searchDesc = dbpSEARCHBYCASE.GetFieldDesc(tableName, fieldName);
+
+            if (searchValue != string.Empty)
+            {
+                //Set Select Clause
+                if (!tables.ContainsKey(tableName))
+                {
+                    tables.Add(tableName, new OrderedDictionary { { String.Empty, "T" + counter.ToString() } });
+                    counter++;
+                    sqlFrom += PLCGlobals.PLCCommon.instance.GetJoiningScript(tableName, tables[tableName][0].ToString(), "CASE_KEY", "L.CASE_KEY");
+                }
+
+
+
+                searchParameters.Add(fieldName + '|' + prompt, searchValue);
+
+                if ((!String.IsNullOrWhiteSpace(searchValue)) && (fieldName == "LAB_CASE_YEAR"))
+                {
+
+                    if (searchValue.Length == 2)
+                        searchValue = "20" + searchValue;
+
+                }
+
+                //Set Where Clause
+                sqlWhere += PLCGlobals.PLCCommon.instance.GetWhereClauseByType(tableName, fieldName, prompt, mask, codeTable, searchValue, tables, likeSearch, autoWildCardSearch: autoWildCardSearch);
+
+
+                // log parameters for crystal selection criteria display
+                if (!string.IsNullOrEmpty(sSelectCriteria))
+                    sSelectCriteria += ", ";
+                sSelectCriteria += prompt + " = " + ((mask == "MM/DD/YYYY" || mask == "DD/MM/YYYY") ? searchValue : searchDesc);
+            }
+            else
+            {
+                if (fieldName == "DEPARTMENT_CODE")
+                    searchParameters.Add(fieldName + '|' + prompt, searchValue);
+            }
+        }
+    }
+
+    // Don't allow an empty search.
+    if (PLCCommon.instance.IsNoCriteriaWhereClause(sqlWhere.ToString()))
+        return false;
+
+    // Log search criteria.
+    PLCSession.ForceWriteDebug("CaseSearch By Case: " + sqlSelect + sqlFrom + sqlWhere, true);
+
+    if (gridStatus == defaultQuery)
+    {
+        GridViewCase.PLCSQLString = PLCSessionVars1.FormatSpecialFunctions(sqlSelect + sqlFrom + sqlWhere);
+    }
+    else
+    {
+        GridViewCase.PLCSQLString_AdditionalFrom = sqlFrom;
+
+        if (sqlWhere.Length >= 4)
+            sqlWhere = sqlWhere.Remove(0, 4);
+        GridViewCase.PLCSQLString_AdditionalCriteria = PLCSessionVars1.FormatSpecialFunctions(sqlWhere);
+    }
+
+    GridViewCase.EmptyDataText = this.noCaseFoundMessage;
+    GridViewCase.InitializePLCDBGrid();
+
+    string sessionName = ViewState[GridName].ToString() + "_searchparameters";
+    Session[sessionName] = searchParameters;
+
+    // Save search criteria so it can be used later.
+    SaveSearchCriteria(CaseSearchType.ByCase, sqlSelect, sqlFrom, sqlWhere);
+
+    ViewState[ViewState[GridName].ToString() + "_reportparameters"] = sSelectCriteria;
+    //return PLCSessionVars1.FormatSpecialFunctions(sqlSelect + sqlWhere);
+
+    return true;
+}
