@@ -1,0 +1,8 @@
+Aspect	        ProcessSearchCase() (DashBoard)	SearchContainer() (ContainerSearch)	GetByCaseSQLSelectCommand() (CaseSearch)
+Search Panel	PLCDBPanel pdbpSearchPanel	dbpContainerSearch	dbpSEARCHBYCASE
+Results Grid	pgrdSearchResults	dbgContainerSearch	GridViewCase
+Query Target	Cases (TV_LABCASE, TV_LABITEM)	Containers (TV_CONTAINER, TV_LABCASE)	Cases (TV_LABCASE, TV_DEPTNAME, TV_ANALYST, TV_OFFENSE)
+Table Alias Handling	Uses GetTablesAndAlias()	Uses GetParameterValue()	Dynamically assigns aliases to tables (tables.Add())
+Search Query Handling	Uses CreateGeneralDBPanelSearchWhereClause()	Calls PLCGlobals.PLCCommon.instance.GetWhereClauseByType()	Iterates over search fields and dynamically builds SQL clauses
+Session & ViewState Usage	Saves criteria to ViewState["CASE_SEARCH_reportComments"]	Saves criteria to ViewState["CONTAINER_SEARCH_reportComments"]	Saves criteria to ViewState[GridName] + "_reportparameters"
+Grid Query Assignment	pgrdSearchResults.PLCSQLString = sqlString + searchCriteria	dbgContainerSearch.PLCSQLString = sqlString	Handles defaultQuery, gridHD, and gridHDandDL modes before setting the SQL

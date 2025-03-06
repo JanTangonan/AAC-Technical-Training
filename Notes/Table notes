@@ -1,3 +1,9 @@
 -- for USER OPTIONS
 select * from TV_USEROPT    -- user options table, can be accessed in ADMIN > CONFIGURATION > USER TAB > USER GROUP > PER GROUP VIEW > search for OPTION_RES value 
 select * from TV_AUTHCODE   -- auth code table. this where user options are created and sets the access tree
+
+-- for DBGRID
+select * from TV_DBGRIDHD   -- contains the sql strings and description if the dbgrid
+select * from TV_DBGRIDDL   -- contains the fields included in the dbgrid
+
+-- 
