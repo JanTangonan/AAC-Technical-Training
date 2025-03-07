@@ -6,4 +6,5 @@ select * from TV_AUTHCODE   -- auth code table. this where user options are crea
 select * from TV_DBGRIDHD   -- contains the sql strings and description if the dbgrid
 select * from TV_DBGRIDDL   -- contains the fields included in the dbgrid
 
--- 
+-- for ANALYSTs
+select * from TV_ANALYST    -- contains the users along with their previlages and account statuses
