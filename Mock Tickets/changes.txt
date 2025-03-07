@@ -17,8 +17,12 @@ PLCButtonPanel.cs
     
     protected void searchbutton_Click(object sender, EventArgs e)
     protected void clearbutton_Click(object sender, EventArgs e)
+    public void ShowAlert(Page page)
+
 AnalystSearch.aspx                                      -- added new page for Analyst Search
 AnalystSearch.aspx.cs                                   
+    protected void Page_Load(object sender, EventArgs e)
+    private void RestoreSearchCriteria()                
 
 TV_AUTHCODE
     'ANALSEARCH', 'Analyst Search', '0', 'Program Access/PRELIMS/Web'       -- added to be used as user option for Analyst Search button
