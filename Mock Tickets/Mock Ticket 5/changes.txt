@@ -19,6 +19,10 @@ PLCButtonPanel.cs
     protected void clearbutton_Click(object sender, EventArgs e)
     public void ShowAlert(Page page)
 
+    GetTablesAndAlias()                                 -- added helper functions
+    GetTableNameAndAlias()
+    GetTableFieldJoins()
+
 AnalystSearch.aspx                                      -- added new page for Analyst Search
 AnalystSearch.aspx.cs                                   
     protected void Page_Load(object sender, EventArgs e)
