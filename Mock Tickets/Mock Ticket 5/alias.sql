@@ -1,0 +1,30 @@
+-- indexFrom = 181
+-- indexEnd = 403
+
+SELECT DISTINCT L.CASE_KEY, L.CASE_DATE, L.COURT_DATE, D.DEPARTMENT_NAME, L.DEPARTMENT_CASE_NUMBER, L.LAB_CASE, A.NAME AS "CASE_MANAGER",   L.OFFENSE_DATE, O.OFFENSE_DESCRIPTION   
+FROM TV_LABCASE L  
+LEFT OUTER JOIN TV_DEPTNAME D ON D.DEPARTMENT_CODE = L.DEPARTMENT_CODE   
+LEFT OUTER JOIN TV_ANALYST A ON A.ANALYST = L.CASE_MANAGER    
+LEFT OUTER JOIN  TV_OFFENSE O ON O.OFFENSE_CODE = L.OFFENSE_CODE
+ORDER BY CASE_KEY DESC
+
+-- Substring(indexFrom, indexEnd - indexFrom);
+FROM TV_LABCASE L  
+LEFT OUTER JOIN TV_DEPTNAME D ON D.DEPARTMENT_CODE = L.DEPARTMENT_CODE   
+LEFT OUTER JOIN TV_ANALYST A ON A.ANALYST = L.CASE_MANAGER    
+LEFT OUTER JOIN  TV_OFFENSE O ON O.OFFENSE_CODE = L.OFFENSE_CODE
+
+-- Replace('\n', ' ').Replace('\t', ' ').Replace('\r', ' ').Replace('=', ' ').Replace(",", " JOIN ") + " ";
+FROM TV_LABCASE L   LEFT OUTER JOIN TV_DEPTNAME D ON D.DEPARTMENT_CODE   L.DEPARTMENT_CODE    LEFT OUTER JOIN TV_ANALYST A ON A.ANALYST   L.CASE_MANAGER     LEFT OUTER JOIN  TV_OFFENSE O ON O.OFFENSE_CODE   L.OFFENSE_CODE  
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- indexFrom = 76
+-- indexEnd = 92
+
+SELECT T.ANALYST, T.NAME, T.LAB_CODE, T.CUSTODY_OF, T.GROUP_CODE FROM TV_ANALYST T ORDER BY T.NAME
+
+-- Substring(indexFrom, indexEnd - indexFrom);
+FROM TV_ANALYST 
+
+-- Replace('\n', ' ').Replace('\t', ' ').Replace('\r', ' ').Replace('=', ' ').Replace(",", " JOIN ") + " ";
+FROM TV_ANALYST  
