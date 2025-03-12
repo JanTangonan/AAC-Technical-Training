@@ -30,3 +30,6 @@ AnalystSearch.aspx.cs
 
 TV_AUTHCODE
     'ANALSEARCH', 'Analyst Search', '0', 'Program Access/PRELIMS/Web'       -- added to be used as user option for Analyst Search button
+
+PLCCONTROLS
+    ButtonPanelHelper.cs                                -- added to reuse existing logic from helper class and common functions that cant be accessed due to circular dependency error. 
