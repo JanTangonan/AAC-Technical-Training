@@ -1,0 +1,20 @@
+-- Ticket#6779 - PLCButtonPanel enhancement (Analyst search screen)
+
+INSERT INTO TV_DBGRIDHD (
+    GRID_NAME,
+    SQL_STRING,
+    DESCRIPTION,
+    GRID_WIDTH,
+    GRID_HEIGHT,
+    RECORDS_PER_PAGE
+) VALUES (
+    'ANALSEARCH',
+    'SELECT T.ANALYST, T.NAME, T.LAB_CODE, T.CUSTODY_OF, T.GROUP_CODE FROM TV_ANALYST T ORDER BY T.NAME',
+    'Analyst Search Result',
+    1000,
+    300,
+    10
+);
+
+DELETE FROM TV_DBGRIDHD
+WHERE GRID_NAME = 'ANALSEARCH';

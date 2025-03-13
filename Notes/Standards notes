@@ -1,0 +1,5 @@
+PascalCase for events/methods/property                  -- SearchButton_Click instead of searchbutton_Click
+camelCase for local variables/js function               -- thePanel instead of ThePanel
+
+bool instead of Boolean
+string instead of string

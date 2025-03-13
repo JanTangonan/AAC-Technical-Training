@@ -1,3 +1,4 @@
+-- Initial
 UC_MainMenu.ascx
     SideMenu                                            -- added new menu item for Analyst Search under LIMS Search
         <asp:MenuItem Text="$Menu_LIMS_Search_Analyst" Value="Analyst" NavigateUrl="~/AnalystSearch.aspx"></asp:MenuItem>
@@ -33,3 +34,37 @@ TV_AUTHCODE
 
 PLCCONTROLS
     ButtonPanelHelper.cs                                -- added to reuse existing logic from helper class and common functions that cant be accessed due to circular dependency error. 
+
+-- 
+MSQL-VENTURA-DEV
+    MSQL_INSERT_DBGRIDDL
+    MSQL_INSERT_DBGRIDHD
+    MSQL_INSERT_DBPANEL
+
+ORCL-NJSPDEV
+    ORCL_INSERT_DBGRIDDL
+    ORCL_INSERT_DBGRIDHD
+    ORCL_INSERT_DBPANEL
+
+PLCButtonPanel.cs
+    dynactrl()
+        if (PLCShowSearchButtons)       - moved above PLCCustomButtons
+
+    SearchButton_Click
+        - events => PascalCase
+        - variable => camelCase
+        - reduced FindControl usage
+    
+    ClearButton_Click
+        - events => PascalCase
+        - variable => camelCase
+        - reduced FindControl usage
+        - added "Select criteria then click 'Search' button."
+        - clears saved session criteria upon click
+
+    ShowAlert
+        - changed alert to Alert to apply Utility.js Alert function
+
+PLC_SessionVars.cs
+    DefaultLocalizedTextValue
+        {"AnalystSearch_PageTitle", "Analyst Search"},
