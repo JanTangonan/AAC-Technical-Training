@@ -68,3 +68,10 @@ PLCButtonPanel.cs
 PLC_SessionVars.cs
     DefaultLocalizedTextValue
         {"AnalystSearch_PageTitle", "Analyst Search"},
+
+PLCExtensions.cs
+    GetWhereClause()
+    GetTablesAndAlias()
+
+ButtonPanelHelper
+    changed to => PLCControlHelper.cs
