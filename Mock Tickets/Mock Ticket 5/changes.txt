@@ -54,13 +54,15 @@ PLCButtonPanel.cs
         - events => PascalCase
         - variable => camelCase
         - reduced FindControl usage
+        - added before and after
     
     ClearButton_Click
         - events => PascalCase
         - variable => camelCase
         - reduced FindControl usage
         - added "Select criteria then click 'Search' button."
-        - clears saved session criteria upon click
+        - added before and after
+        - clears saved session criteria after click
 
     ShowAlert
         - changed alert to Alert to apply Utility.js Alert function
@@ -69,9 +71,28 @@ PLC_SessionVars.cs
     DefaultLocalizedTextValue
         {"AnalystSearch_PageTitle", "Analyst Search"},
 
-PLCExtensions.cs
-    GetWhereClause()
-    GetTablesAndAlias()
-
 ButtonPanelHelper
     changed to => PLCControlHelper.cs
+
+PLCDBPanel.cs
+    SearchFilterSQL()
+        added tablealias optional parameter
+        added a condition that checks if table alias is existing then fall back to tableName if there in none
+
+AnalystSearch.aspx
+    - removed PLCSessionVars1
+
+-- 
+PLCButtonPanel.cs
+    - removed extra line space on top of // Search
+
+    SearchButton_Click
+        - put before and after inside if grid and panel is linked
+        - updated missed variable with PascalCase format to camelCase format
+
+    ClearButton_Click
+        - put before and after inside if grid and panel is linked
+    
+PLCControlHelper.cs
+    - removed IsLASD properrty
+
