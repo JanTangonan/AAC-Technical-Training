@@ -90,9 +90,29 @@ PLCButtonPanel.cs
         - put before and after inside if grid and panel is linked
         - updated missed variable with PascalCase format to camelCase format
 
+        - made use of GetPanelFieldValues
+
     ClearButton_Click
         - put before and after inside if grid and panel is linked
+
+        - changed session clear to only clear linked DBPanel instead of whole session
     
 PLCControlHelper.cs
     - removed IsLASD properrty
 
+PLCDBPanel.cs
+    GetPanelFieldValues()
+        - gets panel field values
+    SetPanelFieldValues()
+        - sets panel field values
+AnalystSearch.aspx
+    RestoreSearchCriteria()
+        - made use of SetPanelFieldValues() function from DBPanel
+
+--
+PLCDBPanel.cs
+    - changed param name to fieldValues
+
+PLCButtonPanel.cs
+    - trigger SEARCH BEFORE and CLEAR BEFORE events even if no linked DBPanel and DBGrid
+    - 
