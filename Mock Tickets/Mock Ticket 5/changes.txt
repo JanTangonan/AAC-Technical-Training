@@ -115,4 +115,10 @@ PLCDBPanel.cs
 
 PLCButtonPanel.cs
     - trigger SEARCH BEFORE and CLEAR BEFORE events even if no linked DBPanel and DBGrid
-    - 
+    - removed builtin session saving and session clearing
+
+AnalystSearch.cs
+    - added functions SaveSearchCriteria() and ClearSearchCriteria()
+    - added string key = 'ans_' as a unique page key to be added during saving of search criteria in session
+    - added SaveSearchCriteria after search event
+    - added ClearSearchCriteria after clear event
