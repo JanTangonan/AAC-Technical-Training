@@ -122,3 +122,24 @@ AnalystSearch.cs
     - added string key = 'ans_' as a unique page key to be added during saving of search criteria in session
     - added SaveSearchCriteria after search event
     - added ClearSearchCriteria after clear event
+
+--
+PLCDBPanel.cs
+    GetPanelFieldValues()
+        - removed mask variable 
+
+    SetPanelFieldValues()
+        - adjusted function to capture GetPanelFieldValues() return value
+
+AnalystSearch.cs
+    - changed pagekey to get page's full name
+    - added pagekey (pagekey + "_SavedSearchCriteria") to saveSearchCriteria variable to create a unique session id
+    
+    RestoreSearchCriteria()
+        - adjusted function to made use of the updated SetPanelFieldValues() function
+
+--
+AnalystSearch.cs
+    - renamed savedSearchCriteria to savedSearchCriteriaKey		
+    - removed extra line in line #24
+    - added SetGridEmptyMessage() function to initially set grid empty message upon page load. 
