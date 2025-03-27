@@ -1,0 +1,4 @@
+Please improve the existing Sort Analysis Popup in Assignment Report Page
+ - Convert the popup to a jquery dialog using PLCControls.js
+ - Please make analysis panel list drag and drop.
+ - Remove the Move up and Move down buttons.
