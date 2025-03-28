@@ -1,3 +1,4 @@
+//#region AssignmentReport.aspx
 $(function () {
     $("#mdialog-addanalysis").dialog({
         autoOpen: false,
@@ -240,8 +241,9 @@ $(function () {
         height: 200
     });
 });
+//#endregion
 
-
+//#region MatrixControlScript.js
 /* Sort Analysis Panels */
 function SortAnalysisPanels(verification) {
     var fnPost = function () {
@@ -252,3 +254,16 @@ function SortAnalysisPanels(verification) {
     SaveMatrixWithDelay(false, fnPost);
 }
 
+function OpenAddAnalysis() {
+    SaveMatrixWithDelay(false);
+    var position = { my: "center", at: "center", of: window };
+    $('#mdialog-addanalysis').dialog('option', 'position', position);
+    $('#mdialog-addanalysis').dialog("open");
+    $("input[id*='fbSection_input']").change();
+
+    if ($('#satc .atcgridrow').hasClass("atcselectedgridrow"))
+        $('#satc .atcgridrow').removeClass("atcselectedgridrow").addClass("atcgridrow");
+    $("#satc input[id*='chkAnalysis']:checked").prop("checked", false);
+}
+
+//#endregion
