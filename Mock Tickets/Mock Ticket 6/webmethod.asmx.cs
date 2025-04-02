@@ -36,3 +36,26 @@ ORDER BY TEMPNUM, AR.ANALYSIS_TYPE_SEQUENCE";
 
     return html;
 }
+
+//
+html = @"
+        <div id='mdialog-sortanalysis' class='sortanalysis-panels'>
+            <div id='mdialog-sortanalysis-content' style='height: 400px; overflow-y: auto;'>
+                <div class='sortanalysis-panels-item'>
+                    <div>
+                        <b>Analysis Panels</b>
+                        <ul id='sortanalysisPanelList' class='sortanalysis-panels-item'>";
+
+while (!qryAnalysisSequences.EOF())
+{
+    html += "<li data-id='" + qryAnalysisSequences.FieldByName("ANALYSIS_TYPE_CODE") + "'>" +
+            qryAnalysisSequences.FieldByName("DESCRIPTION") + "</li>";
+    qryAnalysisSequences.Next();
+}
+
+html += @"      </ul>
+                    </div>
+                </div>
+                Drag & drop to sort the Analysis panels.
+            </div>
+        </div>";

@@ -1,2 +1,16 @@
 AssignmentReports.aspx
     - 
+
+WSMatrix.asmx.cs
+    RenderSortAnalysis()
+        - updated dynamic generation of HTML
+
+MatrixControlScripts.js
+    GetPanels_OK(e)
+        - 
+
+    OpenSortAnalysis()
+        -
+
+    initSortableAndDialog
+    

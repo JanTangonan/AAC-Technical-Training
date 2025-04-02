@@ -1,1 +1,7 @@
 	Lab Case: 22-000068 \ Assignments: 2
+
+FLOW
+    - add the dialog markup
+    - initialize the jquery dialog
+    - open the dialog using the function in  matrix control script
+    

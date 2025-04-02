@@ -104,11 +104,6 @@ private void ShowDashboardPanels()
         dictPanelsSort = defaultDBPanelsSort;
 
     var helper = new PLCHelperFunctions();
-    string script = "showSortDashBoardPanels("
-        + helper.JSONStrFromStruct(dictPanelsSort) + ");";
-    ScriptManager.RegisterStartupScript(this,
-        this.GetType(),
-        "_showSortDashBoardPanels",
-        script,
-        true);
+    string script = "showSortDashBoardPanels(" + helper.JSONStrFromStruct(dictPanelsSort) + ");";
+    ScriptManager.RegisterStartupScript(this, this.GetType(), "_showSortDashBoardPanels", script, true);
 }
