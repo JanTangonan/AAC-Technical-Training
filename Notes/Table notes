@@ -11,3 +11,6 @@ select * from TV_DBPANEL    -- contains the fields included in the dbpanel
 
 -- for ANALYSTs
 select * from TV_ANALYST    -- contains the users along with their previlages and account statuses
+
+-- for section/exam codes
+select * from TV_EXAMCODE   -- contains sections and their descriptions, and some flags 
