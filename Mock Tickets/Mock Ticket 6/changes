@@ -1,5 +1,5 @@
 AssignmentReports.aspx
-    - 
+    - removed ModalPopupExtender
 
 WSMatrix.asmx.cs
     RenderSortAnalysis()
@@ -10,7 +10,18 @@ MatrixControlScripts.js
         - 
 
     OpenSortAnalysis()
-        -
+        - 
 
-    initSortableAndDialog
-    
+    InitAnalysisPanelSortDialog()
+        - 
+
+    SaveAnalysisPanelSortOrder()
+        - change
+
+--
+AssignmentReports.aspx
+    - changed name for pnlAPS to sortanalysis-panels
+    - removed extra lines
+
+WSMatrix.asmx.cs
+    - changed name for pnlAPS to $sortanalysisPanels

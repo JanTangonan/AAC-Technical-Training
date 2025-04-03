@@ -1,5 +1,5 @@
 function SaveAnalysisPanelSortOrder(verification) {
-    var $sortDialog = $(".sortanalysis-panels");
+    var $bhvAPS = $find("bhvAPS");
 
     if ($bhvAPS) {
         var itemsCount = $("#pnlAnalysisSort option").length;
