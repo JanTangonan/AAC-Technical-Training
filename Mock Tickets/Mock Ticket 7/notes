@@ -1,0 +1,31 @@
+Item format: “Lab item number + Custody Of + Location” 
+
+LAB_ITEM_NUMBER + CUSTODY_OF + LOCATION
+
+transferjs.aspx.cs
+    Page_Load()
+        - GetCaseItemsJSON()
+    
+    hdnItemsJSON
+
+transfer.js
+    - #divItems
+    - #btnSave
+
+    InitTransferjs()
+        - PopulateItemsTable()
+            - CreateTableRow()
+
+    TransferItems()
+        - GetTransferParameters()
+flow:
+    - click save button
+    - validate
+    - show popup 
+
+#divItems flow
+    - upon InitTransferjs() call
+        - get items from hdnItemsJSON
+        - create table rows for each item
+        - add to #divItems
+        - add event listeners for checkboxes

@@ -1,2 +1,7 @@
-TAB4Items.aspx
+Transferjs.aspx
     - 
+
+Transfer.js
+    ValidateRequiredFields()
+        - moved TransferItems()
+        - 
