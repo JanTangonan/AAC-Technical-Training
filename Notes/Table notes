@@ -14,3 +14,12 @@ select * from TV_ANALYST    -- contains the users along with their previlages an
 
 -- for section/exam codes
 select * from TV_EXAMCODE   -- contains sections and their descriptions, and some flags 
+
+--
+select * from TV_LABCTRL    -- contains the lab control codes and their descriptions, and some flags
+select * from TV_LABCTRL2
+select * from TV_LABCTRL3
+select * from TV_LABCTRL4
+select * from TV_LABCTRL5
+select * from TV_LABCTRL6
+select * from TV_LABCTRL7

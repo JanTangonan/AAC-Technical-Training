@@ -1,7 +1,12 @@
 Transferjs.aspx
-    - 
+    - added placeholder for dialog
 
 Transfer.js
     ValidateRequiredFields()
         - moved TransferItems()
         - 
+
+BCTransferjs.aspx
+
+
+BCTransfer.js
