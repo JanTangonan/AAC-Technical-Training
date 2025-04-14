@@ -36,3 +36,70 @@ function GetItemUserInputs() {
 
     return arr.join(",");
 }
+
+function contentPageLoad() {
+    gridviewFixPos();
+    dbpanelAttachPopupToParent("#divpassword", "div[id$='phAuthorization']");
+
+    var prm = Sys.WebForms.PageRequestManager.getInstance();
+    if (prm != null) {
+        prm.add_pageLoaded(windowFocus);
+        prm.add_pageLoaded(getItemGridScrollPos);
+    }
+
+    function pageLoaded() {
+        // Always attempt to re-initialize the dialog after UpdatePanel refresh
+        initTransferSummaryDialog();
+    }
+
+    function windowFocus() {
+        if (!_winPopup || _winPopup.closed)
+            window.focus();
+    }
+
+    function getItemGridScrollPos() {
+        $gridbody = $("[id$='gvItems'] > tbody");
+        $pnlscroll = $("[id$='hdnPanel1ScrollTopPos']");
+
+        $("[id$='gvItems']").addClass("fixed_headers");
+        $gridbody.scroll(function () {
+            OnContainerScroll(this, $pnlscroll.attr("id"));
+        });
+
+        if ($pnlscroll.val() != "")
+            $gridbody.scrollTop($pnlscroll.val());
+    }
+
+    function initTransferSummaryDialog() {
+        var $dialog = $("#mdialog-transfersummary");
+
+        // Check if already initialized to avoid double-binding
+        if ($dialog.hasClass("ui-dialog-content")) {
+            $dialog.dialog("destroy"); // Rebuild it if it already exists (helps with UpdatePanel replacement)
+        }
+
+        $dialog.dialog({
+            autoOpen: false,
+            modal: true,
+            resizable: false,
+            draggable: false,
+            title: 'Transfer Summary',
+            width: 450,
+            height: 500,
+            buttons: {
+                OK: function () {
+                    $(this).dialog("close");
+                    TransferItems();
+                },
+                Cancel: function () {
+                    EnableButtons();
+                    $(this).dialog("close");
+                }
+            }
+        });
+    }
+
+    // Initialize once on first full page load
+    //initTransferSummaryDialog();
+    getItemGridScrollPos();
+}
