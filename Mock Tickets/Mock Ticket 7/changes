@@ -16,12 +16,13 @@ Transfer.js
         - moved TransferItems()
         - 
 
+BCTransfer.aspx
+    - add dlgTransferSummaryList
+    - added placeholder for dialog
+    
+
+
 BCTransferjs.aspx
-
-
-BCTransfer.js
-
-
 PageManager.js
     _checkSignature
         _prepareTransfer

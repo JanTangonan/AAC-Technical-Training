@@ -23,3 +23,6 @@ select * from TV_LABCTRL4
 select * from TV_LABCTRL5
 select * from TV_LABCTRL6
 select * from TV_LABCTRL7
+
+--
+select * from TV_WEBCONFIG  -- contaons webconfig control codes
