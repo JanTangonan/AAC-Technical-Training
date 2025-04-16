@@ -124,3 +124,77 @@ private void GetCaseItemsJSON()
             }
 
         }
+
+
+PLCQuery qryDesc;
+List < string > lstContainerInBulk = new List < string > ();
+List < string > lstItemInContainer = new List < string > ();
+
+    DataTable dtRemove = PLCSession.PLCDataSet2.Tables["ItemContainerToRemove"];
+foreach(DataRow row in dtRemove.Rows)
+{
+        string key = row["ECN"].ToString();
+        bool isItem = Convert.ToBoolean(row["IsItemType"].ToString());
+
+    if (isItem) {
+        qryDesc = new PLCQuery("SELECT I.LAB_ITEM_NUMBER, L.DEPARTMENT_CASE_NUMBER, T.DESCRIPTION AS TYPEDESC FROM TV_LABITEM I " +
+            "LEFT OUTER JOIN TV_LABCASE L ON I.CASE_KEY = L.CASE_KEY " +
+            "LEFT OUTER JOIN TV_ITEMTYPE T ON I.ITEM_TYPE = T.ITEM_TYPE " +
+            "WHERE I.EVIDENCE_CONTROL_NUMBER = ?");
+        qryDesc.AddSQLParameter("EVIDENCE_CONTROL_NUMBER", key);
+        qryDesc.Open();
+
+        if (PLCSession.GetLabCtrlFlag("NO_PROMPT_ITEM_FROM_CONTAINER") != "T")
+            lstItemInContainer.Add(qryDesc.FieldByName("DEPARTMENT_CASE_NUMBER") + ", Item# " + qryDesc.FieldByName("LAB_ITEM_NUMBER") + " - " + qryDesc.FieldByName("TYPEDESC"));
+    }
+    else {
+        qryDesc = new PLCQuery("SELECT C.CONTAINER_DESCRIPTION, L.DEPARTMENT_CASE_NUMBER, P.DESCRIPTION AS TYPEDESC FROM TV_CONTAINER C " +
+            "LEFT OUTER JOIN TV_LABCASE L ON C.CASE_KEY = L.CASE_KEY " +
+            "LEFT OUTER JOIN TV_PACKTYPE P ON C.PACKAGING_CODE = P.PACKAGING_CODE " +
+            "WHERE C.CONTAINER_KEY = ?");
+        qryDesc.AddSQLParameter("CONTAINER_KEY", key);
+        qryDesc.Open();
+
+        lstContainerInBulk.Add(qryDesc.FieldByName("DEPARTMENT_CASE_NUMBER") + ", Container: " +
+            (string.IsNullOrEmpty(qryDesc.FieldByName("CONTAINER_DESCRIPTION")) ? "" : qryDesc.FieldByName("CONTAINER_DESCRIPTION") + " - ") + qryDesc.FieldByName("TYPEDESC"));
+    }
+}
+
+if (lstContainerInBulk.Count > 0 || lstItemInContainer.Count > 0) {
+        string message = string.Empty;
+    if (lstContainerInBulk.Count > 0)
+        message += "This container(s) is in a bulk. Are you sure you want to remove from the bulk container?<br/>" + string.Join("<br/>", lstContainerInBulk);
+
+    if (lstItemInContainer.Count > 0)
+        message += (string.IsNullOrEmpty(message) ? "" : "<br/><br/>") + "This item(s) is in a container. Are you sure you want to remove from the container?<br/>" + string.Join("<br/>", lstItemInContainer);
+
+    EnableTxtBarcode(false);
+    dlgMessage.ShowConfirm("Confirm", message);
+    return;
+}
+
+//
+List < string > lstItemInContainer = new List < string > ();
+
+PLCQuery qryDesc;
+DataTable dtRemove = PLCSession.PLCDataSet2.Tables["ItemContainerToRemove"];
+foreach(DataRow row in dtRemove.Rows)
+{
+    string key = row["ECN"].ToString();
+    bool isItem = Convert.ToBoolean(row["IsItemType"].ToString());
+
+    qryDesc = new PLCQuery("SELECT I.LAB_ITEM_NUMBER, L.DEPARTMENT_CASE_NUMBER, T.DESCRIPTION AS TYPEDESC FROM TV_LABITEM I " +
+        "LEFT OUTER JOIN TV_LABCASE L ON I.CASE_KEY = L.CASE_KEY " +
+        "LEFT OUTER JOIN TV_ITEMTYPE T ON I.ITEM_TYPE = T.ITEM_TYPE " +
+        "WHERE I.EVIDENCE_CONTROL_NUMBER = ?");
+    qryDesc.AddSQLParameter("EVIDENCE_CONTROL_NUMBER", key);
+    qryDesc.Open();
+
+    lstItemInContainer.Add(qryDesc.FieldByName("DEPARTMENT_CASE_NUMBER") + ", Item# " + qryDesc.FieldByName("LAB_ITEM_NUMBER") + " - " + qryDesc.FieldByName("TYPEDESC"));
+}
+    string message = string.Empty;
+
+if (lstItemInContainer.Count > 0)
+    message += (string.IsNullOrEmpty(message) ? "" : "<br/><br/>") + "The following items will now be transferred. Would you like to continue?<br/>" + string.Join("<br/>", lstItemInContainer);
+
+dlgTransferSummaryList.ShowConfirm("Transfer Summary", message);

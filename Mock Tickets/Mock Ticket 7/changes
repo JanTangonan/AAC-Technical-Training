@@ -1,12 +1,13 @@
 Transfer.aspx
-    - added placeholder for dialog
+    - added dlgTransferSummaryList
 
 TransferCore.cs
     TransferItem
         - added public string CustodyDesc { get; set; }
 
 Transfer.aspx.cs
-
+    ProcessTransfer()
+        - added condition to check if SHOW_TRANSFER_SUMMARY == "T"
 
 Transferjs.aspx
     - added placeholder for dialog
@@ -15,12 +16,13 @@ Transfer.js
     ValidateRequiredFields()
         - moved TransferItems()
         - 
-
+-- 
 BCTransfer.aspx
-    - add dlgTransferSummaryList
-    - added placeholder for dialog
-    
-
+    - added dlgTransferSummaryList
+BCTransfer.aspx.cs
+    - added dlgTransferSummaryList_ConfirmClick
+    - added dlgTransferSummaryList_CancelClick
+    - added condition to check if SHOW_TRANSFER_SUMMARY == "T"
 
 BCTransferjs.aspx
 PageManager.js
