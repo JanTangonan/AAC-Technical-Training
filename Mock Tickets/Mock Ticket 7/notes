@@ -60,3 +60,10 @@ ORCL-NJSP
 
 ProcessBCTransfer
 TransferItems
+
+getTransferSettings = () => this._callGet("TransferWebService.asmx/GetTransferSettings", {});
+
+e1L  003ck
+e1L  003QD
+e1L  003Pz
+e1L  003Q0

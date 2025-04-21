@@ -9,26 +9,51 @@ Transfer.aspx.cs
     ProcessTransfer()
         - added condition to check if SHOW_TRANSFER_SUMMARY == "T"
 
+--
 Transferjs.aspx
     - added placeholder for dialog
+    - added hdnShowTransferSummary
 
 Transfer.js
     ValidateRequiredFields()
         - moved TransferItems()
-        - 
+    InitTransferjs()
+        - added dialog initialization
+    OpenTransferSummaryDialog()
+        - opens summary dialog
+
+Transferjs.aspx.cs
+    - added hdnShowTransferSummary.Value = PLCSession.GetLabCtrl("SHOW_TRANSFER_SUMMARY");
+    - added condition to check if hdnShowTransferSummary == "T"
+
 -- 
 BCTransfer.aspx
     - added dlgTransferSummaryList
+
 BCTransfer.aspx.cs
     - added dlgTransferSummaryList_ConfirmClick
     - added dlgTransferSummaryList_CancelClick
     - added condition to check if SHOW_TRANSFER_SUMMARY == "T"
 
+--
 BCTransferjs.aspx
 PageManager.js
+    - added _showTransferSummary property
     _checkSignature
         _prepareTransfer
+            - added condition to check if showTransferSummary == "T"
+
+    _initializeTransferSettings()
+        - added showTransferSummary from payload
 
 PopupManager.js
+    
     displayCustomConfirmationMessage
         - added title = this.TITLE_CONFIRMATION parameter
+    
+
+    
+
+TransferWebService.asmx.cs
+    GetSettings()   
+        - added showTransferSummary in payload

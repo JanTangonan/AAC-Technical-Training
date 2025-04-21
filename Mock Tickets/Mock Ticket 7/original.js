@@ -103,3 +103,33 @@ function contentPageLoad() {
     //initTransferSummaryDialog();
     getItemGridScrollPos();
 }
+
+//
+this._apiManager.doTransfer(items, containers, lists, passwords, refusalReasons, printReceipt, transferPanelFields, weightFields, weightUnitFields, this._batchSequenceKey, this._scannedItemList, this._allowOpenAssignments).then(({ data }) => JSON.parse(data.d)).then(data => {
+    if (data.responseCode === "SUCCESS") {
+        if (this._usesGiantSuccessPopup) {
+            this._popupManager.displayGiantPopup();
+        }
+        else
+            this._popupManager.displayMessageWithCallback("Success", "Transfer Successful.", () => { location.reload(); });
+    } else if (data.responseCode === "SUCCESS-NO-CONFIRM") {
+        window.location = data.payload.location;
+    } else if (data.responseCode === "PRINT-REPORT") {
+        this._processPrint(data.payload.printType, data.payload.printDataKey);
+    } else if (data.responseCode === "PASSWORD-FAIL") {
+        this._passwordControl.highlighInvalidPasswords(data.payload);
+        this._popupManager.displayMessage("Transfer failed", "Invalid " + this._passwordControl.DisplayLabel.toLowerCase() + " found.");
+        this._transferButton.disabled = false;
+        this._allowOpenAssignments = false;
+    } else if (data.responseCode == "CONFIRM-OPEN-ASSIGNMENTS") {
+        this._popupManager.displayConfirmationMessage("OPEN-ASSIGNMENT", () => {
+            this._allowOpenAssignments = true;
+            this._prepareTransfer();
+        });
+        this._transferButton.disabled = false;
+    } else if (data.payload && data.payload.message) {
+        this._popupManager.displayMessage(data.responseCode, data.payload.message);
+    }
+
+    this._hideLoadingBar();
+});
