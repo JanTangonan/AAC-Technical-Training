@@ -44,7 +44,9 @@ e1L000aLEL02CM
 
 --
 scan custody loc to go to BCTransferjs.aspx
+VAN   MIKE
 VAN   WICK
+VB   DEPTLOC
 
 GetItemsForTransfer
 ProcessTransfer
@@ -67,3 +69,8 @@ e1L  003ck
 e1L  003QD
 e1L  003Pz
 e1L  003Q0
+
+e1C  09zGW
+e1C  09zGX
+e1C  09zGY
+e1C  09zGZ

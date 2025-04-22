@@ -52,8 +52,12 @@ PopupManager.js
         - added title = this.TITLE_CONFIRMATION parameter
     
 
-    
-
 TransferWebService.asmx.cs
     GetSettings()   
         - added showTransferSummary in payload
+
+MSQL
+    added SHOW_TRANSFER_SUMMARY flag in TV_LABCTRL5
+
+ORCL
+    added "Show Transfer Summary" flag in LABCTRL5
