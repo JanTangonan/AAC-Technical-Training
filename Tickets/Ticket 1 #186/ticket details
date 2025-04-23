@@ -1,0 +1,12 @@
+#186 UI Issue DBPanel required message overlaps with textbox when DBPanel memo counter is used
+
+Steps to Reproduce:
+    - Login using Mike/mike, DB: MSSQL-MNBCA, Select Lab Code: St. Paul Laboratory
+    - Select a case (e.g. PLSEARCH-CASE-04)
+    - Go to Items tab
+    - Click on Add button
+    - Select Type “a biological sample” , Described as which is a memo text field will now be a required field (*)
+    - Do not enter value on required fields then click Save button.
+    - Actual Result: There will be a validation message beside the required fields. However, the required field validation message for memo textbox field overlaps with the bottom line of the textbox. Issue occurs only for memo  text field configured with TV_DBPANEL.MEMO_CHAR_COUNT_COLOR (See attached for reference on how this feature works)
+
+Expected Result: The validation message should be displayed below the field just like with the other required fields.  
