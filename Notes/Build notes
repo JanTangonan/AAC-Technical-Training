@@ -1,0 +1,24 @@
+- Checkout Project
+- Recreate Issue
+- Create Ticket Details
+- Identify Issue
+- Create Estimated Timeline
+- Create Notes
+- Track Changes
+- Check Coding Standards
+- Test Changes
+- Create Patch File
+- Double Check Code Changes (Polish)
+- Publish Project
+- Route for Code Review
+- Check if ready for testing
+- Route for Testing
+- Checkin
+- Server Publish
+- Server Test
+
+
+Master Server Build
+    http://aacserver2019/master/
+Debug logs ~
+    \\aacserver2019\LabSave
