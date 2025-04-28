@@ -1,3 +1,27 @@
 TAB4Items.aspx
     - "Described as" control has overlapping required message
     - ITEMSTAB
+
+
+Test Data Used:
+    ~ PLSEARCH-CASE-04
+
+
+PLC_Query.cs 
+    ~ AllowSQLValidation()
+        - ALLOW_SQL_VALIDATION = 'T'
+
+Provider=SQLOLEDB;
+Data Source=AACSERVER2019/MSSQL2019;
+Initial Catalog=MNBCA;User ID=MNBCA;
+Password=mnbca;
+Application Name=LIMS-73846875-d940-4415-98a0-b4e85f3f298b;
+
+[DBNETLIB][ConnectionOpen (Connect()).]SQL Server does not exist or access denied.
+
+PLCDBPanel.cs
+    if (!string.IsNullOrEmpty(memoCounter) && IsValidColor(memoCounter))
+    tb.ID
+       ~ DBP_PLCDBPanel18
+
+    
