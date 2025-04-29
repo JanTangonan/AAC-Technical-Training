@@ -24,4 +24,5 @@ PLCDBPanel.cs
     tb.ID
        ~ DBP_PLCDBPanel18
 
+    CanSave()
     
