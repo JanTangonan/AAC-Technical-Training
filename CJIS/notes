@@ -1,0 +1,340 @@
+Threats to Security and Privacy
+    Threat actors
+        cybercriminals, 
+        hackers, 
+        thrill-seekers, 
+        insider threat
+
+        profit, 
+        ideology, 
+        satisfaction, 
+        discontent
+
+    Insider Threat
+    Social Engineering - trick an individual into revealing information or taking an action that can be used to attack systems or networks
+    Social Mining - gather information about the organization that may be used to support future attacks
+    
+    Social Engineering Attacks
+        Phishing
+            ~ uses authentic-looking emails
+            ~ Spear Phishing - specific user or group of users is targeted
+            ~ Quishing - QR code phishing
+
+        Social Media Exploitation  
+            ~ attacker uses information found on a user’s social media profiles to create a targeted phishing attack.
+
+        Pretexting and Impersonation 
+            ~ attacker creates a fictional backstory that is used to manipulate someone into providing private information or to influence behavior.
+            ~ Fake IT Support calls - common form of impersonation
+
+        Baiting 
+            ~ use of a false promise to lure the user into a trap
+            ~ Scareware - use of false alarms or fictitious threats
+            ~ Quid pro quo - exchange of some type of sensitive information in exchange for a service
+            
+        Tailgating
+            ~ also known as “piggybacking”, unauthorized person manipulates their way into a restricted area
+            ~ Thread-jacking - attacker replies to an existing email exchange, inserting themselves into a legitimate conversation.
+
+    Shoulder Surfing
+        ~ an unauthorized person stands near a user to get the user’s password or other data from the user's computer monitor.
+
+
+Security and Privacy Vulnerabilities
+    Physical - The placement of a computer in a non-secure location
+    Natural - A server connected to a power source without a surge protector or backup power supply
+    Hardware - A connection to the internet without a firewall
+    Software - Not updating the computer's operating system when updates are issued
+
+CJIS Systems Agency (CSA)
+    responsible for establishing and administering an information technology security program throughout their user community, including local levels
+
+CJIS Systems Officer (CSO)
+    individual located within the CSA responsible for the administration of the CJIS network within the organization.
+
+Information Security Officer (ISO)
+    security point-of-contact to the FBI CJIS Division.
+
+Criminal Justice Agency (CJA)
+    governmental agency that performs the administration of criminal justice pursuant to a statute or executive order
+
+Terminal Agency Coordinator (TAC) 
+    point-of-contact at the local agency for matters relating to CJIS information access.
+
+Noncriminal Justice Agency (NCJA)
+    government, private, or public agency that provides services primarily for purposes other than the administration of criminal justice.
+
+Organizational Personnel with Information Security Responsibilities
+    Local Agency Security Officer (LASO)
+        primary Information Security contact between a local law enforcement agency and the CSA
+
+    Authorized Recipient Security Officer (ARSO)
+        coordinates and oversees information security by ensuring that the approved fingerprint processing contractor adheres to the CJIS Security Policy
+
+Agency Responsibilities
+    Agencies that access CJI are required to adhere to all technical and procedural requirements of the FBI CJIS Security Policy.
+
+Individual User Responsibilities
+    Individuals are responsible for maintaining their own conduct, as it pertains to CJI.
+
+Top 5 Daily Security Rules
+1. Use a unique user ID and password
+2. Be accountable for your actions while accessing and using CJI
+3. Do not share or leave passwords in conspicuous locations (keyboard, monitor, mousepad, or desk)
+4. Use password protected screensavers and lock computer when stepping away from the desk. Simply turning off the monitor during break does not constitute a sufficient security
+5. Logout of the system at the end of your shift or when another operator wants to access the system. 
+
+Contractor/Vendor Responsibilities
+    ~ Private contractors who perform criminal justice functions must meet the same training and certification criteria required by governmental agencies performing a similar function.
+
+CJIS Security Addendum
+    ~ All private contractors who perform criminal justice functions must sign the CJIS Security Addendum, an addendum to the agreement between a criminal justice agency and a private contractor.
+
+What is CJI?
+    ~ In the United States, the individual right to privacy is protected by the US Constitution. The Privacy Act of 1974 further protects personal privacy from misuse by regulating the collection, maintenance, use, and dissemination of information by criminal justice agencies.
+
+Criminal Justice Information (CJI)
+    ~ term used to refer to all of the FBI Criminal Justice Information Services (CJIS) Division provided data necessary for law enforcement and civil agencies to perform their work.  
+    ~ Biometric
+    ~ Identity History
+    ~ Biographic
+    ~ Property
+    ~ Case History
+
+National Crime Information Center (NCIC)
+    supervised by the FBI Criminal Justice Information Services (CJIS) Division, however the management of the information processed, stored or transmitted to NCIC is a collaboration between the FBI and federal, state, local, and tribal criminal justice agencies.
+
+Nlets
+    a computer-based message switching system that connects every state, local, and federal law enforcement.
+
+Criminal History Record Information
+    ~ Criminal History Record Information (CHRI)
+        arrest-based data collected by both national and state criminal justice agencies. CHRI is sometimes informally referred to as “restricted data”.
+
+        Arrest descriptions and notations
+        Other formal criminal charges
+        Conviction status
+        Sentencing data
+        Incarceration or correctional supervision
+        Probation and parole information
+
+    ~ Interstate Identification Index (III)
+        “pointer” system that ties FBI criminal history files and state-level files maintained by each state into a national system.
+
+    ~ The restricted files, which should be protected as CHRI, are as follows:
+        Gang Files
+        Threat Screening Center Files
+        Supervised Release Files
+        National Sex Offender Registry Files
+        Historical Protection Order Files
+        Identity Theft Files
+        Protective Interest Files
+        Person With Information (PWI) data in Missing Persons Files
+        Violent Person File
+        National Instant Criminal Background Check System (NICS) Denied Transaction
+
+Personally Identifiable Information
+    information which can be used to distinguish or trace an individual’s identity, either alone or when combined with other personal or identifying information (e.g., date of birth, place of birth, gender, race, etc.). 
+
+    Name
+    Social security number
+    Biometric records (such as fingerprints, retina scans, facial geometry)
+    Driver’s License or Passport number
+    Personal address information (including physical or email addresses)
+
+    PII should be extracted from CJI for the purpose of official business only.
+
+
+Information Handling
+    Authorized Purposes
+        Criminal justice purposes
+            Detection                                        
+            Apprehension
+            Pre-trial release
+            Post-trial release
+            Prosecution
+            Adjudication
+            Detention
+            Correctional supervision
+            Rehabilitation of accused persons or criminal offenders
+
+        Noncriminal justice purposes
+            Employment suitability
+            Licensing determinations
+            Immigration and naturalization matters
+            National security clearances
+
+Authorized Usage
+
+CJI Dissemination
+    CJI should be disclosed only on a need-to-know, right-to-know basis. This means that CJI should never be shared with anyone who does not require the information for their official duties.
+
+    ~ Phone/Radio
+    ~ Email 
+    ~ Faxing
+    ~ Text/Chat
+
+Media Protection
+    Access to all digital and non-digital media should be restricted to authorized individuals.
+
+    Diskettes
+    Magnetic Tapes
+    CDs or DVDs
+    External or Removable hard drives
+    USB Flash Drives
+
+    Non-digital Media
+    Paper
+    Microfilm
+    Fax Ribbon
+
+    Media Storage
+        Digital and non-digital media should be securely stored and physically controlled within a physically secure location or controlled area.
+
+    Secure storage of media includes:
+        Locked drawer, desk, or cabinet
+        Controlled media library
+    
+    Physically controlling stored media includes:
+        Conducting inventories
+        Ensuring procedures are in place to allow users to check out and return media
+        Maintaining accountability for stored media
+
+    Physical Media Disposal
+        If hard copies no longer need to be retained, shredding and incineration are the two most popular methods for destruction.
+
+    Access, Use, & Dissemination Penalties
+        nauthorized requests, receipt, release, interception, dissemination, or discussion of CJI is a serious violation and may result in the following:
+        ~ Criminal prosecution
+        ~ Termination of employment
+
+    Personnel Sanctions
+        The agency will perform a formal disciplinary process for any personnel who fail to comply with the security policies and procedures.
+
+
+Access Control
+    regulation of access between active entities (i.e., users or processes acting on behalf of users) and passive entities (i.e., devices, files, records, domains) in organizational systems. 
+
+    Access Control Criteria
+        Authorized access to the system should be based on:
+            ~ Valid access authorizations (i.e., privileges)
+            ~ Intended system usage
+            ~ Attributes associated with the user's account (see AC-2(d)(3) in the Security Policy for a list of possible attributes)
+
+    Individual Access
+        Individuals should have access to elements of their personally identifiable information (PII) through either an automated (e.g., application interface) or manual process (e.g., request forms).
+
+    Publicly Accessible Content
+        Publicly Accessible Content
+
+    Access Enforcement
+        least privilege - granted only the most restrictive set of access privileges required
+        separation of duties - division of roles and responsibilities
+
+Physical Security
+    Physical Access Authorizations
+        ~ Develop and maintain a list of individuals with authorized access to any physically secure location
+        ~ Issue authorization credentials (e.g., ID badges, identification cards, etc.) for access to the physically secure location
+
+    Physical Access Control
+        ~ individual access authorizations should be verified before granting access.
+
+    Physical Controls
+        Physical Access Devices
+        Monitoring Physical Access
+        Access Control for Transmission Medium
+        Access Control for Display Medium
+        Delivery and Removal
+        Visitor Control
+
+    Controlled Areas
+        If an agency cannot meet all of the controls required for establishing a physically secure location but has an operational need to access or store CJI, the agency shall designate an area, room, or storage container as a controlled area for the purpose of day-to-day CJI access or storage.
+
+
+System Security
+    System Access Control
+        ~ System Use Notification
+        ~ Session Lock 
+        ~ Session Termination
+
+    Identification and Authentication
+        Identification
+            unique representation of an  individual user, machine, or other entity
+        
+        Authentication
+            mechanisms or processes to verify the identity of a user, process, or device, as a prerequisite to allowing access to a system’s resources.
+
+        Encryption
+            process of converting information or data into a code to prevent unauthorized access.
+        
+        Decryption 
+            process of converting the information back from its encrypted state into a readable format.
+
+        System and Information Integrity
+            helps ensure that the information being accessed has not been tampered with or damaged by an error in the information system.
+
+        Malicious Code Protection
+            Employ virus protection
+            malicious code protection should include automatic updates
+            implement local procedures to ensure malicious code protection is kept current
+
+        Spam and Spyware Protection
+            Spam protection at critical information system entry points (e.g., firewalls, electronic mail servers, remote-access servers)
+            Spyware protection at workstations, servers, and mobile computing devices on the network
+            Spam and spyware protection designed to detect and take appropriate action on unsolicited messages and spyware/adware
+        
+        Wireless Access
+            Wireless access to the system should be protected using appropriate encryption and authentication.
+            Wireless Device Malicious Code Protection
+                Agencies that allow wireless devices, such as smartphones and tablets, to access CJI should have an approval process for all software used on those devices.
+            Devices that have had any unauthorized changes made to them, such as being rooted or jailbroken, should not be used to process, store, or transmit CJI data at any time.
+
+            Remote Access
+                All remote accesses must be monitored and controlled by the agency through managed access control points
+
+            Use of External Systems
+                agencies may opt to prohibit the use of any external systems
+
+            Personally Owned Information Systems
+                Personally owned information systems should not be used to access, process, store, or transmit CJI
+
+            Publicly Accessible Computers
+                Publicly accessible computers should not be used to access, process, store or transmit CJI.
+
+Incident Response
+    Security Incidents
+        New user accounts are mysteriously created which bypass standard procedures
+        Sudden high activity on an account that has had little or no activity for months
+        Data modification or deletion
+        Changes in file lengths or modification dates
+        New files with novel or strange names appear
+        Attempts to write to system files
+        Unexplained poor system performance
+        The system unexpectedly crashes without clear reasons
+        Denial of service
+        Suspicious probes
+        Suspicious browsing
+
+    Security Incident Policy
+        Agencies must develop and document an incident response policy which must be reviewed and updated annually and following any security incidents involving unauthorized access to CJI or systems used to process, store, or transmit CJI.
+    
+    Incident Response Training
+        Normal User
+            Needs to know who to call or how to recognize an incident
+
+        System Administrator
+            Needs additional training on how to handle incidents
+
+        Incident Responder
+            May need more specific training on forensics, data collection techniques, reporting, system recovery, and system restoration
+
+        Incident Handling
+            Preparation
+            Detection & Analysis
+            Containment, Eradication, & Recovery
+            Post-Incident Activity
+
+    Reporting Security Events
+        Report any incidents or unusual activity to your agency contact, Local Agency Security Officer (LASO), or Information Security Officer (ISO) immediately.
+
+
