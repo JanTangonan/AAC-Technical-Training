@@ -25,4 +25,16 @@ PLCDBPanel.cs
        ~ DBP_PLCDBPanel18
 
     CanSave()
-    
+        //Validate a required field ~ line 2626
+            if ((pr.tb.Text.Trim() == "") && (pr.required == "T"))
+            {
+                pr.ErrMsg.Text = pr.GetRequiredMessage();
+                pr.ErrMsg.Visible = true;
+                RecordOK = false;
+            }
+
+TAB4Items.aspx
+    if ($memo.attr("memocounter")) 
+
+PLCDBPanel.js
+    appendMemoCounter()

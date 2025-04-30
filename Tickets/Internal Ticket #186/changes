@@ -1,6 +1,3 @@
-TAB4Items.aspx
-    
-    
-
-PLCDBPanel.cs
-    memoCounter = dr["MEMO_CHAR_COUNT_COLOR"].ToString().Trim();
+PLCDBPanel.js
+    appendMemoCounter()
+        $memofield.parent().append(divMemoCounter); > $memofield.after(divMemoCounter);
