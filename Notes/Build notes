@@ -13,9 +13,9 @@ PROCESS
     - Create Patch File
     - Double Check Code Changes (Polish)
     - Publish Project
-    - Route for Code Review
-    - Check if ready for testing
-    - Route for Testing
+    - Route for Code Review (email to Dev Lead)
+    - Check if ready for testing (email to PM)
+    - Route for Testing (email to QA)
     - Checkin
     - Server Publish
     - Server Test
@@ -59,6 +59,9 @@ Paths, Locations, and Links
     Connect Web ~
         C:\Connect_Web
 
+    Code Review Path
+        \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025
+
 ---------------------------------------------
 IIS Creation
 ---------------------------------------------
@@ -70,3 +73,18 @@ IIS Creation
     physical path: 
         > ... > D: > publish > dev_publish 
         > select BEASTiLIMS-MASTER-Arvin > click ok
+
+---------------------------------------------
+DEV PUB
+---------------------------------------------
+path
+    \\AACSERVER2019\publish\dev_publish\BEASTiLIMS-Master-Arvin
+url path 
+    http://aacserver2019/BEASTiLIMS-MASTER-Arvin/
+
+---------------------------------------------
+CODE REVIEW
+---------------------------------------------
+    ~ patch file
+    ~ ticket details
+    ~ email kuya ralph > forward assign ticket email
