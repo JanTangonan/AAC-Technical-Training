@@ -3,3 +3,7 @@ PLCDBPanel.js
         $memofield.parent().append(divMemoCounter); > $memofield.after(divMemoCounter);
 
 - Please switch the display style of memo counter so that the required message will still show to the right if there is available space
+
+Stylesheet.css
+    .dbpanel-memo-flex
+        display: inline-flex !important;

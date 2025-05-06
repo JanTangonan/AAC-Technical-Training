@@ -34,12 +34,16 @@ Tools
 ---------------------------------------------
 Paths, Locations, and Links
 ---------------------------------------------
-    ~Master Server Build 
+    ~Master Server Builds
         http://aacserver2019/master/
+        http://aacserver2019/NYSP/
+
     Debug logs ~
         \\aacserver2019\LabSave
+
     Dev Notes ~
         \\AACSERVER2019\StaffDirectory\AAC\Development\Coding Standards\Code Review Standards
+        
     Tortoise SVN latest version ~
         https://tortoisesvn.net/downloads.html
     
@@ -58,6 +62,13 @@ Paths, Locations, and Links
 
     Connect Web ~
         C:\Connect_Web
+        AACSERVER2019/ORCL
+        AACSERVER2019:1521:ORCL
+
+    ORCL SQL DEV
+        AACSERVER2019
+        1521
+        ORCL
 
     Code Review Path
         \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025
