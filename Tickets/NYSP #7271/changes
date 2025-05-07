@@ -1,3 +1,0 @@
-TAB6Assignments.aspx.cs
-    changed "Analyst cannot " + bnApprove.Text + " his own report"
-    to "Analyst cannot " + bnApprove.Text + " own report"

@@ -43,7 +43,7 @@ Paths, Locations, and Links
 
     Dev Notes ~
         \\AACSERVER2019\StaffDirectory\AAC\Development\Coding Standards\Code Review Standards
-        
+
     Tortoise SVN latest version ~
         https://tortoisesvn.net/downloads.html
     
@@ -99,3 +99,25 @@ CODE REVIEW
     ~ patch file
     ~ ticket details
     ~ email kuya ralph > forward assign ticket email
+
+---------------------------------------------
+PM REVIEW
+---------------------------------------------
+    ~ email 
+        - changes
+        - trac link
+        - development screenshots
+        - send to pm
+    ~ copy
+        - boss
+        - dev lead
+        - qa lead
+
+---------------------------------------------
+CHECKIN
+---------------------------------------------
+    ~ commit changes in vs
+    ~ add logs
+    ~ copy logs to trac
+    ~ build in remote server
+    ~ test in server publish (inform QA)
