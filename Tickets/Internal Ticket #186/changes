@@ -7,3 +7,4 @@ PLCDBPanel.js
 Stylesheet.css
     .dbpanel-memo-flex
         display: inline-flex !important;
+

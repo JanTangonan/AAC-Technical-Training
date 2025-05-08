@@ -121,3 +121,12 @@ CHECKIN
     ~ copy logs to trac
     ~ build in remote server
     ~ test in server publish (inform QA)
+
+---------------------------------------------
+MERGE TO MASTER
+---------------------------------------------
+    ~ right click folder
+    ~ svn > merge
+    ~ input URL of branch
+    ~ spcific range > select revision number
+    ~ merge
