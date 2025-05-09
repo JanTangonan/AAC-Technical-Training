@@ -1,0 +1,16 @@
+CREATE OR REPLACE FORCE VIEW ACHD.UV_QCSUBHEADING
+(
+    CASE_KEY,
+    SUBHEADING
+)
+AS
+    SELECT CASE_KEY,
+        MAX(RECEIVED_DATE) as SUBHEADING
+    FROM TV_LABSUB 
+    GROUP BY CASE_KEY;
+
+PLCWebMethod.asmx.cs
+    GetLastVisitText()
+
+QCAdvanced.js 
+    GetLastVisitText(retdata.casekey);
