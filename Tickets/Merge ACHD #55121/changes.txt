@@ -14,3 +14,7 @@ PLCWebMethod.asmx.cs
 
 QCAdvanced.js 
     GetLastVisitText(retdata.casekey);
+
+QuickCreate_Advanced.aspx
+    <div ID="lblLastVisit" style="display: none;">
+    </div>
