@@ -25,4 +25,4 @@ select * from TV_LABCTRL6
 select * from TV_LABCTRL7
 
 --
-select * from TV_WEBCONFIG  -- contaons webconfig control codes
+select * from TV_WEBCONFIG  -- contains webconfig control codes
