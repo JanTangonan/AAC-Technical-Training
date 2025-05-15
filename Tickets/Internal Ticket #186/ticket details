@@ -10,3 +10,6 @@ Steps to Reproduce:
     - Actual Result: There will be a validation message beside the required fields. However, the required field validation message for memo textbox field overlaps with the bottom line of the textbox. Issue occurs only for memo  text field configured with TV_DBPANEL.MEMO_CHAR_COUNT_COLOR (See attached for reference on how this feature works)
 
 Expected Result: The validation message should be displayed below the field just like with the other required fields.  
+
+DEV PUB:
+http://aacserver2019/BEASTiLIMS-MASTER-Arvin/
