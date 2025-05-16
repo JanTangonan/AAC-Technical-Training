@@ -1,0 +1,1 @@
+- Can we increase the character limit to 500 for these comment fields? Database varchar is 250 right now. Can you also cap the characters at 500 in the comments field? They reported entering a comment over 250 and the entire comment not being saved.

@@ -73,6 +73,19 @@ Paths, Locations, and Links
     Code Review Path
         \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025
 
+    DBSYNC PATH
+        staffdirectory/aac/programs
+
+    PLCURI
+        \\aacserver2019\StaffDirectory\PLC\OCX\PLCURI
+
+    MODULES
+        \\aacserver2019\StaffDirectory\PLC\OCX\PLCUPDATE\PLCLIMS\MASTER\Master Module\Modules
+
+    OcxUp
+        \\aacserver2019\StaffDirectory\PLC\OCX\PLCUPDATE
+ 
+    WebLabCtrl.aspx - 
 ---------------------------------------------
 IIS Creation
 ---------------------------------------------
