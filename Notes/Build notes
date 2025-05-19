@@ -34,7 +34,7 @@ Tools
 ---------------------------------------------
 Paths, Locations, and Links
 ---------------------------------------------
-    ~Master Server Builds
+    ~Server Builds
         http://aacserver2019/master/
         http://aacserver2019/NYSP/
 
@@ -133,6 +133,7 @@ CHECKIN
     ~ add logs
     ~ copy logs to trac
     ~ build in remote server
+    ~ change bucket to final test
     ~ test in server publish (inform QA)
 
 ---------------------------------------------
