@@ -50,3 +50,28 @@ public void GetLastVisitText()
             HttpContext.Current.Response.Flush();
             HttpContext.Current.ApplicationInstance.CompleteRequest();
         }
+
+
+DateTime tempDate = new DateTime();
+if (DateTime.TryParse(dateOfBirth, out tempDate))
+    dateOfBirth = tempDate.ToString(PLCSession.GetDateFormat());
+
+
+string dobStr = qryLiveScan.FieldByName("DOB");
+    if (!string.IsNullOrEmpty(dobStr))
+    {
+        DateTime dtDOB = DateTime.ParseExact(dobStr, "yyyy-MM-dd", null);
+        dictParams.Add("TV_LABNAME.DATE_OF_BIRTH", dtDOB.ToString(PLCSession.GetDateFormat()));
+    }
+
+
+try
+            {
+                PLCQuery qry = new PLCQuery();
+                qry.SQL = "SELECT * FROM UV_QCSUBHEADING WHERE CASE_KEY = ?";
+                qry.AddSQLParameter("CASE_KEY", caseKey);
+                if (qry.Open() && qry.HasData())
+                {
+                    dictLastVisitText["subheading"] = Convert.ToDateTime((qry.FieldByName("SUBHEADING"))).ToString(PLCSession.GetDateFormat());
+                }
+            }
