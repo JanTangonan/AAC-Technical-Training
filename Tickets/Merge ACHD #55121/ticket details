@@ -13,3 +13,16 @@ Lab Case: 25-000051 - ventra_dev
 Lab Case: S25-00309 - mnbca         '456668'
 Department Case: PLSEARCH-CASE-04 
 Lab Case: 2022-4567                 '1055544'
+
+
+{[subheading, 5/19/2025]}
+
+dep case #: LASTVISIT-001 '1056477'     - njspdev
+dep case #: LASTVISIT-001 '456770'      - mnbca
+
+
+getDBPanelOverwritePrompt
+    ~ Offense Address field(s) will be overwritten once the Prelog submission has been taken into LIMS. Do you want to continue?
+
+USES_SUBMISSION_SEARCH = 'T'
+
