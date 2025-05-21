@@ -2,3 +2,21 @@ TV_STATLIST
 TV_REVLIST
 
 Assignments tab > add > 
+
+The application allows the user to enter 2000 chars and stops at 2000 char
+The problem is the database has 250 chars only, lets increase to 2000,
+Please run the following script, test and confirm
+alter table TV_STATS ALTER COLUMN NOTE VARCHAR(2000)
+
+
+Labcase = S22-00524, Assignment #39, Section = FA, Checklist = REVIEW
+
+Department Case # = PLSEARCH-CASE-04, Labcase = D-25-00380, Assignment #3, Seciton = DNA,
+Checklist = DNAREV
+
+issues: 
+
+txtComment.MaxLength = 2000;
+    ~ input comments lenght = 4009
+    ~ doesnt save
+
