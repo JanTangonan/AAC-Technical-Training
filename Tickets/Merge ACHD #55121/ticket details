@@ -26,3 +26,11 @@ getDBPanelOverwritePrompt
 
 USES_SUBMISSION_SEARCH = 'T'
 
+#btnDraftOpen
+LoadDraft()
+    LoadQCDraftByKey
+        RestoreDraft
+            GetLastVisitText(casekey)
+
+StartLoadCaseDataFromLabCaseNumber(response.labcase, fnPost)
+    GetLastVisitText(casekey)
