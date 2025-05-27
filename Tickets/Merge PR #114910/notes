@@ -4,4 +4,11 @@ Master
     - 250 input limit, 250 save
 
 Merged
-    - autosave in 
+    - autosave in 10(can be configured)
+    - cancel popup > ok and cancel button
+        ok > save then redirect to assignments tabs page
+        cancel > redirect to assignments tabs page
+    - 2000 input limit, 2000 save
+
+MSQL-MNBCA: department case = MANAGELW, sequence 39, section = FA
+ORCL-NJSPDEV: department case # = PLSEARCH-CASE-04, sequence 3, section = DNA
