@@ -1,0 +1,13 @@
+Duplicated data in UI. 
+
+**Database Used:**MSSQL-ABQ 
+**Steps to Reproduce:**  
+    1. Go to NOTESOBSOLETE case. 
+    2. Go to Assignments tab > Assign 2. 
+    3. Click Ready for Rev. button. 
+    4. Select option in the flexbox of the Confirmation popup > Click OK button. 
+
+**Actual Result:** 
+ On click of OK button in Confirmation popup for Regeneration of Notes Packet, data from the flexbox will be visually duplicated in memo field. 
+
+ Note: In plcweb.ini, correct data is still displayed (no duplicate). 

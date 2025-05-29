@@ -30,6 +30,8 @@ Tools
     ADD DB THROUGH Connect_Web
     - C:\Connect_Web
     - F:\AAC\Programs\Connect_Web
+        ~ AACSERVER2019\MSSQL2019
+        ~ 
 
 ---------------------------------------------
 Paths, Locations, and Links
