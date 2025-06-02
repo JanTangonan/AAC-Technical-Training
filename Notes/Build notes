@@ -131,6 +131,7 @@ PM REVIEW
 ---------------------------------------------
 CHECKIN
 ---------------------------------------------
+VS
     ~ commit changes in vs
     ~ add logs
     ~ copy logs to trac
@@ -138,6 +139,15 @@ CHECKIN
     ~ change bucket to final test
     ~ test in server publish (inform QA)
 
+SCRIPT
+    ~ check out _build_scripts folder
+    ~ go to /2025/<branch>/<date>
+    ~ create folder, name using ticket # and title
+    ~ add scripts
+    ~ right click folder > svn add
+    ~ svn commit > add logs using folder name
+    ~ add to trac details
+    
 ---------------------------------------------
 MERGE TO MASTER
 ---------------------------------------------
