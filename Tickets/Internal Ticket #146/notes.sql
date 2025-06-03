@@ -1,0 +1,12 @@
+select * from TV_LABCASE
+where DEPARTMENT_CASE_NUMBER = 'PLSEARCH-CASE-04'
+--1056417
+
+select * from TV_LABEXAM
+where CASE_KEY = '1056417'
+
+update TV_LABEXAM
+set PRODUCE_NOTES_PACKET = 'D'
+where CASE_KEY = '1056417'
+and SEQUENCE = '4'
+
