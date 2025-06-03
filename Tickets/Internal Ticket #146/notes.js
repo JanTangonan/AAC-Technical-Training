@@ -71,3 +71,27 @@ function openRegenReasonPopup() {
 //     WebOCX.CreateNotesPacket(PLCSession.PLCGlobalAssignmentKey, reasonForRegen);
 // }
 
+
+
+//
+function updateRegenReasonMemo() {
+    var $fbRegenReason = $("[id$='fbRegenReason']").find("input:visible");
+    var $txtRegenReason = $("[id$='txtRegenReason']");
+   
+    var selectedReason = $fbRegenReason.val();
+    console.log(selectedReason);
+    if ($fbRegenReason.length > 0 && selectedReason.length > 0) {
+        var reasonMemoVal = $txtRegenReason.val();
+        var lowerMemo = reasonMemoVal.toLowerCase();
+        var lowerSelected = selectedReason.toLowerCase();
+
+        if (!lowerMemo.includes(lowerSelected)) {
+            if (reasonMemoVal.length > 0) {
+                reasonMemoVal += "\n";
+            }
+            reasonMemoVal += selectedReason;
+            console.log(reasonMemoVal);
+            $txtRegenReason.val(reasonMemoVal);
+        }
+    }
+}
