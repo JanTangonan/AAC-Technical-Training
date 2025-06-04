@@ -71,8 +71,6 @@ function openRegenReasonPopup() {
 //     WebOCX.CreateNotesPacket(PLCSession.PLCGlobalAssignmentKey, reasonForRegen);
 // }
 
-
-
 //
 function updateRegenReasonMemo() {
     var $fbRegenReason = $("[id$='fbRegenReason']").find("input:visible");
