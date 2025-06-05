@@ -1,0 +1,12 @@
+Customer wanted to search by Date Ranges for the TV_LABEXAM DATE_ASSIGNED and ANALYST_DATE. I added these two fields and made the prompts have from and To in them so that the application knows to do a date range search like the other search screens.
+
+When we test this, the application throws errors about the "same key already exists". If I remove the extra fields for the Date TO's then the search work but only for a single date. Please fix this screen so that date ranges work like they do on other search screens.
+
+I have attached the grid and panel scripts we used with the customer.
+
+
+To access Assignsearch, go to Dashboard>Search>Assignment then try attached DBPanel and DBGrid from customer if you will encounter the issue.
+
+
+"same key has already been added" - issue
+- due to duplicate prompt name in dbpanel
