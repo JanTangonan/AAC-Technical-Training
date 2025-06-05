@@ -26,9 +26,14 @@ Merge PR #115678:
 Merge PR #114910:
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-5/Login.aspx
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\053025\(Merge to Master) 114910 - Technical Review Comments Field DNA SP186
-    Status: QA Testing
+    Status: Checked in
 
 Internal Ticket #146: 
-    Dev Pub: 
-    Code Review: 
-    Status: 
+    Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-6/Login.aspx
+    Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\060625\146 Duplicated data in UI
+    Status: Code Review
+
+OCME #116253:
+    Dev Pub: No Change
+    Code Review: No Change
+    Status: Emailed to Adam
