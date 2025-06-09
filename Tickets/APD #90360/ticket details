@@ -1,0 +1,11 @@
+Ericka,
+
+It appears maybe these changes were only done on the Officer Retention review dialog and not also on the Status Change screen of the Items Tab. I have set the LABCTRL5 flag to Hide the DNA Clearance Form and the Second Reviewer but they still show on this popup. I have cleared Cache and logged off since making the change and it still shows both. I will need this fixed for Onondaga and Master unless you find I did not do something correctly.
+
+I did find there were 2 flags for the Second Reviewer and settings them both hide the field on the Items Tab so just the DNA Clearance is the concern.
+
+------------------------------------------------------------------------------------------
+
+Please work on the additional request below for APD Branch.
+
+Currently when LABCTRL5.HIDE_DNA_CLEARANCE = T, the DNA Clearance form column is still being displayed in Items Tab>Status change pop up, please hide.

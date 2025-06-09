@@ -31,9 +31,11 @@ Merge PR #114910:
 Internal Ticket #146: 
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-6/Login.aspx
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\060625\146 Duplicated data in UI
-    Status: Code Review
+    Status: QA Testing
 
 OCME #116253:
     Dev Pub: No Change
     Code Review: No Change
-    Status: Emailed to Adam
+    Status: Emailed to Adam - Completed
+
+APD #90

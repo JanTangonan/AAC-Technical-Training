@@ -66,6 +66,7 @@ Paths, Locations, and Links
         C:\Connect_Web
         AACSERVER2019/ORCL
         AACSERVER2019:1521:ORCL
+        AACSERVER2019\MSSQL2019
 
     ORCL SQL DEV
         AACSERVER2019
