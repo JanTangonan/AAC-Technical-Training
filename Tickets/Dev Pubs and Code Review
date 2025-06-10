@@ -6,27 +6,27 @@ Internal Ticket #186:
 NYSP #7271:             
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-NYSP-Arvin/Login.aspx
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\050925\7271 - Ticket 102053 - Skip Review, combine all into Approve process change
-    Status: Checked in
+    Status: Checked in - Completed
 
 Merge NYSP #7271:       
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-2/Login.aspx
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\050925\(Merge to Master) 7271 - Ticket 102053 - Skip Review, combine all into Approve process change
-    Status: Checked in
+    Status: Checked in - Completed
 
 Merge ACHD #55121:
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-3/Login.aspx
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\051625\(Merge to Master) 55121 - Add Date of Last Visit to the header in QC
-    Status: Checked in
+    Status: Checked in - Completed
 
 Merge PR #115678:
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-4/Login.aspx
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\052325\(Merge to Master) 115678 - Expand review comments field to 500 char
-    Status: Checked in
+    Status: Checked in - Completed
 
 Merge PR #114910:
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-5/Login.aspx
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\053025\(Merge to Master) 114910 - Technical Review Comments Field DNA SP186
-    Status: Checked in
+    Status: Checked in - Completed
 
 Internal Ticket #146: 
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-6/Login.aspx
@@ -38,4 +38,7 @@ OCME #116253:
     Code Review: No Change
     Status: Emailed to Adam - Completed
 
-APD #90
+OCHD #90360:
+    Dev Pub: http://aacserver2019/BEASTiLIMS-OCHD-Arvin/Login.aspx
+    Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\061325\OCHD 90360 - Process Barcode doesn't work in .Net
+    Status: QA Lead
