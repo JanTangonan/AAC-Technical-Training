@@ -1,0 +1,3 @@
+Please convert the search filter fields to DBPanel and add Date from/to and Item# filters in Story.aspx page (CaseInfo Tab>Case Correspondence button). 
+If DBPanel is not configured display the existing hardcoded search filters.
+
