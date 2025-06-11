@@ -23,7 +23,10 @@ Open
 
 qryRevRequest.SetFieldValue("DNA_CLEARANCE_ACKNOWLEDGED", cbClearance.Checked ? "T" : "F");
 
+
+
 Agency Case: MTRX-FOCUS
 Lab Case Number =  DFS19-000230, Item Number = 1, Item type = Biological Stain/Swab
 
-
+ View DNA Clearance Form
+DUPE_COLLECTED_BY_AND_DATE
