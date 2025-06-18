@@ -4,3 +4,10 @@ TV_EXAMCODE.PRINT_CRYSTAL_REPORT_ONLY
 ~ TechReview2 page
 TV_REVLIST.SHOW_COMMENTS
 TV_LABCTRL2.CHECK_LIST_USES_COMMENTS
+
+~ prelog with attachment > qc import
+USES_IMAGE_VAULT_SERVICE
+
+~ use story.aspx in tab1case schedule
+USES_STORY
+
