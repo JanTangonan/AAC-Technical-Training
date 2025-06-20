@@ -1,0 +1,3 @@
+SEARCH
+    ~ always use PLCGlobals.PLCCommon.instance.GetWhereClauseByType
+    ~ 
