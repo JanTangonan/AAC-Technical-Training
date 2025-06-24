@@ -43,10 +43,10 @@ OCHD #90360:
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\061325\OCHD 90360 - Process Barcode doesn't work in .Net
     Status: Checked in - Completed
 
-ABQ #113485:
+ABQ #113485: 
     Dev Pub: http://aacserver2019/BEASTiLIMS-ABQ-Arvin/Login.aspx
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\062025\ABQ Ticket #113485 - Item Info Additions for Case Correspondence
-    Status: Code review
+    Status: Testing
 
 OCHD #116395: 
     Dev Pub: http://aacserver2019/BEASTiLIMS-OCHD-Arvin-2/Login.aspx
