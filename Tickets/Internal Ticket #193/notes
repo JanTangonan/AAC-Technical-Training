@@ -1,0 +1,9 @@
+Buttons visibility:
+Admin Remove    – TV_LABCTLR5.USES_ADMIN_REMOVAL set to T
+Expunge         – TV_LABCTRL7. USES_CASE_EXPUNGE set to T
+
+
+Login: Mike/mike, MSSQL-MNBCA, Lab Code: COD Laboratory
+Expected: On hit of enter it should trigger OK button.
+
+TAB1Case.aspx
