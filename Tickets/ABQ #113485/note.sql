@@ -42,3 +42,5 @@ FROM
 --
 -- TV_SCHDETL       S
 -- 
+
+--CASE KEY = 676624 
