@@ -20,3 +20,21 @@ function showExpungePopup(title) {
     return false;
 }
 
+
+$(document).on("keydown", function (e) {
+    if (e.key === "Enter") {
+        // If expunge popup is visible, override default Enter behavior
+        if ($("#expungeDialog").is(":visible")) {
+            e.preventDefault(); // prevent any global default
+            $("#btnOKExpunge:visible, #btnOKAdminRemoval:visible").click();
+        }
+    }
+});
+
+
+
+if ($btnExpunge.length) {
+    __doPostBack('<%= btnOKExpunge.UniqueID %>', '');
+} else if ($btnAdmin.length) {
+    __doPostBack('<%= btnOKAdminRemoval.UniqueID %>', '');
+}
