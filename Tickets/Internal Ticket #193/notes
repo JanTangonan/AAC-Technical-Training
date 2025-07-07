@@ -6,4 +6,7 @@ Expunge         – TV_LABCTRL7. USES_CASE_EXPUNGE set to T
 Login: Mike/mike, MSSQL-MNBCA, Lab Code: COD Laboratory
 Expected: On hit of enter it should trigger OK button.
 
+MSQL-MNBCA, Lab Code: St. Paul Laboratory, Lab Case: S24-00595
+ORCL-NJSPDEV, Lav Code: Central Regional Laboratory, Department Case: AAC25-0306-001
+
 TAB1Case.aspx
