@@ -1,2 +1,30 @@
 MSQL-VENTURA_DEV, Lab Code = Property and Evidence, Reagent Type = ABAcard p30
 ORCL-NJSPDEV, Lab Code = Central Regional Laboratory, Section = Drug Standard, Drug Type = DS 001
+
+Local Build
+    edge: Version 138.0.3351.77 (Official build) (64-bit)
+        normal: working
+        no throttling: working
+        3g: working
+    
+    chrome: Version 138.0.7204.97 (Official Build) (64-bit)
+        normal: working
+        no throttling: not working
+        3g: working
+
+Local (dev pub)
+    edge: Version 138.0.3351.77 (Official build) (64-bit)
+
+Remote (dev pub)
+    edge: Version 138.0.3351.77 (Official build) (64-bit)
+        normal: not working
+        no throttling: not working
+        3g: not working
+
+    chrome: Version 138.0.7204.97 (Official Build) (64-bit)
+        normal: not working
+        no throttling: 
+        3g: working
+
+
+issues: 
