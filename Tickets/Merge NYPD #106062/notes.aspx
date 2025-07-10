@@ -1705,3 +1705,8 @@
     <script src="../PLCWebCommon/JavaScripts/ClearedEvent.js?rev=<%= PLCSession.CurrentRev %>" type="text/JavaScript" language="JavaScript"></script>
 </body>
 </html>
+
+
+<PLC:MessageBox ID="mbDeleteCustody" runat="server" MessageType="Confirmation" PanelCSSClass="modalPopup"
+        Width="400" CaptionCSSClass="caption" PanelBackgroundCSSClass="modalBackground" Message="Are you sure you want to delete this custody?"
+        Caption="Confirm" OnOkClick="DeleteCustody_Click"/>
