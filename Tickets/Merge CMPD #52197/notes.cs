@@ -132,3 +132,28 @@ protected void PLCDBPanel1_TextChanged(object sender, PLCDBPanelTextChangedEvent
         }
     }
 }
+
+protected void PLCDBPanel1_TextChanged(object sender, PLCDBPanelTextChangedEventArgs e)
+{
+    if (e.FieldName == "DATE_OF_BIRTH" && PLCSession.GetLabCtrl("USES_QC_NAME_AGE") == "T")
+    {
+        PLCDBPanel1.setpanelfield("JUVENILE", "F");
+        if (!string.IsNullOrEmpty(PLCDBPanel1.getpanelfield("DATE_OF_BIRTH")))
+        {
+            PLCQuery qryCase = new PLCQuery("SELECT OFFENSE_DATE FROM TV_LABCASE WHERE CASE_KEY = " + PLCSession.PLCGlobalCaseKey);
+            if (qryCase.Open() && qryCase.HasData() && !string.IsNullOrEmpty(qryCase.FieldByName("OFFENSE_DATE")))
+            {
+                DateTime dateOfBirth = DateTime.MinValue;
+                if (DateTime.TryParse(PLCDBPanel1.getpanelfield("DATE_OF_BIRTH"), out dateOfBirth))
+                {
+                    DateTime offenseDate = DateTime.Parse(qryCase.FieldByName("OFFENSE_DATE"));
+                    int nameAge = computeAge(offenseDate, dateOfBirth);
+                    int oldestJuvenile = PLCSession.GetLabCtrl("OLDEST_JUVENILE") == "" || PLCSession.GetLabCtrl("OLDEST_JUVENILE") == "0" ? 18 : Convert.ToInt32(PLCSession.GetLabCtrl("OLDEST_JUVENILE"));
+                    PLCDBPanel1.setpanelfield("JUVENILE", nameAge <= oldestJuvenile ? "T" : "F");
+                }
+                else
+                    PLCDBPanel1.setpanelfield("JUVENILE", "F");
+            }
+        }
+    }
+}

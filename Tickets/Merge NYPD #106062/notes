@@ -27,4 +27,16 @@ Remote (dev pub)
         3g: working
 
 
-issues: 
+Can Delete Custody (LAMCUSTD)
+SetPLCButton("DELETE", PLCSessionVars1.CheckUserOption(LAMCUSTD), true);
+J001Rg
+
+else if (IsCurrentTabPanelType("RECEIPTS"))
+
+pages:
+    TAB5HistCustody.aspx
+    TAB6Component.aspx
+    TAB10Isuues.aspx
+    TAB11Receipts.aspx
+
+DBPanel.ID = "dbpRECEIPTS" && DBPanel.Visible = "False"
