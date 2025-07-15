@@ -28,7 +28,11 @@ Remote (dev pub)
 
 
 Can Delete Custody (LAMCUSTD)
+Can Add Issue (LAMINQ)
+
 SetPLCButton("DELETE", PLCSessionVars1.CheckUserOption(LAMCUSTD), true);
+canEditIssues = canPrintIssues && !PLCSession.CheckUserOption(LAMINQ);
+
 J001Rg
 
 else if (IsCurrentTabPanelType("RECEIPTS"))
@@ -40,3 +44,36 @@ pages:
     TAB11Receipts.aspx
 
 DBPanel.ID = "dbpRECEIPTS" && DBPanel.Visible = "False"
+
+
+23	D	TAB1ChemInfo.aspx	Drug Standard Info	
+24	D	TAB2ManuVendor.aspx	Manufacturer/Vendor	
+25	D	TAB3SafetyInfo.aspx	Safety Info	
+26	D	TAB4LabStat.aspx	LabStat	
+27	D	TAB5HistCustody.aspx	History Of Custody	
+28	D	TAB10Issues.aspx	Issue	
+29	D	TAB11Receipts.aspx	Receive	
+31	D	TAB6Component.aspx	Component	
+32	D	TAB7ServHistory.aspx	Service History	
+
+33	C	TAB10Issues.aspx	Issue	
+33	CHEM_C_ISSUES	F	1
+
+34	C	TAB11Receipts.aspx	Receive	
+34	CHEM_C_RECEIPTS	F	1
+
+35	C	TAB6Component.aspx	Component	
+35	CHEM_C_COMPONENT	F	2
+
+36	C	TAB7ServHistory.aspx	Service History	
+36	CHEM_C_SERVICEHISTORY	F	1
+
+33	C	TAB10Issues.aspx	Issue	
+34	C	TAB11Receipts.aspx	Receive	
+35	C	TAB6Component.aspx	Component	
+36	C	TAB7ServHistory.aspx	Service History	
+
+33	CHEM_C_ISSUES	F	1
+34	CHEM_C_RECEIPTS	F	1
+35	CHEM_C_COMPONENT	F	2
+36	CHEM_C_SERVICEHISTORY	F	1
