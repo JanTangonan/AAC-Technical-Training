@@ -1,7 +1,14 @@
 select * from TV_CHEMSETUP
-where CHEM_CATEGORY = 'D'
+where CHEM_CATEGORY = 'C'
 
-select * from TV_CHEMPANEL
+select * from TV_DBGRIDDL
+where GRID_NAME = 'CHEMINV_COMPONENTS'
+
+select CREATE_INITIAL_RECEIPT from TV_CHEMINV
+
+select * from TV_CHEM
+
+select * from CHEMPANEL
 
 select * from TV_CHEMCAT
 
@@ -16,5 +23,5 @@ CHEM_I_SERVICEHISTORY
 32	D	TAB7ServHistory.aspx	Service History	
 
 
-31	CHEM_R_COMPONENT	F	2
-32	CHEM_I_SERVICEHISTORY	F	1
+31	CHEM_D_COMPONENT	F	2
+32	CHEM_D_SERVICEHISTORY	F	1

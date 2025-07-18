@@ -66,5 +66,14 @@ Internal Ticket #193:
 Merge NYPD #106062:       
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-8/Login.aspx
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\070425\(Merge to Master) NYPD 106062- Deletion of Dispense Records for NYPD
-    Status: in progress
+    Status: Testing
 
+Merge CMPD #52197:       
+    Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-9/Login.aspx
+    Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\071825\(Merge to Master) CMPD 52197 – Invalid Date Field Entry
+    Status: Testing
+
+Merge CMPD #105084:       
+    Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-10/Login.aspx
+    Code Review: 
+    Status: on going

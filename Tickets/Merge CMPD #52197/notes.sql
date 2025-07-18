@@ -1,0 +1,4 @@
+select * from TV_LABCASE
+where OFFENSE_DATE is not null
+
+SELECT OFFENSE_DATE FROM TV_LABCASE WHERE CASE_KEY = ''
