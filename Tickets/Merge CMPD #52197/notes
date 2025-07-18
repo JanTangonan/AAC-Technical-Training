@@ -4,3 +4,12 @@ LAB CASE: S14-02235
 
 "453222"
 
+PLCSession.PLCGlobalCaseKey = "387661"
+
+USES_QC_NAME_AGE set to "T"
+
+
+recreate issue:
+    ~ DATE_OF_BIRTH field should have POSTBACK = 'T'
+    ~ field AGE should be Visible
+    ~ lab case should have OFFENSE_DATE in TV_LABCASE
