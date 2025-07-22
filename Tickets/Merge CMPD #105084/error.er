@@ -1,0 +1,7 @@
+INSERT INTO TV_RPTLOG(RPTLOG_KEY,RPTLOG_USER,RPTLOG_NAME,RPTLOG_PATH,RPTLOG_SERVER,RPTLOG_START,RPTLOG_END,RPTLOG_HASDOCUMENT,RPTLOG_ERROR) Values ('1927','MIKE','custinq.rpt','C:\Projects\BEASTiLIMS_Master-Merge-CMPD-105084\BEASTiLIMS\Reports\ORACLE\custinq.rpt','DELL-JAN',to_date('21-Jul-2025 13:27:07','DD-MON-YYYY HH24:MI:SS'),to_date('21-Jul-2025 13:27:07','DD-MON-YYYY HH24:MI:SS'),'F','Exception in FIXUP: Logon failed.
+Logon failed.
+Details:  [Database Vendor Code: 67 ]
+Logon failed.
+Details:  [Database Vendor Code: 67 ]
+Error in File custinq 14232_20568_{EBF23539-BE35-493E-AC16-D52989F71138}.rpt:
+Unable to connect: incorrect log on parameters.')

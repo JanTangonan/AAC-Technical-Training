@@ -2,3 +2,4 @@ GETCRYSTALPDFWITHFORMAT
 
 bnPrint_Click
 PLCSession.PLCCrystalReportName = PLCSession.FindCrystalReport("custinq.rpt");
+
