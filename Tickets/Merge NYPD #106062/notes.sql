@@ -25,3 +25,21 @@ CHEM_I_SERVICEHISTORY
 
 31	CHEM_D_COMPONENT	F	2
 32	CHEM_D_SERVICEHISTORY	F	1
+
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+select * from TV_CHEMCAT
+
+select * from TV_CHEMSETUP
+where CHEM_CATEGORY = 'O'
+
+select * from TV_CHEMPANEL
+--26	CHEM_C_RECEIPTS	F	1
+
+select * from TV_DBPANEL
+where PANEL_NAME = 'CHEM_C_RECEIPTS'
+
+select * from TV_DBGRIDDL
+where GRID_NAME = 'CHEMINV_RECEIPTS'
+
+select * from TV_DBGRIDHD
+where GRID_NAME = 'CHEMINV_RECEIPTS'

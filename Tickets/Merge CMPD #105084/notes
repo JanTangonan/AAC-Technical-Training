@@ -3,3 +3,188 @@ GETCRYSTALPDFWITHFORMAT
 bnPrint_Click
 PLCSession.PLCCrystalReportName = PLCSession.FindCrystalReport("custinq.rpt");
 
+ExporttoDisk 1 TempFile:C:\LabSave\Temp\40bc9d71-5f51-49c3-90f5-486f07547f8f.
+ExporttoDisk 1 TempFile:C:\LabSave\Temp\adfb4a9d-30b2-4d61-b16b-2c646054ab83.
+Exception in crReportDocument.ExportToStream:The system cannot find the path specified.
+GetCrystalReportResponse OutC:\Projects\BEASTiLIMS_Master-Merge-CMPD-105084\BEASTiLIMS\Reports\MSSQL\assign.rpt Length:0
+
+
+ExporttoDisk 7 TempFile:C:\LabSave\Temp\c9080099-d814-48aa-8992-eaba7ade7413.
+
+--success log
+07/23/2025 13:35:24 (193)  : CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+File Version: 13.0.14.1720
+Product Version: 13.0.14.1720
+07/23/2025 13:35:24 (193)  : 1. GetCrystalReportResponse, ReportName in:D:\publish\dev_publish\Arvin\BEASTiLIMS-Master-Arvin-10\Reports\MSSQL\CLCASES.rpt
+07/23/2025 13:35:24 (193)  : 2. GetCrystalReportResponse, SelFormula:{TV_CASELIST.BATCH_NO} = 2349953
+07/23/2025 13:35:24 (193)  : 3. GetCrystalReportResponse, FormStr:GLOBALANALYST="MIKE"
+07/23/2025 13:35:24 (193)  : 4. GetCrystalReportResponse, CINFO:MSSQL-MNBCA
+07/23/2025 13:35:24 (193)  : 5. GetCrystalReportResponse, reportcomments:Agency = 400-US Naval Criminal Investigative Service, Case Year = 2025
+07/23/2025 13:35:24 (193)  : 6. GetCrystalReportResponse, globalAnalyst:MIKE
+07/23/2025 13:35:24 (193)  : Before GetCreds
+07/23/2025 13:35:24 (193)  : inside GetCreds 1
+07/23/2025 13:35:24 (193)  : SetupConnectionFromCINFO In:MSSQL-MNBCA:
+07/23/2025 13:35:24 (193)  : SetupConnectionFromCINFO 1:MSSQL-MNBCA:
+07/23/2025 13:35:24 (193)  : SetupConnectionFromCINFO 2:
+07/23/2025 13:35:24 (193)  : SetupConnectionFromCINFO 3:
+07/23/2025 13:35:24 (193)  : SetupConnectionFromCINFO 4:
+07/23/2025 13:35:24 (193)  : SetupConnectionFromCINFO 5:
+07/23/2025 13:35:24 (193)  : SetupConnectionFromCINFO 6:
+07/23/2025 13:35:24 (193)  : SetupConnectionFromCINFO 7:
+07/23/2025 13:35:24 (193)  : SetupConnectionFromCINFO 8:
+07/23/2025 13:35:24 (193)  : SetupConnectionFromCINFO 9:
+07/23/2025 13:35:24 (193)  : SetupConnectionFromCINFO 10:
+07/23/2025 13:35:24 (193)  : SetupConnectionFromCINFO 11:
+07/23/2025 13:35:24 (193)  : ----------------------
+07/23/2025 13:35:24 (193)  : Server Name:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (193)  : UserID:MNBCA
+07/23/2025 13:35:24 (193)  : DatabaseName:MNBCA
+07/23/2025 13:35:24 (193)  : Password:???? :) ????
+07/23/2025 13:35:24 (193)  : PLCDBProvider:SQLOLEDB
+07/23/2025 13:35:24 (193)  : DatabaseServer:MSSQL
+07/23/2025 13:35:24 (193)  : ----------------------
+07/23/2025 13:35:24 (193)  : inside GetCreds 2
+07/23/2025 13:35:24 (193)  : After GetCreds
+07/23/2025 13:35:24 (193)  : ALLOW_SQL_VALIDATION:T
+07/23/2025 13:35:24 (209)  : CONNECT TIME: 15.6244
+07/23/2025 13:35:24 (209)  :  SELECT ACCESS_CODE, GROUP_CODE FROM TV_ANALYST WHERE ANALYST = 'MIKE'
+07/23/2025 13:35:24 (209)  : QUERY TIME: 15.6244
+07/23/2025 13:35:24 (225)  : CONNECT TIME: 0
+07/23/2025 13:35:24 (225)  :  SELECT ACCESS_CODES FROM TV_GROUPS WHERE GROUP_CODE IN ('ADMIN') AND ACCESS_CODES IS NOT NULL
+07/23/2025 13:35:24 (225)  : QUERY TIME: 15.6185
+07/23/2025 13:35:24 (225)  : getSchemaOnly retrieved: 00:00:00
+07/23/2025 13:35:24 (225)  : Setting formStr(0) :GLOBALANALYST="MIKE";GLOBALACCESSCODES="JH"
+07/23/2025 13:35:24 (225)  : CONNECT TIME: 0
+07/23/2025 13:35:24 (225)  :  SELECT ADDRESS_1, ADDRESS_2 FROM TV_LABCTRL WHERE LAB_CODE = 'S'
+07/23/2025 13:35:24 (240)  : QUERY TIME: 15.6263
+07/23/2025 13:35:24 (240)  : FindCrystalReport (3) Searching for: D:\publish\dev_publish\Arvin\BEASTiLIMS-Master-Arvin-10\reports\custom\CLCASES.rpt
+07/23/2025 13:35:24 (240)  : CONNECT TIME: 0
+07/23/2025 13:35:24 (240)  :  SELECT REPORT_FORMAT, REPORT_HASH FROM TV_CUSTREPORTS WHERE UPPER(REPORT_FORMAT) IN ('CLCASES.RPT') AND REPORT_SOURCE IN ('STOCKREPORTS', 'LAMSTOCKREPORTS') AND REPORT_DATA IS NOT NULL
+07/23/2025 13:35:24 (240)  : QUERY TIME: 0
+07/23/2025 13:35:24 (240)  : getSchemaOnly retrieved: 00:00:00
+07/23/2025 13:35:24 (240)  : Looking for report file: CLCASES
+07/23/2025 13:35:24 (240)  : Looking in subfolder: MSSQL
+07/23/2025 13:35:24 (240)  : Checking file path: D:\publish\dev_publish\Arvin\BEASTiLIMS-Master-Arvin-10\Reports\MSSQL\CLCASES.rpt
+07/23/2025 13:35:24 (240)  : File found: D:\publish\dev_publish\Arvin\BEASTiLIMS-Master-Arvin-10\Reports\MSSQL\CLCASES.rpt
+07/23/2025 13:35:24 (240)  : reportpath:D:\publish\dev_publish\Arvin\BEASTiLIMS-Master-Arvin-10\Reports\MSSQL\CLCASES.rpt
+07/23/2025 13:35:24 (256)  : Before Fixup 1
+07/23/2025 13:35:24 (256)  : Before Fixup 2
+07/23/2025 13:35:24 (256)  : Before Fixup 3:GLOBALANALYST="MIKE";GLOBALACCESSCODES="JH";ADDR1="Forensic Science Laboratory - St. Paul" & CHR(13) & "1430 Maryland Avenue East" & CHR(13) & "St. Paul, MN 55106";ADDR2="New York, Cubao"
+07/23/2025 13:35:24 (256)  : Enter the fixupreport, FILENAME:rassdk://D:\publish\dev_publish\Arvin\BEASTiLIMS-Master-Arvin-10\Reports\MSSQL\CLCASES.rpt
+07/23/2025 13:35:24 (256)  : Enter the fixupreport, DATABASENAME:MNBCA
+07/23/2025 13:35:24 (256)  : Enter the fixupreport, SERVERNAME:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (256)  : Enter the fixupreport, dbserver:MSSQL
+07/23/2025 13:35:24 (256)  : Enter the fixupreport, formStr:GLOBALANALYST="MIKE";GLOBALACCESSCODES="JH";ADDR1="Forensic Science Laboratory - St. Paul" & CHR(13) & "1430 Maryland Avenue East" & CHR(13) & "St. Paul, MN 55106";ADDR2="New York, Cubao"
+07/23/2025 13:35:24 (256)  : Begin FormulaFixup:GLOBALANALYST="MIKE";GLOBALACCESSCODES="JH";ADDR1="Forensic Science Laboratory - St. Paul" & CHR(13) & "1430 Maryland Avenue East" & CHR(13) & "St. Paul, MN 55106";ADDR2="New York, Cubao"
+07/23/2025 13:35:24 (334)  : Formulas For MainReport
+07/23/2025 13:35:24 (334)  : FormulaName:GLOBALANALYST  FormValue:"MIKE"
+07/23/2025 13:35:24 (334)  : Formula not found GLOBALANALYST
+07/23/2025 13:35:24 (334)  : FormulaName:GLOBALACCESSCODES  FormValue:"JH"
+07/23/2025 13:35:24 (334)  : Formula not found GLOBALACCESSCODES
+07/23/2025 13:35:24 (334)  : FormulaName:ADDR1  FormValue:"Forensic Science Laboratory - St. Paul" & CHR(13) & "1430 Maryland Avenue East" & CHR(13) & "St. Paul, MN 55106"
+07/23/2025 13:35:24 (334)  : Formula not found ADDR1
+07/23/2025 13:35:24 (334)  : FormulaName:ADDR2  FormValue:"New York, Cubao"
+07/23/2025 13:35:24 (334)  : Formula not found ADDR2
+07/23/2025 13:35:24 (334)  : After FormulaFixup
+07/23/2025 13:35:24 (334)  : before try
+07/23/2025 13:35:24 (334)  : ConnectionCount:1
+07/23/2025 13:35:24 (334)  : Connection 0.Servername Before:AACSERVER2019
+07/23/2025 13:35:24 (350)  : Connection 0.Servername After:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (350)  : fixup A
+07/23/2025 13:35:24 (350)  : fixup B
+07/23/2025 13:35:24 (350)  : before table name:TV_CASELIST
+07/23/2025 13:35:24 (350)  : before table location:TV_CASELIST
+07/23/2025 13:35:24 (350)  : before table login:TV_CASELIST
+07/23/2025 13:35:24 (350)  : before table servername:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (350)  : before table userid:MNBCA
+07/23/2025 13:35:24 (350)  : Before Apply
+07/23/2025 13:35:24 (350)  : After Apply
+07/23/2025 13:35:24 (350)  : after table name:TV_CASELIST
+07/23/2025 13:35:24 (350)  : after table location:TV_CASELIST
+07/23/2025 13:35:24 (350)  : after table login:TV_CASELIST
+07/23/2025 13:35:24 (350)  : after table servername:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (350)  : after table userid:MNBCA
+07/23/2025 13:35:24 (350)  : before table name:TV_DEPTNAME
+07/23/2025 13:35:24 (350)  : before table location:TV_DEPTNAME
+07/23/2025 13:35:24 (350)  : before table login:TV_DEPTNAME
+07/23/2025 13:35:24 (350)  : before table servername:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (350)  : before table userid:MNBCA
+07/23/2025 13:35:24 (350)  : Before Apply
+07/23/2025 13:35:24 (350)  : After Apply
+07/23/2025 13:35:24 (350)  : after table name:TV_DEPTNAME
+07/23/2025 13:35:24 (350)  : after table location:TV_DEPTNAME
+07/23/2025 13:35:24 (350)  : after table login:TV_DEPTNAME
+07/23/2025 13:35:24 (350)  : after table servername:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (350)  : after table userid:MNBCA
+07/23/2025 13:35:24 (350)  : before table name:TV_LABCASE
+07/23/2025 13:35:24 (350)  : before table location:TV_LABCASE
+07/23/2025 13:35:24 (350)  : before table login:TV_LABCASE
+07/23/2025 13:35:24 (350)  : before table servername:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (350)  : before table userid:MNBCA
+07/23/2025 13:35:24 (350)  : Before Apply
+07/23/2025 13:35:24 (350)  : After Apply
+07/23/2025 13:35:24 (350)  : after table name:TV_LABCASE
+07/23/2025 13:35:24 (350)  : after table location:TV_LABCASE
+07/23/2025 13:35:24 (350)  : after table login:TV_LABCASE
+07/23/2025 13:35:24 (350)  : after table servername:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (350)  : after table userid:MNBCA
+07/23/2025 13:35:24 (350)  : before table name:TV_OFFENSE
+07/23/2025 13:35:24 (350)  : before table location:TV_OFFENSE
+07/23/2025 13:35:24 (350)  : before table login:TV_OFFENSE
+07/23/2025 13:35:24 (350)  : before table servername:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (350)  : before table userid:MNBCA
+07/23/2025 13:35:24 (350)  : Before Apply
+07/23/2025 13:35:24 (350)  : After Apply
+07/23/2025 13:35:24 (350)  : after table name:TV_OFFENSE
+07/23/2025 13:35:24 (350)  : after table location:TV_OFFENSE
+07/23/2025 13:35:24 (350)  : after table login:TV_OFFENSE
+07/23/2025 13:35:24 (350)  : after table servername:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (350)  : after table userid:MNBCA
+07/23/2025 13:35:24 (350)  : before table name:TV_ANALYST
+07/23/2025 13:35:24 (350)  : before table location:TV_ANALYST
+07/23/2025 13:35:24 (350)  : before table login:TV_ANALYST
+07/23/2025 13:35:24 (350)  : before table servername:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (350)  : before table userid:MNBCA
+07/23/2025 13:35:24 (350)  : Before Apply
+07/23/2025 13:35:24 (350)  : After Apply
+07/23/2025 13:35:24 (350)  : after table name:TV_ANALYST
+07/23/2025 13:35:24 (350)  : after table location:TV_ANALYST
+07/23/2025 13:35:24 (350)  : after table login:TV_ANALYST
+07/23/2025 13:35:24 (350)  : after table servername:AACSERVER2019\MSSQL2019
+07/23/2025 13:35:24 (350)  : after table userid:MNBCA
+07/23/2025 13:35:24 (350)  : fixup D
+07/23/2025 13:35:24 (350)  : After Fixup:GLOBALANALYST="MIKE";GLOBALACCESSCODES="JH";ADDR1="Forensic Science Laboratory - St. Paul" & CHR(13) & "1430 Maryland Avenue East" & CHR(13) & "St. Paul, MN 55106";ADDR2="New York, Cubao"
+07/23/2025 13:35:24 (350)  : After Fixup 1
+07/23/2025 13:35:24 (350)  : Report Comments Length 70
+07/23/2025 13:35:24 (350)  : SetDatabaselogon:MNBCA
+07/23/2025 13:35:24 (350)  : Before Export 1
+07/23/2025 13:35:24 (350)  : Before Export 2
+07/23/2025 13:35:24 (350)  : ExporttoDisk 1 TempFile:C:\LabSave\Temp\920b9940-f10e-436c-aae2-3fe3c76b6c5f.
+07/23/2025 13:35:24 (727)  : ExporttoDisk 2 TempFile:C:\LabSave\Temp\920b9940-f10e-436c-aae2-3fe3c76b6c5f.
+07/23/2025 13:35:24 (727)  : ExporttoDisk 3 TempFile:C:\LabSave\Temp\920b9940-f10e-436c-aae2-3fe3c76b6c5f.
+07/23/2025 13:35:24 (727)  : ExporttoDisk 4 TempFile:C:\LabSave\Temp\920b9940-f10e-436c-aae2-3fe3c76b6c5f.
+07/23/2025 13:35:24 (727)  : ExporttoDisk 5 TempFile:C:\LabSave\Temp\920b9940-f10e-436c-aae2-3fe3c76b6c5f.
+07/23/2025 13:35:24 (727)  : ExporttoDisk 6 TempFile:C:\LabSave\Temp\920b9940-f10e-436c-aae2-3fe3c76b6c5f.
+07/23/2025 13:35:24 (727)  : ExporttoDisk 7 TempFile:C:\LabSave\Temp\920b9940-f10e-436c-aae2-3fe3c76b6c5f.
+07/23/2025 13:35:24 (742)  : GetCrystalReportResponse OutD:\publish\dev_publish\Arvin\BEASTiLIMS-Master-Arvin-10\Reports\MSSQL\CLCASES.rpt Length:40194
+
+
+07/23/2025 13:35:23 (506)  : getSchemaOnly retrieved: 00:00:00
+07/23/2025 13:35:23 (506)  : Looking for report file: CLCASES
+07/23/2025 13:35:23 (506)  : Looking in subfolder: MSSQL
+07/23/2025 13:35:23 (506)  : Checking file path: D:\publish\dev_publish\Arvin\BEASTiLIMS-Master-Arvin-10\Reports\MSSQL\CLCASES.rpt
+07/23/2025 13:35:23 (506)  : File found: D:\publish\dev_publish\Arvin\BEASTiLIMS-Master-Arvin-10\Reports\MSSQL\CLCASES.rpt
+07/23/2025 13:35:23 (506)  : @AppURL: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-10
+07/23/2025 13:35:24 (162)  : RPTNAME:D:\publish\dev_publish\Arvin\BEASTiLIMS-Master-Arvin-10\Reports\MSSQL\CLCASES.rpt
+07/23/2025 13:35:24 (162)  : SELFORM:{TV_CASELIST.BATCH_NO} = 2349953
+07/23/2025 13:35:24 (162)  : RPTSVCURL:
+07/23/2025 13:35:24 (178)  : WEBMETHOD URL:http://aacserver2019/BEASTiLIMS-MASTER-Arvin-10/PLCWebCommon/PLCWebMethods.asmx
+07/23/2025 13:35:24 (742)  : DMZ1
+07/23/2025 13:35:24 (742)  : DMZ2
+07/23/2025 13:35:24 (742)  : DMZ3
+07/23/2025 13:35:24 (742)  : DMZ4
+07/23/2025 13:35:24 (742)  : DMZ5
+07/23/2025 13:35:24 (742)  : DMZ6
+07/23/2025 13:35:24 (742)  : DMZ7
+07/23/2025 13:35:24 (742)  : rlen:40194
+07/23/2025 13:35:24 (742)  : DMZ8
