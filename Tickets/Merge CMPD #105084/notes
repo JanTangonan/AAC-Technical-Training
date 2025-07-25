@@ -8,6 +8,8 @@ ExporttoDisk 1 TempFile:C:\LabSave\Temp\adfb4a9d-30b2-4d61-b16b-2c646054ab83.
 Exception in crReportDocument.ExportToStream:The system cannot find the path specified.
 GetCrystalReportResponse OutC:\Projects\BEASTiLIMS_Master-Merge-CMPD-105084\BEASTiLIMS\Reports\MSSQL\assign.rpt Length:0
 
+AuditLoc.aspx
+CustodyInquiry.aspx
 
 ExporttoDisk 7 TempFile:C:\LabSave\Temp\c9080099-d814-48aa-8992-eaba7ade7413.
 

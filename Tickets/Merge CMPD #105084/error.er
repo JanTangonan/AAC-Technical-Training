@@ -5,3 +5,20 @@ Logon failed.
 Details:  [Database Vendor Code: 67 ]
 Error in File custinq 14232_20568_{EBF23539-BE35-493E-AC16-D52989F71138}.rpt:
 Unable to connect: incorrect log on parameters.')
+
+-- ORCL IOWA: AuditLoc.aspx - custinq
+07/24/2025 09:46:10 (146)  : INSERT INTO TV_RPTLOG(RPTLOG_KEY,RPTLOG_USER,RPTLOG_NAME,RPTLOG_PATH,RPTLOG_SERVER,RPTLOG_START,RPTLOG_END,RPTLOG_HASDOCUMENT,RPTLOG_ERROR) Values ('2193','MIKE','custinq.rpt','custinq.rpt','AACSERVER2019',to_date('24-Jul-2025 09:46:10','DD-MON-YYYY HH24:MI:SS'),to_date('24-Jul-2025 09:46:10','DD-MON-YYYY HH24:MI:SS'),'F','Exception in FIXUP: Logon failed.
+Details:  [Database Vendor Code: 18456 ]
+Error in File custinq 4812_7316_{06CAD77A-DC17-4711-A276-4B6909318785}.rpt:
+Unable to connect: incorrect log on parameters.
+Details:  [Database Vendor Code: 18456 ]')
+07/24/2025 09:46:10 (146)  : auditlog-internal 1
+07/24/2025 09:46:10 (146)  : auditlog-internal 2
+07/24/2025 09:46:10 (146)  : auditlog-internal 3
+07/24/2025 09:46:10 (146)  : CONNECT TIME: 0
+07/24/2025 09:46:10 (146)  : select AUDITLOG_SEQ.NEXTVAL NEXTSEQ from DUAL
+07/24/2025 09:46:10 (146)  : QUERY TIME: 0
+07/24/2025 09:46:10 (146)  : auditlog-internal 4
+07/24/2025 09:46:10 (146)  : INSERT INTO TV_AUDITLOG (LOG_STAMP, TIME_STAMP, USER_ID, PROGRAM, CODE, SUB_CODE, ERROR_LEVEL, OS_USER_NAME, OS_COMPUTER_NAME, OS_ADDRESS, ADDITIONAL_INFORMATION, BUILD_NUMBER) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+07/24/2025 09:46:10 (146)  : auditlog-internal 5
+
