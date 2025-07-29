@@ -66,7 +66,7 @@ Internal Ticket #193:
 Merge NYPD #106062:       
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-8/Login.aspx
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\070425\(Merge to Master) NYPD 106062- Deletion of Dispense Records for NYPD
-    Status: Testing
+    Status: Checked in - Completed
 
 Merge CMPD #52197:       
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-9/Login.aspx
@@ -76,4 +76,9 @@ Merge CMPD #52197:
 Merge CMPD #105084:       
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-10/Login.aspx
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\072525\(Merge to Master) CMPD 105084 - Update - Custody Inquiry Report missing search criteria
-    Status: PM Review
+    Status: Final test
+
+Merge KYSP #112114 :       
+    Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-11/Login.aspx
+    Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\072525\(Merge to Master) KYSP 112114 - tab1CODNACASETAB.aspx Offense Code issue
+    Status: Code Review
