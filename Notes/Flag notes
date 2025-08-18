@@ -11,3 +11,7 @@ USES_IMAGE_VAULT_SERVICE
 ~ use story.aspx in tab1case schedule
 USES_STORY
 
+~ use of Pin in Custody Tab
+TV_LABCTRL2.PIN_REQUIRED_FOR_TRANSFER='T'
+TV_LABCTRL5.USE_PIN_FOR_VERIFICATIONS='T'
+
