@@ -1,0 +1,50 @@
+SELECT DISTINCT
+    A.SCHEDULE_KEY, 
+    A.CASE_KEY, 
+    FORMAT(CAST(A.DATE_RES AS date),'MM/dd/yyyy') AS DATE_RES, 
+    CAST(A.TIME AS time(7)) AS TIME, 
+    B.DESCRIPTION, 
+    C.NAME, 
+    A.COMMENTS,   
+    CASE WHEN A.EVIDENCE_CONTROL_NUMBER IS NULL THEN 
+	         CASE
+                WHEN EXISTS (
+                    SELECT *
+                    FROM TV_SCHDETL S
+                    LEFT OUTER JOIN TV_SCHDETL SD ON SD.SCHEDULE_KEY = S.SCHEDULE_KEY
+                    WHERE S.SCHEDULE_KEY = A.SCHEDULE_KEY
+                ) THEN
+            COALESCE(
+                (
+                    STUFF((SELECT ', ' || LI2.LAB_ITEM_NUMBER
+                    FROM TV_SCHEDULE S  
+                    LEFT OUTER JOIN TV_SCHDETL SD ON SD.SCHEDULE_KEY = S.SCHEDULE_KEY 
+                    LEFT OUTER JOIN TV_LABITEM LI2 ON LI2.EVIDENCE_CONTROL_NUMBER = SD.EVIDENCE_CONTROL_NUMBER  
+                    WHERE S.SCHEDULE_KEY = A.SCHEDULE_KEY
+                    FOR XML PATH ('')), 1, 1, '')
+                ),
+                'Deleted'
+            )
+                ELSE 'Not Item Related'
+            END
+        ELSE 
+            COALESCE(I.LAB_ITEM_NUMBER, 'Deleted')
+    END AS ITEM_NUMBER,
+	E.DESCRIPTION AS SECTION_DESCRIPTION
+FROM 
+    TV_SCHEDULE A  
+    LEFT OUTER JOIN TV_SCHTYPE B ON B.TYPE_RES = A.TYPE_RES  
+    LEFT OUTER JOIN TV_ANALYST C ON C.ANALYST = A.ANALYST 
+    LEFT OUTER JOIN TV_LABITEM I ON I.EVIDENCE_CONTROL_NUMBER = A.EVIDENCE_CONTROL_NUMBER 
+	LEFT OUTER JOIN TV_EXAMCODE E ON E.EXAM_CODE= A.SECTION
+	LEFT OUTER JOIN TV_SCHDETL D ON D.SCHEDULE_KEY = A.SCHEDULE_KEY  WHERE A.CASE_KEY = 1052447 ORDER BY 
+    A.DATE_RES DESC, 
+    A.TIME DESC
+
+
+-- ISSUES -- 
+ORA-00904: "LI2"."LAB_ITEM_NUMBER": invalid identifier
+00904. 00000 -  "%s: invalid identifier"
+*Cause:    
+*Action:
+Error at Line: 19 Column: 83
