@@ -1,0 +1,18 @@
+Ticket #113485 - Item Info Additions for Case Correspondence
+
+Merged ABQ Rev#32636 to Master
+1. Converted existing hard coded search panel into configurable DBPanel
+    a. added new DBPANEL "SCHEDULE_SEARCH"
+        - added Date Range search field
+        - added Item number search field
+    b. added buttons for the DBPANEL
+        - added "Search" button
+        - added "Show Mine" button
+        - added "Show All" button
+
+Scripts: (Rev#32982)
+- \2025\Master\090525\113485 - Item Info Additions for Case Correspondence\MSQL_DBGRID_SCHEDULE.sql
+- \2025\Master\090525\113485 - Item Info Additions for Case Correspondence\ORCL_DBGRID_SCHEDULE.sql
+
+#PROGRAMMING: 2.0
+#TESTING: 3.0
