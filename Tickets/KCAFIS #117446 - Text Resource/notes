@@ -2,3 +2,25 @@ SCRIPTS CHECKIN
 At revision: 32955
 \Build Scripts\2025\KCAFIS\082925\117446 - Please change the title of Departments tab to Agencies. See attached
 
+-- -- -- -- -- -- -- -- -- --
+#117446 - Please change the title of "Departments" tab to "Agencies". See attached. 
+
+1. Added new TEXTRESOURCE for Departments Tab label in Admin>Config>Departments Tab.
+    - Added ConfigTAB3Depts.lblActive in TV_TEXTRESOURCES with a value of "Find Agency".
+    - Added ConfigTab3Depts.btnDeptInfo in TV_TEXTRESOURCES with a value of "Agency Information".
+    - Added ButtonPanel.DepartmentRoles? in TV_TEXTRESOURCES with a value of "Agency Roles".
+    - Added ButtonPanel.UploadToDepartment? in TV_TEXTRESOURCES with a value of "Upload to Agencies".
+    - Added ButtonPanel.Dept_Picture_Mask in TV_TEXTRESOURCES with a value of "Agency Picture Mask".
+
+2. Added new Texts in LocalizedText?.resx.
+    - Added ConfigTAB3Dept.lblActive in LocalizedText.resx with a value of "Find Department". By default, it will still use "Find Department".
+    - Added ConfigTab3Depts.btnDeptInfo in LocalizedText.resx with a value of "Department Information". By default, it will still use "Department Information".
+    - Added ButtonPanels.DepartmentRoles in LocalizedText.resx with a value of "Department Roles". By default, it will still use "Department Roles".
+    - Added ButtonPanel.UploadToDepartment in LocalizedText.resx with a value of "Upload to Department". By default, it will still use "Upload to Departments".
+    - Added ButtonPanel.Dept_Picture_Mask in LocalizedText.resx with a value of "Dept Picture Mask". By default, it will still use "Dept Picture Mask".
+
+Scripts: (Rev#33014)
+\2025\KCAFIS\090525\117446 - Please change the title of Departments tab to Agencies. See attached\MSQL_ORCL_Insert_TEXTRESOURCES.sql
+
+#PROGRAMMING: 1.0
+#TESTING: 8.0
