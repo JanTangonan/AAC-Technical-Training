@@ -1,0 +1,14 @@
+Lab: St. Paul Laboratory
+Section: Drugs
+Checmical Name - Asset Type: Acid
+
+NX0409P-5
+Acid2
+
+TV_CHEMPANEL: set CHEM_C_KITCONTENTS = 'F'
+TV_CHEMSETUP: look for setup in LAM
+
+LABCTRL3.USES_WS_BARCODE_PRINTING to 'T'
+
+Acid
+NX0409P-5
