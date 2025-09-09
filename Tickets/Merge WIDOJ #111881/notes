@@ -11,3 +11,10 @@ J001XH
 Property and Evidence
 Biology
 3130 POP-4
+
+TV_CHEMCAT > has DUPE_FIELDS column, this will be checked first if empty then it will proceed to chemctrl
+TV_CHEMCTRL > has CHEMICAL_DUPE_FIELDS, this will be checked if chemcat is null
+
+
+ORCL-NJSPDEV: Barcode = J03tLC, Barcode = J03ug2
+MSQL-VENTURA_DEV: Barcode = J001BN, Barcode = J001XX

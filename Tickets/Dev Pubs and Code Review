@@ -124,9 +124,9 @@ Merge ABQ #113485
     Status: Checked-in
 
 Merge WIDOJ #111881
-    Dev Pub: 
-    Code Review:  
-    Status: Ongoing 
+    Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-15/Login.aspx
+    Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\091225\(Merge to Master) 111881 - WI SP #21 VENDOR_NAME not duping even thought it's set in CHEMCTRL
+    Status: Code Review 
 
 Merge WIDOJ #111911
     Dev Pub: 
