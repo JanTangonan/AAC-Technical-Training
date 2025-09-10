@@ -12,3 +12,13 @@ LABCTRL3.USES_WS_BARCODE_PRINTING to 'T'
 
 Acid
 NX0409P-5
+
+use OcxUp to setup missing ocx application, check for logs
+
+J002Pi
+Name: (+/-)-CP 47,497-C8-homolog (Cannabicyclohexanol) , Type: C2837, Lot #: 0425690-2 , Tracking #: J002Pi, Quantity Remaining: 25, Units: MG, Images: {img_count}, Documents: {attach_count}
+Custody Of: Drug Standard Refrigator	
+
+
+try TV_ASSETKIT ito mga kit contents within a TV_ASSETTYP. Linking: TV_ASSETTYP.CODE -> TV_ASSETKIT.ASSETTYP_FK
+dapat TV_ASSETTYP.KIT = 'T' and TV_ASSETTYP.DONOTCREATEKITRECORD = F
