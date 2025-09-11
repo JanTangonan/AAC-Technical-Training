@@ -12,6 +12,7 @@ LABCTRL3.USES_WS_BARCODE_PRINTING to 'T'
 
 Acid
 NX0409P-5
+Barcode: J01xA7
 
 use OcxUp to setup missing ocx application, check for logs
 
@@ -22,3 +23,16 @@ Custody Of: Drug Standard Refrigator
 
 try TV_ASSETKIT ito mga kit contents within a TV_ASSETTYP. Linking: TV_ASSETTYP.CODE -> TV_ASSETKIT.ASSETTYP_FK
 dapat TV_ASSETTYP.KIT = 'T' and TV_ASSETTYP.DONOTCREATEKITRECORD = F
+
+
+chem control number Value = 1021325
+
+to add kit content records:
+check for the KIT_FK in LOGS 
+then update the KIT_FK using
+
+update TV_CHEMINV
+set KIT_FK = '1025478'
+where BARCODE in ('J03uMD', 'J03uMK')
+
+Barcode: J03uM6
