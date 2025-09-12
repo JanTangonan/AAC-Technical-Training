@@ -24,7 +24,7 @@ Custody Of: Drug Standard Refrigator
 try TV_ASSETKIT ito mga kit contents within a TV_ASSETTYP. Linking: TV_ASSETTYP.CODE -> TV_ASSETKIT.ASSETTYP_FK
 dapat TV_ASSETTYP.KIT = 'T' and TV_ASSETTYP.DONOTCREATEKITRECORD = F
 
-
+s
 chem control number Value = 1021325
 
 to add kit content records:
