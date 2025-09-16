@@ -11,3 +11,13 @@ select
     ACTIVE 
 from TV_OFFENSE  
 where (OFFENSE_CODE = '' OR OFFENSE_CODE IS NULL)
+
+update TV_OFFENSE
+set OFFENSE_CODE = ''
+where OFFENSE_CODE = ' '
+
+select * from TV_OFFENSE where OFFENSE_CODE = ' '
+
+select * from tv_codehead
+
+DESC TV_CODEHEAD;

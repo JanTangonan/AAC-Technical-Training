@@ -1,0 +1,17 @@
+Master:
+string format = useUserDateFormat
+? PLCSession.GetDateFormat()
+: pictureMask.ToLower().Replace("m", "M");
+
+Changes:
+calendar.Format = pictureMask.ToLower().Replace("m", "M");
+
+select * from TV_REVLIST
+where SECTION = 'DRG'
+
+
+string calendarID = "imgCalendar" + iID;
+placeholderChecklistItems
+
+ORCL-NJSPDEV
+lab case: C23-00022, Section 5
