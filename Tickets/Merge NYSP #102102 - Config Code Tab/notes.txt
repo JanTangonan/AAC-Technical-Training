@@ -1,0 +1,6 @@
+NYSP is missing collumm "INVALID_CHARACTERS"
+
+ALTER TABLE CODEHEAD
+ADD ("Invalid Characters" VARCHAR2(30));
+
+"Invalid Characters" AS "INVALID_CHARACTERS"
