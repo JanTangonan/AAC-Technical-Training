@@ -1,24 +1,15 @@
-09/16/2025 10:29:02 (679)  : @PageError:ORA-00904: "INVALID_CHARACTERS": invalid identifier
-   at System.Data.OleDb.OleDbCommand.ProcessResults(OleDbHResult hr)
-   at System.Data.OleDb.OleDbCommand.PrepareCommandText(Int32 expectedExecutionCount)
-   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
-   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
-   at System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
-   at System.Data.Common.DbDataAdapter.FillSchemaInternal(DataSet dataset, DataTable datatable, SchemaType schemaType, IDbCommand command, String srcTable, CommandBehavior behavior)
-   at System.Data.Common.DbDataAdapter.FillSchema(DataTable dataTable, SchemaType schemaType, IDbCommand command, CommandBehavior behavior)
-   at System.Data.Common.DbDataAdapter.FillSchema(DataTable dataTable, SchemaType schemaType)
-   at PLCCONTROLS.PLCQuery.getSchemaOnly() in C:\Projects\BEASTiLIMS_Master-Merge-NYSP-102102\PLCCONTROLS\PLC_Query.cs:line 1362
-   at PLCCONTROLS.PLCQuery.get_PLCDataTable() in C:\Projects\BEASTiLIMS_Master-Merge-NYSP-102102\PLCCONTROLS\PLC_Query.cs:line 365
-   at PLCCONTROLS.PLCQuery.First() in C:\Projects\BEASTiLIMS_Master-Merge-NYSP-102102\PLCCONTROLS\PLC_Query.cs:line 958
-   at PLCCONTROLS.CacheHelper.OpenCachedSql(String sql, String addlkey, Boolean forUniqueUser, TimeSpan duration, Boolean forReadOnly) in C:\Projects\BEASTiLIMS_Master-Merge-NYSP-102102\PLCCONTROLS\CacheHelper.cs:line 266
-   at PLCCONTROLS.CacheHelper.OpenCachedSql(String sql, TimeSpan duration) in C:\Projects\BEASTiLIMS_Master-Merge-NYSP-102102\PLCCONTROLS\CacheHelper.cs:line 174
-   at BEASTiLIMS.ConfigTAB2Codes.GridView1_SelectedIndexChanged(Object sender, EventArgs e) in C:\Projects\BEASTiLIMS_Master-Merge-NYSP-102102\BEASTiLIMS\ConfigTAB2Codes.aspx.cs:line 334
-   at System.EventHandler.Invoke(Object sender, EventArgs e)
-   at System.Web.UI.WebControls.GridView.OnSelectedIndexChanged(EventArgs e)
-   at System.Web.UI.WebControls.GridView.HandleSelect(Int32 rowIndex)
-   at System.Web.UI.WebControls.GridView.HandleEvent(EventArgs e, Boolean causesValidation, String validationGroup)
-   at System.Web.UI.WebControls.GridView.RaisePostBackEvent(String eventArgument)
-   at System.Web.UI.WebControls.GridView.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
-   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
-   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
-   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+********** PLC Application Error **********
+LIMS Version : Master Build 1.9-17-2025-NET4.0.30319
+Error Message : Field [ENTRY_ANALYST] is not found - Exception: 
+Error Page Title : BEAST Electronic Case File
+Session ID : im1niwl1k3igvyj00zls1gsu
+Error URL : http://localhost:60315/TechReview2.aspx
+Error Database: ORACLE
+Error Proc : PLCQuery.SetFieldValue
+Error SQL : select * from TV_STATS where EXAM_KEY = -1
+Error USER : MIKE
+Error CASE : MTX-PANELCOPY001
+*******************************************
+
+
+09/17/2025 10:24:10 (734)  : <p/>********** PLC Application Error **********<p/>LIMS Version : Master Build 1.9-17-2025-NET4.0.30319<p/>Error Message : Field [ENTRY_ANALYST] is not found - Exception: <p/>Error Page Title : LIMS Error<p/>Session ID : im1niwl1k3igvyj00zls1gsu<p/>Error URL : http://localhost:60315/TechReview2.aspx<p/>Error Database: ORACLE<p/>Error Proc : PLCQuery.SetFieldValue<p/>Error SQL : select * from TV_STATS where EXAM_KEY = -1<p/>Error USER : MIKE<p/>Error CASE : MTX-PANELCOPY001<p/>*******************************************<p/><p/>
