@@ -15,3 +15,14 @@ placeholderChecklistItems
 
 ORCL-NJSPDEV
 lab case: C23-00022, Section 5
+
+MSQL-MNCBA
+Lab Case: S22-00524
+
+
+<tr id="ctl00_cp_line3" onmouseover="OnMouseHighlight(this);" onmouseout="OnMouseHighlightOut(this);" section="BIO" code="Q4" type="1" checklist="T" userres="4" class=""><td class="question"><span id="ctl00_cp_question3">Calculations and data transfers are accurate and free from transcription errors</span></td><td id="ctl00_cp_answer3" class="answer"><select name="ctl00$cp$dlanswer3" id="ctl00_cp_dlanswer3" class="default" style="background-color:White;" tabbableindex="27" tabindex="27">
+		<option value="yes">yes</option>
+		<option value=" no"> no</option>
+		<option selected="selected" value=""></option>
+
+	</select></td><input type="hidden" name="ctl00$cp$hiddenvalues3" id="ctl00_cp_hiddenvalues3" value="Q4,BIOSIGN"></tr>

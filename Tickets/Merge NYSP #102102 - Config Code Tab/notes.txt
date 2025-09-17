@@ -4,3 +4,11 @@ ALTER TABLE CODEHEAD
 ADD ("Invalid Characters" VARCHAR2(30));
 
 "Invalid Characters" AS "INVALID_CHARACTERS"
+
+Ticket#102102 - DBPanel: CTCODES_TV_OFFENSE problem in ALL environments (including Production)
+
+1. Merged NYSP Rev#26871 to Master
+    - Fix issue where the selected TV_OFFENSE record is not populated in the DBPanel fields in Config Codes tab.
+
+#PROGRAMMING: 0.5
+#TESTING: 3
