@@ -8,3 +8,6 @@ Exception in GetDBConn:An OLE DB Provider was not specified in the ConnectionStr
    at System.Data.OleDb.OleDbConnection..ctor(String connectionString)
    at PLCCONTROLS.PLCSessionVars.GetDBConn(String connStr) in C:\Projects\BEASTiLIMS\BEASTiLIMS_Master_5\PLCCONTROLS\PLC_SessionVars.cs:line 2539
 09/16/2025 17:22:32 (816)  : @InitAvailableLabCtrlKeys: tv_labctrl6: Object reference not set to an instance of an object.
+
+
+no changes
