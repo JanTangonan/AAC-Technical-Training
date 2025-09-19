@@ -1,0 +1,19 @@
+[DEFAULTS]
+PLCURI_KEY=32188
+FUNCNAME=OCXUP
+AESINFO=dzIxdq/8R13vBXlsfVkVqY0jjAAP43k9SXbOKB9/WIl3ZDnzPMVAjcfh92N2Lpagt6tRNHPfSb9Klg+ZdMMlRpsJWrugwIXz/O4HQuue+1HvHTPC9EZLeJSHeb/7BByDIunEv47W89HiHmx6jrWub7KFQLT4piCuq/hMW8kFmmo=
+ANALYST=MIKE
+PLCDATABASE=OCM_BEAST_DEV_08122025
+APPLICATIONMODE=DIRECT
+PLCLIMS
+
+
+pages:
+UC_MainMenu.ascx
+UC_MainMenu.ascx.cs
+PLC_SessionVars.cs
+LocalizedText.resx
+
+
+ \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\091925\(Merge to Master) 113441 - arconfig to ocx in .NET MASTER (additional)
+
