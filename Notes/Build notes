@@ -164,3 +164,13 @@ LIMS PRELOG
 ---------------------------------------------
     ~ http://aacserver2019/Master/limsprelogv2/login.aspx
     ~ 
+
+---------------------------------------------
+OCX
+---------------------------------------------
+\\aacserver2019\StaffDirectory\PLC\OCX\PLCUPDATE
+\\aacserver2019\StaffDirectory\PLC\OCX\PLCUPDATE\TLSv1.3 Remote Modules
+
+Connect mo db mo via ConnecUni
+2. Upload mo yung program sa OCXUp 
+
