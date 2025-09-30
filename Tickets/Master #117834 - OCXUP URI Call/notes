@@ -24,4 +24,17 @@ PLCLIMS_OCXUP 30.22.1.1
 MSQL-NJSP
 ORCL-IOWA
 
-test
+----------
+Ticket#117834 - OCXUP URI CALL~3527
+
+1. Added submenu "Upload Modules" under Admin > Utility submenu
+    - Visibility is configurable based on new user option, "OCXUP".
+    - The menu label is configurable using the text resource: Menu_LIMS_Admin_Utility_UploadModules.
+    - On click of the submenu, calls the "OCXUP" PLC program.
+
+Scripts At revision: 33216
+    - \BEASTILIMS_Build_Scripts\2025\Master\100325\117834 - OCXUP URI CALL~3527\MSQL_ORCL_Insert_AUTHCODE.sql
+    - \BEASTILIMS_Build_Scripts\2025\Master\100325\117834 - OCXUP URI CALL~3527\MSQL_ORCL_Insert_TEXTRESOURCES.sql
+
+#PROGRAMMING: 3
+#TESTING: 3
