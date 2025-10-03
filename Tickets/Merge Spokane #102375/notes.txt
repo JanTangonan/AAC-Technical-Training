@@ -1,0 +1,13 @@
+MSQL-ISP: LAM > Media Collection
+ORCL-IOWA: LAM > Media Collection
+
+102	2470	2470	000aa	DataTraveler 4GB Thumb
+103	2471	2471	000ab	Lexar Media 512 MB
+104	2472	2472	000ac	Promaster Compact Flash Memory Card 4GB
+105	2473	2473	000ad	Sony SD Card 2GB
+106	2475	2475	000af	Sony Memory Stick 128MB
+
+
+select * from TV_CHEMREAGENT
+where SUB_CHEM_CONTROL_NUMBER = 2471
+4277	2471	MIKE	2022-01-13 00:00:00.000	NULL	12	BOT
