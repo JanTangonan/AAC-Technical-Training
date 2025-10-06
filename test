@@ -1,0 +1,587 @@
+[33mcommit c68e2ebb3f9971509c0193bfe02cfdd3ab1ddea8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mJumba[m[33m, [m[1;31morigin/Jumba[m[33m)[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Oct 6 17:31:58 2025 +0800
+
+    Merge Spokane #102375 QA Testing
+
+[33mcommit f78244e8a313bc2a8304c85b9c3cded224578467[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Oct 2 14:29:13 2025 +0800
+
+    Merge Spokane #102375 - testing
+
+[33mcommit 411252f70d71faddf16a56072955fc2f3b109914[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Sep 30 13:01:45 2025 +0800
+
+    Master #117834 - checked in
+
+[33mcommit 3b7404e8495ba0ece9a034730330d2fe43e0e107[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Sep 26 17:26:21 2025 +0800
+
+    Merge OCHD #117882 - new task
+
+[33mcommit ccf19801982462fdcf72b5bfc14afa5764980459[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Sep 25 17:54:25 2025 +0800
+
+    Master #117834 - testing
+
+[33mcommit 9234680c6c89de261c8953d192bdae62e103328a[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Sep 24 17:49:58 2025 +0800
+
+    Master #117834 - Code review
+
+[33mcommit 627ba8708252710811224025239c961cd7ec4943[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Sep 23 17:43:52 2025 +0800
+
+    Merge WIDOJ #111881 - checked in
+
+[33mcommit 14c8e569257127fe7e73a03fb79bebfd247f2fb3[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Sep 22 17:24:18 2025 +0800
+
+    Master #117834 - progress
+
+[33mcommit 56bfff1b5fa0f2f8518235f7f860f038fe4ef096[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Sep 19 17:31:40 2025 +0800
+
+    Master #117834
+
+[33mcommit f3d404edffad7744d8739fe4bdbd11aaf7d32775[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Sep 18 17:51:58 2025 +0800
+
+    Merge NYSP #98527 - no change
+
+[33mcommit b9ea7e7da716feb62281fee72da6ccf468ebee1c[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Sep 17 17:57:54 2025 +0800
+
+    Merge NYSP #98527
+
+[33mcommit 7f17de3c840137fe35cdfc29db514d8baaaf86fa[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Sep 16 17:51:54 2025 +0800
+
+    Merge NYSP #102102 - for checkin
+
+[33mcommit 7d9fee90ed5aa60fd9a248e5694bc747cfb5993e[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Sep 15 17:51:40 2025 +0800
+
+    Merge NYSP #102102 - merged
+
+[33mcommit 46089fcea90f0b6617ad3dd42666731299b80c2f[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Sep 12 17:53:11 2025 +0800
+
+    Testing
+
+[33mcommit 9277a2fb92bc907a9902a24b270f3f3b40945f5f[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Sep 11 17:33:36 2025 +0800
+
+    Merge WIDOJ #111911 - pm review
+
+[33mcommit 7207a537d1c2d9b873881ddd0ea9cb5f242b6992[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Sep 10 17:56:13 2025 +0800
+
+    Merge WIDOJ #111881 for testing
+
+[33mcommit 9525cfb6605367e4991689b1fae4e5828a74fbc2[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Sep 9 15:40:23 2025 +0800
+
+    Merge WIDOJ #111911 - dev testing
+
+[33mcommit f2688e512f2a827ce7fb5b5997c751331e471b9c[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Sep 8 11:05:27 2025 +0800
+
+    KCAFIS #117446 additional changes checked in
+
+[33mcommit cf1baf019bb4036947ff0b872bdccb7f4480aeac[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Sep 3 17:47:29 2025 +0800
+
+    Merge WIDOJ #111881 merged
+
+[33mcommit 14feaf12bb53857a0b12a8e514617c9321193a4e[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Sep 2 17:38:40 2025 +0800
+
+    Merge ABQ #113485 - Checked in
+
+[33mcommit 063eacff3b697a85fad009161d0230335d6ee59e[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Sep 1 17:54:39 2025 +0800
+
+    Merge WIDOJ #111911
+
+[33mcommit 19dc554d8d5aca935afbd54bf0ec43b5e9d969af[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Aug 29 17:40:52 2025 +0800
+
+    KCAFIS #117446 - additional changes
+
+[33mcommit 0e86d6621626d5d6cb2e106cefde3b774e7b3906[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Aug 28 17:52:14 2025 +0800
+
+    KCAFIS #117446 - additional change
+
+[33mcommit b7bce679171d3066e4bd14ee47e25c49ca15d2b4[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Aug 27 17:44:28 2025 +0800
+
+    KCAFIS #117446 - For checkin
+
+[33mcommit 30063eb55f096a754a4023c7549016318fc9fe58[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Aug 26 11:34:53 2025 +0800
+
+    Merge ABQ #113485 progress 1
+
+[33mcommit d03ded7a6471a4d2f7ab424e32a3c7979992e11f[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Aug 18 17:40:27 2025 +0800
+
+    OCHD #117241 checked in
+
+[33mcommit 5fe1240fdd57142b7253b4bab54c46bba0c84c33[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Aug 15 09:41:19 2025 +0800
+
+    OCHD #117241
+
+[33mcommit c3e88cfb16dea054e314f8aeef142baed1ba3107[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Aug 12 17:42:53 2025 +0800
+
+    Merge VCSO #83788 For Testing
+
+[33mcommit d02c424ee82b537b47b13f262b2b2dfbbbb00b9c[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Aug 8 17:43:38 2025 +0800
+
+    Merge VCSO #83788 merged
+
+[33mcommit 344c0803b804aa72455b05d09819113b7b8dae1b[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Aug 6 17:53:45 2025 +0800
+
+    Merge NESP #106823 testing
+
+[33mcommit 6099bc123a0123afed0c723d44fa196d031d45aa[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Aug 5 17:55:13 2025 +0800
+
+    Merge NESP #106823 initial
+
+[33mcommit 37348047c61be503109e54c548a24e43ebdf3939[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Aug 4 17:58:21 2025 +0800
+
+    Merge OHBCI #111367 code reviewed
+
+[33mcommit 661f266f1b11c4d47237329550738f6929c57d25[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Aug 1 17:50:44 2025 +0800
+
+    Merge OHBCI #111367 Dev Testing
+
+[33mcommit ea1545734eddc67fb8c743fbe98a57bd9926e7cc[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Jul 31 17:52:21 2025 +0800
+
+    Merge OHBCI #111367 initial
+
+[33mcommit 848a160fcf012822f1c89c5af031165a4264d767[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Jul 30 17:52:33 2025 +0800
+
+    Merge Spokane #102115 testing
+
+[33mcommit 36c481de2d8edf63653d76d3a0ffadcf64d034f1[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Jul 29 16:57:50 2025 +0800
+
+    Merge CMPD #105084 for final test
+
+[33mcommit d1744e94158d05e98d92407e9625f548509bd92e[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Jul 25 17:10:42 2025 +0800
+
+    Merge KYSP #112114 Code review
+
+[33mcommit c550383d925316ce7f12b3c13c0dfbb86fc4f246[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Jul 24 16:59:49 2025 +0800
+
+    test
+
+[33mcommit d996c531b779d35dce353eba477f56ea2caf913d[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Jul 23 18:28:46 2025 +0800
+
+    Merge CMPD #105084 testing
+
+[33mcommit eb3817894ef3abd7894b32f4bae549d0ca6262fb[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Jul 22 08:55:42 2025 +0800
+
+    Merge CMPD #105084 PM Review
+
+[33mcommit 4a922cfadcf05dcf539c99455566abc85fa4c402[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Jul 18 16:27:49 2025 +0800
+
+    Merge CMPD #52197 testing
+
+[33mcommit ca5d499981a6534cddbf88633a5856ed78af0af5[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Jul 15 17:59:10 2025 +0800
+
+    Merge CMPD #52197 progress
+
+[33mcommit 9bae007fc46b9d0d77823af78a62874f27836e01[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Jul 14 16:04:24 2025 +0800
+
+    Merge NYPD #106062 fix
+
+[33mcommit f19a5e9eab7fa93b0e6b569e8dbf4d984ada04fe[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Jul 11 17:37:00 2025 +0800
+
+    Merge CMPD #52197 progress
+
+[33mcommit e5f82a4fd872c2a640a823c196486c0a81b3314d[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Jul 10 17:42:07 2025 +0800
+
+    Merge NYPD #106062 retest
+
+[33mcommit 8677953d1a8914fe94c61ff54a608088894937c5[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Jul 9 17:58:23 2025 +0800
+
+    Merge CMPD initial
+
+[33mcommit d5df7397276778e6dff70f344acf4b02b5fc4fbf[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Jul 8 17:48:01 2025 +0800
+
+    Merge NYPD #106062 - progress
+
+[33mcommit c02288a2342f125b7d96f22715ae5b859f27a701[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Jul 7 15:37:13 2025 +0800
+
+    Internal Ticket #193: Code review
+
+[33mcommit 9c898b720d61b6e1fec6b91b12d0ffcd9caa412c[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Jul 4 17:47:51 2025 +0800
+
+    Internal Ticket #193 progress
+
+[33mcommit b22c9ccba0f303443e3b607d7c63bea961034396[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Jul 3 17:49:46 2025 +0800
+
+    Merge NYPD #106062 for fix
+
+[33mcommit 0b6ded5084e3ec554a91873198ab3609b8e6af82[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Jul 2 17:29:18 2025 +0800
+
+    Merge NYPD #106062: Code review
+
+[33mcommit b247c0171b14f7f39491bf33af3caff91f0a9fb9[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Jul 1 17:17:10 2025 +0800
+
+    ABQ #113485 checked in
+
+[33mcommit fa08c97eb12c3882e1142e5987e7aeaaa747d8ea[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Jun 27 17:57:54 2025 +0800
+
+    ABQ #113485 retest
+
+[33mcommit a421949e7db1541b4bfe126e57b86ef95e3708cb[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Jun 26 18:00:06 2025 +0800
+
+    Internal Ticket #193 initial
+
+[33mcommit 362b0e1dc4ae0f8605e1e7d06c625bc0d83765bc[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Jun 24 17:53:34 2025 +0800
+
+    ABQ #113485 for PM review
+
+[33mcommit b75772c9eeeaad087ed1663ab8dc818f637f68ec[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Jun 23 17:44:29 2025 +0800
+
+    Merge KYSP #112108 checked in
+
+[33mcommit 1a8a08089d33dd33d2456f131e8f50a29eefadf3[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Jun 20 17:49:54 2025 +0800
+
+    ABQ #113485 v2
+
+[33mcommit cd7a88b5880b26f533749e268a49c4c4c97d106f[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Jun 19 17:50:31 2025 +0800
+
+    ABQ #113485 code reviewed - return for rework
+
+[33mcommit 10cba7026b16a9f3eb070e625af47a863d1271db[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Jun 18 17:53:09 2025 +0800
+
+    ABQ #113485 progress
+
+[33mcommit 8e53ea1bf0df6b0dbb1bbcb3b1a9e8fc0f84be7b[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Jun 17 17:50:22 2025 +0800
+
+    OCHD #116395 code review
+
+[33mcommit e058623657bfadfe0f579846ab9adde2ffcd45d0[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Jun 17 17:48:04 2025 +0800
+
+    OCHD #116395 code review
+
+[33mcommit f32c6ed6b5670ce609050c3481dac4f822c60993[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Jun 16 17:54:12 2025 +0800
+
+    OCHD #90360 checked in
+
+[33mcommit fc59db6ae4166fec23c41ddf758b8626afaf7624[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Jun 11 17:52:35 2025 +0800
+
+    OCHD #90360 rework
+
+[33mcommit 6279ef7054d5b6dac45029e039e21587741737ad[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Jun 10 17:55:31 2025 +0800
+
+    OCHD #90360 QA Testing
+
+[33mcommit 2e2334dcedc1f08365ccb5abb9f92a40b14fbb3b[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Jun 9 17:51:57 2025 +0800
+
+    APD #90360 initial
+
+[33mcommit 995cf51f9d9a11484aed38b5d8e2a0d7aa5aa28b[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Jun 5 17:13:11 2025 +0800
+
+    OCME #116253 initial
+
+[33mcommit a3486c3605ad2cfa0f3630c137b03641bb8425c3[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Jun 4 17:53:00 2025 +0800
+
+    Internal Ticket #146 code review
+
+[33mcommit ebaed45b00117ac410d2586cd205187ddcd6215f[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Jun 3 17:56:00 2025 +0800
+
+    Internal Ticket #146 progress 2
+
+[33mcommit ce010a3e5ee734f4e2c3f534ef055caba11caaf5[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Jun 2 17:54:00 2025 +0800
+
+    Internal Ticket #146 progress 1
+
+[33mcommit 56679808c371caa612b7174825fda69e3f0b8780[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu May 29 18:00:52 2025 +0800
+
+    testing
+
+[33mcommit 310444654543dd8fe26a138f17dc5b64528d8211[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed May 28 17:59:50 2025 +0800
+
+    Merge PR #115678 testing
+
+[33mcommit 5f1069372f2dcd1bb9a654edc7c964b8ec063613[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue May 27 17:45:48 2025 +0800
+
+    Merge PR #114910 code reviewed
+
+[33mcommit 87fa26ac88ec87ff046c218fa1af9092d887a942[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon May 26 17:32:11 2025 +0800
+
+    Merge ACHD #55121 checked in
+
+[33mcommit dc9761a505edf20f38a0f903cddbe4e63f8103ce[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri May 23 17:24:45 2025 +0800
+
+    Merge ACHD #55121 retest
+
+[33mcommit 42c6494c1d1c2e5344347c17794098d71d5e657a[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu May 22 17:50:18 2025 +0800
+
+    Merge ACHD #55121 code review 2
+
+[33mcommit 6cbea8d4033ca3dbb6110c62e0dd17bea0f8f6a3[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed May 21 17:51:59 2025 +0800
+
+    Merge PR #115678 code review
+
+[33mcommit 95e1b38e289d0bc0227c1684d9f325ed768bb337[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue May 20 17:56:31 2025 +0800
+
+    Merge ACHD #55121 return ticket
+
+[33mcommit 65e7b73fd8af8f18e4452ebb14ff9067cb03e197[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon May 19 17:57:25 2025 +0800
+
+    Merge PR #115678 progress 1
+
+[33mcommit 3b5e7e44764ca8e7b8a69bcc231b1ca89e7bd3a5[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri May 16 17:45:07 2025 +0800
+
+    Merge PR #115678 Initial
+
+[33mcommit fa42d5cace290d3fc684a74801c44d2f9efe911b[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu May 15 17:27:22 2025 +0800
+
+    Merge ACHD #55121: for testing
+
+[33mcommit c5129214c2431f5b7fa8b7d66f449785d70d4441[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed May 14 17:49:08 2025 +0800
+
+    Merge ACHD 55121 progress 3
+
+[33mcommit ff05abf05d5eddb12c77a500ddff4ca3464a3f67[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue May 13 17:58:46 2025 +0800
+
+    Merge ACHD #55121 progress 2
+
+[33mcommit 8fc96caaca6439fca16e5954f88b48e7740982f3[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri May 9 17:51:19 2025 +0800
+
+    Merge ACHD #55121 progress 1
+
+[33mcommit 59cc19481eff29f05ee1d9784f5673f512bedea7[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu May 8 17:42:06 2025 +0800
+
+    Merge ACHD 55121 investigation
+
+[33mcommit 6189922043b5e017aaa55bfd45e67d9e1ea475c6[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed May 7 17:54:00 2025 +0800
+
+    NYSP #7271 completed
+
+[33mcommit 947a6ea7e2a2255ecb9550dbee6a3bb9f9453ebc[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue May 6 17:58:10 2025 +0800
+
+    NYSP #7271 Initial
+
+[33mcommit 4a6ea26a6c12bbd5945330c165806892988575fa[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri May 2 17:51:52 2025 +0800
+
+    Internal Ticket #186 Review 1
+
+[33mcommit eef8109ca5e56c492b5d1a23a2ef0243d3ef90d6[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Apr 30 17:51:52 2025 +0800
+
+    Internal TIcket #186 progress 1
+
+[33mcommit 18962e1a4ebea7634a8863583a380aab22eae464[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Apr 29 17:49:20 2025 +0800
+
+    CJIS
+
+[33mcommit 3e58b2f5200440f9b7bccad56f1770c2d6ede5bf[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Apr 28 17:52:10 2025 +0800
+
+    Internal Ticket #186 initial
+
+[33mcommit b37f971a1ce45e3ec5c2ee356b18334cce4a3f6a[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Apr 23 17:49:00 2025 +0800
+
+    Mockt Ticket 7 completed
+
+[33mcommit eaff7aacbe270b30926f4d58fdae5dc86f3b247e[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Apr 22 17:50:45 2025 +0800
+
+    Mock Ticket 7 progress 7
+
+[33mcommit 5db14116dd04c065ef90d4a2ea40b75071b1a6af[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Apr 21 17:55:07 2025 +0800
+
+    Mock Ticket 7 progress 6
+
+[33mcommit 532b9a1bca31a2f95e10bda4b5bbe91e20f05fab[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Wed Apr 16 14:56:20 2025 +0800
+
+    Mock Ticket 7 rework
+
+[33mcommit f89ebdabd7b0e36460c1941998985a925c55a2e2[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Tue Apr 15 17:49:43 2025 +0800
+
+    Mock Ticket 7 progress 5
+
+[33mcommit 03bed4a0447fd4f64903dd4af524fe4ba8ed83ec[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Mon Apr 14 17:53:21 2025 +0800
+
+    Mock Ticket 7 progress 4
+
+[33mcommit d4ef5dbc6d1fa5f16337e5eb017274752d1bde00[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Fri Apr 11 17:49:49 2025 +0800
+
+    Mock Ticket 7 progress 3
+
+[33mcommit 8d0f04b7d55ce46f28ddc250cd4482ef0fb789e2[m
+Author: Jumba <janthegreatxc@gmail.com>
+Date:   Thu Apr 10 17:47:27 2025 +0800
+
+    Mock Ticket 7 progress 2

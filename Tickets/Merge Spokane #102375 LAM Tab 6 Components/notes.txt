@@ -7,7 +7,11 @@ ORCL-IOWA: LAM > Media Collection
 105	2473	2473	000ad	Sony SD Card 2GB
 106	2475	2475	000af	Sony Memory Stick 128MB
 
-
 select * from TV_CHEMREAGENT
 where SUB_CHEM_CONTROL_NUMBER = 2471
 4277	2471	MIKE	2022-01-13 00:00:00.000	NULL	12	BOT
+
+dbpCOMPONENTS.SetMyFieldModeEnableDisable("AMOUNT", PLCSession.CheckUserOption("COMPEDQTY") || dbpCOMPONENTS.IsNewRecord);
+COMPEDQTY
+
+PLCButtonPanel_PLCButtonClick
