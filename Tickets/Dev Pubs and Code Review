@@ -71,7 +71,7 @@ Merge NYPD #106062:
 Merge CMPD #52197:       
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-9/Login.aspx
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\071825\(Merge to Master) CMPD 52197 – Invalid Date Field Entry
-    Status: Routed for Testing
+    Status: Checked-in
 
 Merge CMPD #105084:       
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-10/Login.aspx
@@ -156,4 +156,4 @@ Merge OCHD 117882
 Merge SPOKANE #102375
     Dev Pub: http://aacserver2019/BEASTiLIMS-Master-Arvin-18/Login.aspx
     Code Review: 
-    Status: On going
+    Status: QA test
