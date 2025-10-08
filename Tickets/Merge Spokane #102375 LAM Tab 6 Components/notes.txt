@@ -15,3 +15,11 @@ dbpCOMPONENTS.SetMyFieldModeEnableDisable("AMOUNT", PLCSession.CheckUserOption("
 COMPEDQTY
 
 PLCButtonPanel_PLCButtonClick
+
+setup: 
+    add dbpanels in TV_CHEMPANEL and TV_DBPANEL then setup in TV_CHEMSETUP
+
+use query to check if despense record is created
+select * from TV_CHEMUSE
+where CHEM_USE_KEY = '8527'
+and/or CHEM_CONTROL_NUMBER = '88928'
