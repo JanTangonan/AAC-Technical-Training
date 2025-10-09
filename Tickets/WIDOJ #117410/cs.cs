@@ -42,9 +42,69 @@ private void SetCommentProperties(string sTitle, string sMessage, int nMessageTy
 }
 
 function EnableDisableOKButton(okID, commentID)
-    {        
-        bnOkButtonID = okID;
-        textboxCommentID = commentID;        
-        // use timer to check comment field
-        setTimeout("Timer_EnableDisableOKButton()",2000);        
+{
+    bnOkButtonID = okID;
+    textboxCommentID = commentID;
+    // use timer to check comment field
+    setTimeout("Timer_EnableDisableOKButton()", 2000);
+}
+
+
+
+protected void btnConfirmUpdate_Click(object sender, EventArgs e)
+{
+    // save text in txtConfirmUpdate
+    if (txtConfirmUpdate.Text.Trim().Length > 0)
+    {
+        hdnConfirmUpdate.Value = txtConfirmUpdate.Text;
+        if (((Button)sender).ID == "btnConfirmDelete")
+            PLCButtonPanel1.ClickDeleteButton();
+        else
+            PLCButtonPanel1.ClickSaveButton();
     }
+    else
+    {
+        PLCButtonPanel1.ClickCancelButton();
+    }
+}
+
+
+protected Boolean DoButtonEvent(string btnname, string btnaction)
+{
+    if (PLCButtonClick == null) return true;
+
+    Boolean recordadded = false;
+    if (ViewState["AddMode"] == null)
+        recordadded = false;
+    else
+        recordadded = ((string)ViewState["AddMode"] == "T");
+
+    PLCButtonClickEventArgs e = new PLCButtonClickEventArgs(btnname, btnaction, false, recordadded);
+
+    try { PLCButtonClick(this, e); }
+    catch (Exception ex)
+    {
+        const string DEVDEBUG = "DEVDEBUG";
+        var appSettings = System.Configuration.ConfigurationManager.AppSettings;
+        if (appSettings.AllKeys.Contains(DEVDEBUG))
+        {
+            string errorLog = string.Format("ButtonPanel: {0} - {1}\nError: {2}\n{3}",
+                btnname,
+                btnaction,
+                ex.Message,
+                ex.StackTrace);
+            PLCSession.ForceWriteDebug(errorLog, true);
+            this.SetSaveError("An error has occurred, please check debug log");
+        }
+
+        return false;
+    }
+    if (btnaction.ToUpper() == "AFTER")
+    {
+        String eventName = "DBButtonPanelButtonClick";
+        String js = "_doDBPanelButtonEvent('" + btnname + "');";
+        ScriptManager.RegisterStartupScript(Parent.Page, typeof(Page), eventName, js, true);
+    }
+
+    return (!e.button_canceled);
+}

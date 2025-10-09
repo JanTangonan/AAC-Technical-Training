@@ -1,0 +1,85 @@
+********** PLC Application Error **********
+LIMS Version : WIDOJ Build 1.10-9-2025-NET4.0.30319
+Error Message : Cannot ExecuteQuery - Exception: The statement has been terminated.
+The DELETE statement conflicted with the REFERENCE constraint "TV_REPTNAME_FK1". The conflict occurred in database "MNBCA", table "dbo.TV_REPTNAME", column 'EXAM_KEY'.
+Error Page Title : Assignment Information
+Session ID : hbo5yddgyzzfox4aws0a3i4g
+Error URL : http://localhost:50573/TAB6Assignments.aspx
+Error Database: MSSQL
+Error Proc : PLCQuery.Delete
+Error SQL : DELETE FROM TV_LABEXAM  where EXAM_KEY = 614358
+Error USER : MIKE
+Error CASE : MANAGELW
+*******************************************
+
+
+10/09/2025 09:07:34 (441)  : <p/>********** PLC Application Error **********<p/>LIMS Version : WIDOJ Build 1.10-9-2025-NET4.0.30319<p/>Error Message : Cannot ExecuteQuery - Exception: The statement has been terminated.
+The DELETE statement conflicted with the REFERENCE constraint &quot;TV_REPTNAME_FK1&quot;. The conflict occurred in database &quot;MNBCA&quot;, table &quot;dbo.TV_REPTNAME&quot;, column &#39;EXAM_KEY&#39;.<p/>Error Page Title : LIMS Error<p/>Session ID : hbo5yddgyzzfox4aws0a3i4g<p/>Error URL : http://localhost:50573/TAB6Assignments.aspx<p/>Error Database: MSSQL<p/>Error Proc : PLCQuery.Delete<p/>Error SQL : DELETE FROM TV_LABEXAM  where EXAM_KEY = 614358<p/>Error USER : MIKE<p/>Error CASE : MANAGELW<p/>*******************************************<p/><p/>
+
+------------------------------------------------------------------------
+
+10/09/2025 09:07:30 (716)  : INSERT INTO TV_PLCLOCK(TABLE_NAME,TABLE_KEY1,TABLE_KEY2,TABLE_KEY3,LOCKED_BY,LOCKED_ON,OS_COMPUTER_NAME,TYPE_RES) Values ('TV_LABEXAM','450989','613816','-1','MIKE','9-Oct-2025 09:07:30','::1','EDIT')
+10/09/2025 09:07:30 (717)  : auditlog-internal 1
+10/09/2025 09:07:30 (717)  : auditlog-internal 2
+10/09/2025 09:07:30 (718)  : auditlog-internal 3
+10/09/2025 09:07:30 (721)  : auditlog-internal 4
+10/09/2025 09:07:30 (727)  : INSERT INTO TV_AUDITLOG (LOG_STAMP, TIME_STAMP, USER_ID, PROGRAM, CODE, SUB_CODE, ERROR_LEVEL, OS_USER_NAME, OS_COMPUTER_NAME, OS_ADDRESS, ADDITIONAL_INFORMATION, BUILD_NUMBER, CASE_KEY, EXAM_KEY, LAB_CASE, DEPARTMENT_CASE_NUMBER) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+10/09/2025 09:07:30 (727)  : auditlog-internal 5
+10/09/2025 09:07:30 (728)  : CONNECT TIME: 0
+10/09/2025 09:07:30 (729)  : SELECT SECTION, ANALYST_ASSIGNED FROM TV_LABASSIGN where EXAM_KEY = 613816
+10/09/2025 09:07:30 (745)  : QUERY TIME: 16.9571
+10/09/2025 09:07:30 (748)  : CONNECT TIME: 0
+10/09/2025 09:07:30 (748)  : SELECT I.IMAGE_ID, I.ENTRY_ID, P.DATA_TYPE, I.FORMAT, I.IMAGE_ID 
+FROM TV_IMAGES I 
+LEFT OUTER JOIN TV_PRINTLOG P ON P.IMAGE_ID = I.IMAGE_ID 
+WHERE P.FILE_SOURCE = 'LABEXAM' AND P.FILE_SOURCE_KEY1 = 613816 UNION 
+SELECT I.IMAGE_ID, I.ENTRY_ID, E.DATA_TYPE, I.FORMAT, I.IMAGE_ID
+FROM TV_IMAGES I 
+LEFT OUTER JOIN TV_EXAMIMAG E ON E.IMAGES_TABLE_ID = I.IMAGE_ID 
+WHERE E.EXAM_KEY = 613816 UNION 
+SELECT I.IMAGE_ID, I.ENTRY_ID, E.DATA_TYPE, I.FORMAT, I.IMAGE_ID
+FROM TV_IMAGES I 
+INNER JOIN TV_EXAMIMAG E ON E.ANNOTATED_IMAGES_TABLE_ID = I.IMAGE_ID 
+WHERE E.EXAM_KEY = 613816
+10/09/2025 09:07:30 (800)  : QUERY TIME: 52.8505
+10/09/2025 09:07:30 (821)  : getSchemaOnly retrieved: 00:00:00
+10/09/2025 09:07:30 (829)  : CONNECT TIME: 0
+10/09/2025 09:07:30 (829)  : SELECT SCHEDULE_KEY, CASE_KEY, DATE_RES, TIME, TYPE_RES, COMMENTS, ANALYST FROM TV_SCHEDULE WHERE 0 = 1
+10/09/2025 09:07:30 (835)  : QUERY TIME: 5.9834
+10/09/2025 09:07:30 (843)  : getSchemaOnly retrieved: 00:00:00
+10/09/2025 09:07:30 (915)  : INSERT INTO TV_SCHEDULE(SCHEDULE_KEY,CASE_KEY,DATE_RES,TIME,TYPE_RES,COMMENTS,ANALYST) Values ('50410342','450989','9-Oct-2025 09:07:30','9-Oct-2025 09:07:30','CE','CASE UPDATED
+AUDIT LOG:
+ASSIGNMENT DELETED
+EXAM KEY: 613816 - SECTION: BIOLOGY section for CHEMINV use ONLY
+REASON FOR CHANGE: test','MIKE')
+10/09/2025 09:07:30 (916)  : auditlog-internal 1
+10/09/2025 09:07:30 (917)  : auditlog-internal 2
+10/09/2025 09:07:30 (917)  : auditlog-internal 3
+10/09/2025 09:07:30 (923)  : auditlog-internal 4
+10/09/2025 09:07:30 (931)  : INSERT INTO TV_AUDITLOG (LOG_STAMP, TIME_STAMP, USER_ID, PROGRAM, CODE, SUB_CODE, ERROR_LEVEL, OS_USER_NAME, OS_COMPUTER_NAME, OS_ADDRESS, ADDITIONAL_INFORMATION, BUILD_NUMBER, CASE_KEY, EXAM_KEY, LAB_CASE, DEPARTMENT_CASE_NUMBER) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+10/09/2025 09:07:30 (932)  : auditlog-internal 5
+10/09/2025 09:07:30 (933)  : Execute Procedure:DELETE_CASE_ASSIGNMENT
+10/09/2025 09:07:30 (934)  : Execute Procedure (1)
+10/09/2025 09:07:30 (934)  : Execute Procedure (2)
+10/09/2025 09:07:30 (935)  : Add Parameter613816
+10/09/2025 09:07:30 (936)  : Add Parameter450989
+10/09/2025 09:07:30 (937)  : Add ParameterS22-00524
+10/09/2025 09:07:30 (938)  : Add Parameter
+10/09/2025 09:07:30 (938)  : Add ParameterMIKE
+10/09/2025 09:07:30 (938)  : Add ParameteriLIMSWIDOJ Build 1.10-9-2025-NET4.0.30319
+10/09/2025 09:07:30 (939)  : Add Parameter::1
+10/09/2025 09:07:30 (939)  : Add Parameter
+10/09/2025 09:07:30 (940)  : Add Parameter::1
+10/09/2025 09:07:30 (940)  : Add ParameterWIDOJ Build 1.10-9-2025-NET4.0.30319
+10/09/2025 09:07:30 (940)  : Add ParameterS
+10/09/2025 09:07:30 (941)  : Execute Procedure (3)
+10/09/2025 09:07:33 (000)  : Execute Procedure (4)
+10/09/2025 09:07:33 (001)  : Execute Procedure (5)
+10/09/2025 09:07:33 (003)  : CONNECT TIME: 0.9982
+10/09/2025 09:07:33 (004)  : SELECT EVIDENCE_CONTROL_NUMBER FROM TV_ITASSIGN WHERE EXAM_KEY = 613816 AND EVIDENCE_CONTROL_NUMBER NOT IN(SELECT EVIDENCE_CONTROL_NUMBER FROM TV_LABITEM WHERE CASE_KEY = 450989)
+10/09/2025 09:07:33 (139)  : QUERY TIME: 136.6334
+10/09/2025 09:07:33 (169)  : getSchemaOnly retrieved: 00:00:00
+10/09/2025 09:07:33 (170)  : CONNECT TIME: 0
+10/09/2025 09:07:33 (170)  : SELECT * FROM TV_LABEXAM  where EXAM_KEY = 614358
+10/09/2025 09:07:33 (185)  : QUERY TIME: 13.963
+10/09/2025 09:07:33 (355)  : 
