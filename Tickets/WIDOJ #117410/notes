@@ -5,3 +5,8 @@ SaveBigViewItemAssignments()
 
 LOG_EDITS_TO_NARRATIVE = 'T'
 
+DATABANK_MODE = 'F'
+
+ORCL-NJSPDEV
+
+test
