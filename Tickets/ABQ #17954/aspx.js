@@ -76,3 +76,112 @@ function isKitComponentsGridValid() {
             <% --__doPostBack('<%= btnSaveComp.UniqueID %>', ''); --%>
             return gridIsValid;
 }
+
+function handleSaveButtonClick(e) {
+    e.preventDefault(); // stop default postback
+
+    var btn = document.getElementById('<%= btnSaveComp.ClientID %>');
+    btn.disabled = true; // disable immediately
+
+    // run validation
+    if (!isKitComponentsGridValid()) {
+        btn.disabled = false; // re-enable if invalid
+        return false;
+    }
+
+    // force postback manually
+    __doPostBack('<%= btnSaveComp.UniqueID %>', '');
+    return false; // prevent default, since we manually triggered it
+}
+
+
+function handleSaveButtonClick(e) {
+    e.preventDefault(); // stop default postback
+
+    var btn = document.getElementById('<%= btnSaveComp.ClientID %>');
+    btn.disabled = true; // disable immediately
+
+    // run validation
+    if (!isKitComponentsGridValid()) {
+        btn.disabled = false; // re-enable if invalid
+        return false;
+    }
+
+    // force postback manually
+    __doPostBack('<%= btnSaveComp.UniqueID %>', '');
+    return false; // prevent default, since we manually triggered it
+}
+
+function tryDisableButton() {
+    var button = document.getElementById('<%= btnSaveComp.ClientID %>');
+    var isValid = isKitComponentsGridValid();
+
+    alert(isValid);
+    if (isValid) {
+        button.disabled = true;
+        button.value = 'Saving...';
+    }
+
+    return isValid;
+}
+
+function isKitComponentsGridValid() {
+    alert("Validation is running 1!");
+
+    var gridIsValid = true;
+    alert("Validation is running 2!");
+    var dialogTitle = 'Kit Components Inventory';
+    alert("Validation is running 2.1!");
+    var gridKitId = "<%= gvComponentKit.ClientID %>";
+    alert("Validation is running 2.2!");
+    var kitGridJson = getKitComponentGridData(gridKitId);
+    alert("Validation is running 2.3!");
+    var expirationDateRequired = getExpirationDatesRequired(kitGridJson);
+
+    alert("Validation is running 3!");
+
+    var validationList = {
+        'expirationDateRequired': expirationDateRequired
+    };
+
+    alert("Validation is running 4!");
+
+    if (expirationDateRequired.length > 0) {
+        gridIsValid = false;
+    }
+
+    alert("Validation is running 5!");
+
+    // not valid? show a message
+    if (!gridIsValid) {
+        message = '<div>Expiration date is required for the following kit item/s: <br/>' +
+            expirationDateRequired.join(', ') + '</div>';
+        showDialog(dialogTitle, message);
+    }
+
+    alert("Validation is running 6!");
+    return gridIsValid;
+}
+
+///
+<asp:Button ID="btnSaveComp"
+    runat="server"
+    Text="Save"
+    Width="80px"
+    OnClick="SaveKit_Click"
+    OnClientClick="return disableAndPostback(this);"
+    UseSubmitBehavior="false" />
+
+
+function disableAndPostback(button) {
+    if (isKitComponentsGridValid()) {
+        // Disable the button and change text
+        button.disabled = true;
+        button.value = 'Saving...';
+
+        // Manually trigger the postback
+        __doPostBack('<%= btnSaveComp.UniqueID %>', '');
+        return false; // Prevent the default postback
+    }
+    return false; // Validation failed, prevent postback
+}
