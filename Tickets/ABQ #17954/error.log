@@ -1,0 +1,43 @@
+10/27/2025 13:52:33 (680)  : <p/>********** PLC Application Error **********<p/>
+LIMS Version : ABQ Build 1.10-27-2025-NET4.0.30319<p/>
+Error Message : Field [ASSET_PAGE_SIZE] - 
+Exception: no rows in result set<p/>
+Error Page Title : LIMS 
+Error<p/>Session ID : qhebjzxfohhkxgpdegtfkmb0<p/>
+Error URL : http://localhost:55138/ChemInv/ChemInv.aspx<p/>Error Database: MSSQL<p/>
+Error Proc : PLCQuery.FieldByName<p/>
+Error SQL : SELECT ASSET_PAGE_SIZE FROM TV_CHEMCTRL WHERE LAB_CODE = &#39;JH&#39;<p/>
+Error USER : MIKE<p/>*******************************************<p/><p/>
+
+
+------------------------------------------------------------------------
+jquery-migrate-1.4.1.min.js?rev=1.10-27-2025-NET4.0.30319:2 JQMIGRATE: Migrate is installed, version 1.4.1
+[Violation] 'DOMContentLoaded' handler took 728ms
+TAB1ChemInfo.aspx:1 [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://www.chromium.org/developers/design-documents/create-amazing-password-forms) <input name=​"ctl00$txtPassword" type=​"password" id=​"ctl00_txtPassword" class=​"default" tabindex=​"-1">​
+[Violation] Forced reflow while executing JavaScript took 49ms
+TAB1ChemInfo.aspx:454   GET http://localhost:55138/Images/Customer_Banner.jpg 404 (Not Found)
+[NEW] Explain Console errors by using Copilot in Edge: click
+         
+         to explain an error. 
+        Learn more
+        Don't show again
+TAB1ChemInfo.aspx:2921  Uncaught TypeError: columnCallbacks[column] is not a function
+    at HTMLTableCellElement.<anonymous> (TAB1ChemInfo.aspx:2921:54)
+    at n.each (jquery-1.12.4.min.js?rev=1.10-27-2025-NET4.0.30319:2:2881)
+    at a.fn.init.each (jquery-1.12.4.min.js?rev=1.10-27-2025-NET4.0.30319:2:846)
+    at HTMLTableRowElement.<anonymous> (TAB1ChemInfo.aspx:2919:34)
+    at n.each (jquery-1.12.4.min.js?rev=1.10-27-2025-NET4.0.30319:2:2881)
+    at a.fn.init.each (jquery-1.12.4.min.js?rev=1.10-27-2025-NET4.0.30319:2:846)
+    at getKitComponentGridData (TAB1ChemInfo.aspx:2917:14)
+    at isKitComponentsGridValid (TAB1ChemInfo.aspx:2958:31)
+    at HTMLInputElement.onclick (TAB1ChemInfo.aspx:2427:388)
+(anonymous) @ TAB1ChemInfo.aspx:2921
+each @ jquery-1.12.4.min.js?rev=1.10-27-2025-NET4.0.30319:2
+each @ jquery-1.12.4.min.js?rev=1.10-27-2025-NET4.0.30319:2
+(anonymous) @ TAB1ChemInfo.aspx:2919
+each @ jquery-1.12.4.min.js?rev=1.10-27-2025-NET4.0.30319:2
+each @ jquery-1.12.4.min.js?rev=1.10-27-2025-NET4.0.30319:2
+getKitComponentGridData @ TAB1ChemInfo.aspx:2917
+isKitComponentsGridValid @ TAB1ChemInfo.aspx:2958
+onclick @ TAB1ChemInfo.aspx:2427
+TAB1ChemInfo.aspx:2427 [Violation] 'click' handler took 7892ms
