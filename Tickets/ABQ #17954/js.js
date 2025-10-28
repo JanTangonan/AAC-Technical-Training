@@ -61,3 +61,26 @@ function getKitComponentGridData(gridClientId) {
 
     return rowVals
 }
+
+mpeChemInvKit.Show();
+ScriptManager.RegisterStartupScript(
+    this,
+    GetType(),
+    "EnableSaveButton",
+    "$('#" + btnSaveComp.ClientID + "').removeClass('button-disabled');",
+    true
+);
+
+Sys.Application.add_load(function () {
+    var panel = document.getElementById('<%= pnlMainChemInvKit.ClientID %>');
+    var btnSave = document.getElementById('<%= btnSaveComp.ClientID %>');
+
+    var observer = new MutationObserver(function (mutations) {
+        if ($(panel).is(":visible")) {
+            btnSave.classList.remove("button-disabled");
+            btnSave.disabled = false;
+        }
+    });
+
+    observer.observe(panel, { attributes: true, attributeFilter: ['style'] });
+});
