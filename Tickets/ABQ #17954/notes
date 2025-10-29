@@ -1,2 +1,8 @@
 Barcode: J028dG
 
+Ticket#117954 - EZ1 Kits Duped incorrectly
+
+- Addded disabling of Save button in Kit Component Inventory popup upon click to prevent user from clicking multiple times. 
+
+#PROGRAMMING: 5.0
+#TESTING: 2.0 
