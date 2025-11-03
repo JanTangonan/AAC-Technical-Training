@@ -1,0 +1,10 @@
+Uncaught TypeError: columnCallbacks[column] is not a function
+    at HTMLTableCellElement.<anonymous> (TAB1ChemInfo.aspx:3270:54)
+    at ce.each (jquery-3.7.1.min.js?rev=1.11-3-2025-NET4.0.30319:2:3129)
+    at ce.fn.init.each (jquery-3.7.1.min.js?rev=1.11-3-2025-NET4.0.30319:2:1594)
+    at HTMLTableRowElement.<anonymous> (TAB1ChemInfo.aspx:3267:34)
+    at ce.each (jquery-3.7.1.min.js?rev=1.11-3-2025-NET4.0.30319:2:3129)
+    at ce.fn.init.each (jquery-3.7.1.min.js?rev=1.11-3-2025-NET4.0.30319:2:1594)
+    at getKitComponentGridData (TAB1ChemInfo.aspx:3264:14)
+    at isKitComponentsGridValid (TAB1ChemInfo.aspx:3305:31)
+    at HTMLInputElement.onclick (TAB1ChemInfo.aspx:2752:388)
