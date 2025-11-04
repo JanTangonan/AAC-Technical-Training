@@ -7,3 +7,4 @@ PIN_REQUIRED_FOR_TRANSFER != 'T'
 
 MSQL-MNBCA: Barcode = e1S  056FR , Goto Item = 38-1 : a known DNA sample collection kit
 ORCL-IOWA: Barcode = w101 01tU- , Goto Item = 1: Ammunition
+
