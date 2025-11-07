@@ -30,3 +30,4 @@ select * from TV_WEBCONFIG  -- contains webconfig control codes
 --
 select * from TV_OCXDATA    -- contains the OCX control codes and their descriptions, and some flags
 
+select * from TV_CUSTREPORTS

@@ -2,5 +2,6 @@ ORCL-NJSPDEV
 
 LAM RANGE
 
-CustodyGTEQ365
-range.rpt
+ADM Administrative
+    CustodyGTEQ365
+    range.rpt
