@@ -1,0 +1,61 @@
+┌──────────────────────────────────────────────────────────┐
+│ 1️⃣ SELECTION_CRITERIA from TV_CUSTREPORTS table         │
+│ -------------------------------------------------------- │
+│ "Purchase Cost = NUMBERRANGE:9.99 |{TV_CHEMINV.PURCHASE_COST}" │
+└──────────────────────────────────────────────────────────┘
+                 │
+                 ▼
+┌──────────────────────────────────────────────────────────┐
+│ 2️⃣ Parsed by iniReader in RunReport() method             │
+│ (ConfigTAB6GroupReports.aspx.cs)                         │
+│                                                          │
+│ string[] attributes = iniReader.ReadString(key).Split('|'); │
+│ type = attributes[0].Trim();                             │
+│ if (type.Contains(":")) {                                │
+│     mask = type.Split(':')[1];   // ← "9.99"              │
+│     type = type.Split(':')[0];   // ← "NUMBERRANGE"       │
+│ }                                                        │
+└──────────────────────────────────────────────────────────┘
+                 │
+                 ▼
+┌──────────────────────────────────────────────────────────┐
+│ 3️⃣ Assigned into Parameter object                        │
+│                                                          │
+│ var p = new PLCWebCommon.CustomReports.Parameter();       │
+│ p.Type = "NUMBERRANGE";                                  │
+│ p.Mask = "9.99";                                         │
+│ parameters.Add(p);                                       │
+└──────────────────────────────────────────────────────────┘
+                 │
+                 ▼
+┌──────────────────────────────────────────────────────────┐
+│ 4️⃣ Bound to the Repeater control in the ASPX page        │
+│                                                          │
+│ repParameters.DataSource = parameters;                   │
+│ repParameters.DataBind();                                │
+└──────────────────────────────────────────────────────────┘
+                 │
+                 ▼
+┌──────────────────────────────────────────────────────────┐
+│ 5️⃣ Inside the Repeater template:                         │
+│                                                          │
+│ <ajaxToolkit:MaskedEditExtender                          │
+│    Mask='<%# !string.IsNullOrEmpty(Eval("Mask").ToString()) │
+│             ? Eval("Mask").ToString() : "9999999" %>' /> │
+│                                                          │
+│ → At runtime, Eval("Mask") = p.Mask = "9.99"             │
+│ → So the control renders as Mask="9.99"                  │
+└──────────────────────────────────────────────────────────┘
+                 │
+                 ▼
+┌──────────────────────────────────────────────────────────┐
+│ 6️⃣ Rendered HTML + Script in Browser                     │
+│                                                          │
+│ <input id="...txtNumberStart" ... />                     │
+│ <script>                                                 │
+│   $create(AjaxControlToolkit.MaskedEditBehavior,         │
+│     {"Mask":"9.99", ...}, null, null, $get("...txtNumberStart")); │
+│ </script>                                                │
+│                                                          │
+│ Browser now enforces numeric input with 2 decimals.      │
+└──────────────────────────────────────────────────────────┘
