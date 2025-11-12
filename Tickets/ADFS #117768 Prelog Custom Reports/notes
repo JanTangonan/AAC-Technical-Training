@@ -31,3 +31,10 @@ ALLOW_CRW_VIEWER
 SAMPLEREPORT.rpt	635	ADM	0	Test CustomReport Page 2	MANAGEMENT			ADMIN	"Analyst (Code)=CODE|{TV_LABCASE.CASE_MANAGER}|TV_ANALYST
 Offense (Multipick)=MULTIPICK|{TV_LABCASE.OFFENSE_CODE}|TV_OFFENSE
 Custody = CUSTODY|{TV_LABITEM.CUSTODY_OF}|{TV_LABITEM.LOCATION}|"	T	T					
+
+
+Blured!
+extenderId: ctl00_cp_repParameters_ctl01_meeNumberEnd 
+$extender: [object Object]
+mask:           
+isDecimal: false
