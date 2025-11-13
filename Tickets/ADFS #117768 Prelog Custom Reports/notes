@@ -38,3 +38,16 @@ extenderId: ctl00_cp_repParameters_ctl01_meeNumberEnd
 $extender: [object Object]
 mask:           
 isDecimal: false
+
+
+<ajaxToolkit:MaskedEditExtender
+    TargetControlID="TextBox2" 
+    Mask="9,999,999.99"
+    MessageValidatorTip="true" 
+    OnFocusCssClass="MaskedEditFocus" 
+    OnInvalidCssClass="MaskedEditError"
+    MaskType="Number" 
+    InputDirection="RightToLeft" 
+    AcceptNegative="Left" 
+    DisplayMoney="Left"
+    ErrorTooltipEnabled="True"/>
