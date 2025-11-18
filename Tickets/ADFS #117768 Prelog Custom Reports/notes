@@ -51,3 +51,6 @@ isDecimal: false
     AcceptNegative="Left" 
     DisplayMoney="Left"
     ErrorTooltipEnabled="True"/>
+
+
+qryReports.SQL = "SELECT CUST_REPORT_ORDER, REPORT_DESCRIPTION, REPORT_FORMAT, CUST_REPORT_KEY FROM TV_CUSTREPORTS WHERE REPORT_SOURCE = 'MANAGEMENT' AND CUST_REPORT_GROUP = '" + customGroup + "' and CUST_REPORT_KEY IN (" + theKeys + ") ORDER BY CUST_REPORT_ORDER";
