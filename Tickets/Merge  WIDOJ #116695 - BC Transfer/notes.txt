@@ -1,0 +1,25 @@
+scan custody loc to go to BCTransferjs.aspx
+VAN   MIKE
+VAN   WICK
+VB   DEPTLOC
+
+MNBCA: 
+Lab Case: S19-00350
+
+use Dev Tools to generate barcode
+    - item
+        - Key = ECN
+        - Labcode = LAB_CODE
+
+select * from TV_LABITEM
+where CASE_KEY = '448011'
+
+select * from TV_LABCASE
+where LAB_CODE = 'S'
+and LAB_CASE = 'S19-00350'
+
+1501312
+1469042
+1469043
+1469044
+1469261
