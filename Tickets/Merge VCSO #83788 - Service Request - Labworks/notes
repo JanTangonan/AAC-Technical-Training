@@ -1,0 +1,27 @@
+VENTURA DEV: Lab Case = 19-000259 
+MTRX-ITEMDESC2
+
+NJSPDEV: Department Case = MTX-PANELCOPY001
+
+USER OPTION: HIDELABWRK != T
+
+
+
+dbpAssignmentDetails.PLCWhereClause = "WHERE EXAM_KEY = 0"
+
+_PLCConnectionString = 
+"Provider=SQLOLEDB;Data Source=AACSERVER2019\MSSQL2019;Initial Catalog=VENTURA_DEV;User ID=VENTURA_DEV;Password=ventura_dev;Application Name=LIMS-49be753d-34dc-416e-86c4-26b17ed347de;"
+
+this.PLCPanelName = "LABWORK_ASSIGNMENT_DETAILS"
+
+sqlstr = select REPORT_NUMBER, SECTION, ANALYST_ASSIGNED, DATE_ASSIGNED, DATE_COMPLETED from TV_LABASSIGN  WHERE EXAM_KEY = 0
+
+pr.chFlexBox.EncodedCodeCondition = ''
+pr.chFlexBox.SelectedText = 'Latent Prints'
+pr.chFlexBox.SelectedValue = 'LP'
+pr.chFlexBox.TableName = 'TV_EXAMCODE'
+
+pr.chFlexBox.EncodedCodeCondition = '(ACCOUNT_DISABLED <> "T" OR ACCOUNT_DISABLED IS NULL)'
+pr.chFlexBox.SelectedText = 'Kristian'
+pr.chFlexBox.SelectedValue = 'KRIS'
+pr.chFlexBox.TableName = 'CV_ANALYST'

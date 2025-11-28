@@ -23,3 +23,13 @@ and LAB_CASE = 'S19-00350'
 1469043
 1469044
 1469261
+
+BCContainer
+- create bulk container
+m1s  00Vzb
+
+I2025-00003
+
+Container Transfer
+- Bulk container > Transfer button
+
