@@ -18,18 +18,49 @@ select * from TV_LABCASE
 where LAB_CODE = 'S'
 and LAB_CASE = 'S19-00350'
 
-1501312
-1469042
-1469043
-1469044
-1469261
+1501312 -   e1S  05iX0
+1469042 -   e1S  05adm
+1469043 -   e1S  05adn
+1469044 -   e1S  05ado
+1469261 -   e1S  05ahC
 
 BCContainer
 - create bulk container
-m1s  00Vzb
+MNBCA: 
+    barcode: m1s  00Vzb
+    bulk container: I2025-00003
 
-I2025-00003
+NJSPDEV:
+    barcode: m1C  00t4Y
+    bulk container: C2025-BX-022
 
 Container Transfer
 - Bulk container > Transfer button
 
+select * from TV_LABCASE
+where LAB_CODE = 'C'
+and LAB_CASE = 'C23-00022'
+Q22-00173 
+
+select * from TV_LABITEM
+where CASE_KEY = '1054180'
+
+2608666 -   e1C  09wsP
+2608667 -   e1C  09wsQ
+2608668 -   e1C  09wsR
+2608669 -   e1C  09wsS
+2608670 -   e1C  09wsT
+2608671 -   e1C  09wsU
+2608672 -   e1C  09wsV
+2608665 -   e1C  09wsO
+
+2608397 -   e1Q  09woC
+2608399 -   e1Q  09woE
+2608400 -   e1Q  09woF
+2608401 -   e1Q  09woG
+2608398 -   e1Q  09woD
+2608414 -   e1Q  09woT
+2608415 -   e1Q  09woU
+2620912 -   e1Q  09zrk
+2620913 -   e1Q  09zrl
+2620914 -   e1Q  09zrm
