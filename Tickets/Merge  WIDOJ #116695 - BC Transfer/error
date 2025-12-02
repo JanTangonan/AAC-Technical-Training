@@ -1,0 +1,20 @@
+12/02/2025 17:45:39 (088)  : 
+********** PLC Application Error **********
+LIMS Version : Master Build 1.12-2-2025-NET4.0.30319
+Error Message : Cannot ExecuteNonQuery - Exception: ORA-00001: unique constraint (NJSPDEV.REVREQHIST_A0) violated
+Error Page Title : BC Container
+Session ID : klozk2trovlzksu4lzrr4b1f
+Error URL : http://localhost:53919/BCContainer.aspx
+Error Database: ORACLE
+Error Proc : PLCQuery.Post(insert)
+Error SQL : SELECT * FROM TV_REVREQHIST WHERE 0 = 1
+Error USER : MIKE
+Error CASE : MANAGELW
+*******************************************
+
+
+12/02/2025 17:45:39 (224)  : CONNECT TIME: 97.9452
+12/02/2025 17:45:39 (225)  : select * from TV_LABCTRL5 where LAB_CODE = 'C'
+12/02/2025 17:45:39 (251)  : QUERY TIME: 124.279
+12/02/2025 17:45:39 (251)  : <LC_USES_QC_AUTOCOMPLETE> is expired. Refreshing value from database.
+12/02/2025 17:45:39 (252)  : <p/>********** PLC Application Error **********<p/>LIMS Version : Master Build 1.12-2-2025-NET4.0.30319<p/>Error Message : Cannot ExecuteNonQuery - Exception: ORA-00001: unique constraint (NJSPDEV.REVREQHIST_A0) violated<p/>Error Page Title : LIMS Error<p/>Session ID : klozk2trovlzksu4lzrr4b1f<p/>Error URL : http://localhost:53919/BCContainer.aspx<p/>Error Database: ORACLE<p/>Error Proc : PLCQuery.Post(insert)<p/>Error SQL : SELECT * FROM TV_REVREQHIST WHERE 0 = 1<p/>Error USER : MIKE<p/>Error CASE : MANAGELW<p/>*******************************************<p/><p/>
