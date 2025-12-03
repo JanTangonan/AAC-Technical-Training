@@ -18,3 +18,53 @@ Error CASE : MANAGELW
 12/02/2025 17:45:39 (251)  : QUERY TIME: 124.279
 12/02/2025 17:45:39 (251)  : <LC_USES_QC_AUTOCOMPLETE> is expired. Refreshing value from database.
 12/02/2025 17:45:39 (252)  : <p/>********** PLC Application Error **********<p/>LIMS Version : Master Build 1.12-2-2025-NET4.0.30319<p/>Error Message : Cannot ExecuteNonQuery - Exception: ORA-00001: unique constraint (NJSPDEV.REVREQHIST_A0) violated<p/>Error Page Title : LIMS Error<p/>Session ID : klozk2trovlzksu4lzrr4b1f<p/>Error URL : http://localhost:53919/BCContainer.aspx<p/>Error Database: ORACLE<p/>Error Proc : PLCQuery.Post(insert)<p/>Error SQL : SELECT * FROM TV_REVREQHIST WHERE 0 = 1<p/>Error USER : MIKE<p/>Error CASE : MANAGELW<p/>*******************************************<p/><p/>
+
+
+
+----
+12/03/2025 09:21:22 (918)  : @PageError:ORA-00942: table or view does not exist
+   at System.Data.OleDb.OleDbCommand.ProcessResults(OleDbHResult hr)
+   at System.Data.OleDb.OleDbCommand.PrepareCommandText(Int32 expectedExecutionCount)
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillSchemaInternal(DataSet dataset, DataTable datatable, SchemaType schemaType, IDbCommand command, String srcTable, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillSchema(DataTable dataTable, SchemaType schemaType, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillSchema(DataTable dataTable, SchemaType schemaType)
+   at PLCCONTROLS.PLCQuery.getSchemaOnly() in C:\Projects\BEASTiLIMS_Master-Merge-WIDOJ-111881-WIDOJ-116695\PLCCONTROLS\PLC_Query.cs:line 1362
+   at PLCCONTROLS.PLCQuery.get_PLCDataTable() in C:\Projects\BEASTiLIMS_Master-Merge-WIDOJ-111881-WIDOJ-116695\PLCCONTROLS\PLC_Query.cs:line 365
+   at PLCCONTROLS.PLCQuery.IsEmpty() in C:\Projects\BEASTiLIMS_Master-Merge-WIDOJ-111881-WIDOJ-116695\PLCCONTROLS\PLC_Query.cs:line 988
+   at PLCCONTROLS.PLCQuery.HasData() in C:\Projects\BEASTiLIMS_Master-Merge-WIDOJ-111881-WIDOJ-116695\PLCCONTROLS\PLC_Query.cs:line 1001
+   at PLCGlobals.PLCDBGlobal.GetNextContainerNumber(String bulkContainerFormat, String labCode, String containerYear, String containerType, Int32 maxBulkContainerNumber) in C:\Projects\BEASTiLIMS_Master-Merge-WIDOJ-111881-WIDOJ-116695\PLCGLOBALS\PLCDBGlobal.cs:line 22038
+   at BEASTiLIMS.BulkContainer.bnCreate_Click(Object sender, EventArgs e) in C:\Projects\BEASTiLIMS_Master-Merge-WIDOJ-111881-WIDOJ-116695\BEASTiLIMS\BulkContainer.aspx.cs:line 186
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+12/03/2025 09:21:22 (936)  : CONNECT TIME: 0
+12/03/2025 09:21:22 (936)  : SELECT ID, VALUE_RES, ENCRYPTED, STORED_PROC_ENCRYPT FROM TV_WEBCONFIG WHERE CODE = 'WEBLOG'
+12/03/2025 09:21:22 (960)  : QUERY TIME: 22.9232
+12/03/2025 09:21:22 (961)  : URL:http://localhost:53919/BulkContainer.aspx
+12/03/2025 09:21:22 (962)  : Exception Message:ORA-00942: table or view does not exist
+12/03/2025 09:21:22 (962)  : Stacktrace:   at System.Data.OleDb.OleDbCommand.ProcessResults(OleDbHResult hr)
+   at System.Data.OleDb.OleDbCommand.PrepareCommandText(Int32 expectedExecutionCount)
+   at System.Data.OleDb.OleDbCommand.ExecuteReaderInternal(CommandBehavior behavior, String method)
+   at System.Data.OleDb.OleDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OleDb.OleDbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillSchemaInternal(DataSet dataset, DataTable datatable, SchemaType schemaType, IDbCommand command, String srcTable, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillSchema(DataTable dataTable, SchemaType schemaType, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillSchema(DataTable dataTable, SchemaType schemaType)
+   at PLCCONTROLS.PLCQuery.getSchemaOnly() in C:\Projects\BEASTiLIMS_Master-Merge-WIDOJ-111881-WIDOJ-116695\PLCCONTROLS\PLC_Query.cs:line 1362
+   at PLCCONTROLS.PLCQuery.get_PLCDataTable() in C:\Projects\BEASTiLIMS_Master-Merge-WIDOJ-111881-WIDOJ-116695\PLCCONTROLS\PLC_Query.cs:line 365
+   at PLCCONTROLS.PLCQuery.IsEmpty() in C:\Projects\BEASTiLIMS_Master-Merge-WIDOJ-111881-WIDOJ-116695\PLCCONTROLS\PLC_Query.cs:line 988
+   at PLCCONTROLS.PLCQuery.HasData() in C:\Projects\BEASTiLIMS_Master-Merge-WIDOJ-111881-WIDOJ-116695\PLCCONTROLS\PLC_Query.cs:line 1001
+   at PLCGlobals.PLCDBGlobal.GetNextContainerNumber(String bulkContainerFormat, String labCode, String containerYear, String containerType, Int32 maxBulkContainerNumber) in C:\Projects\BEASTiLIMS_Master-Merge-WIDOJ-111881-WIDOJ-116695\PLCGLOBALS\PLCDBGlobal.cs:line 22038
+   at BEASTiLIMS.BulkContainer.bnCreate_Click(Object sender, EventArgs e) in C:\Projects\BEASTiLIMS_Master-Merge-WIDOJ-111881-WIDOJ-116695\BEASTiLIMS\BulkContainer.aspx.cs:line 186
+   at System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   at System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   at System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)

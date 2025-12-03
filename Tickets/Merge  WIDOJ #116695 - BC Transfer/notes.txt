@@ -34,6 +34,10 @@ NJSPDEV:
     barcode: m1C  00t4Y
     bulk container: C2025-BX-022
 
+IOWA:
+    barcode: m1D  00DTq
+    bulk container: BOX2023-00002
+
 Container Transfer
 - Bulk container > Transfer button
 
@@ -44,6 +48,8 @@ Q22-00173
 
 select * from TV_LABITEM
 where CASE_KEY = '1054180'
+
+ PLCSession.CheckUserOption("1023LOC");
 
 2608666 -   e1C  09wsP
 2608667 -   e1C  09wsQ
@@ -64,3 +70,14 @@ where CASE_KEY = '1054180'
 2620912 -   e1Q  09zrk
 2620913 -   e1Q  09zrl
 2620914 -   e1Q  09zrm
+
+2604177 -   e1C  09vmG
+
+1164634 -   e101 04RKP
+
+--IOWA
+1162499 -   e1P  04Qo3
+
+e1D  04RKP
+
+CAN_EDIT_PROCESS_TIME = 'T'
