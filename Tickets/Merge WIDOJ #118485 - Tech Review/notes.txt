@@ -5,5 +5,10 @@ TV_LABCTRL7.SAVE_REPORT_REVISION_AT_REJECT equals T
 
 Lab Case: S22-00524 TOX
 
+
+Lab Case: S25-01216 Seq: 20 Section: BIO
+Lab Case: 2023-00251 Seq: 
+
 select * from TV_WORDDATA where EXAM_KEY = 614892  
 select * from TV_WORDBACK where EXAM_KEY = 614892 
+
