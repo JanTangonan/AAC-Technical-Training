@@ -188,13 +188,22 @@ Merge Master #117954
     Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\112125\(Merge to Master) 117954 - EZ1 Kits Duped incorrectly
     Status: Checked-in
 
-Merge WIDOJ #11741
+Merge WIDOJ #117410
     Dev Pub: http://aacserver2019/BEASTiLIMS-MASTER-Arvin-10/Login.aspx
-    Code Review: 
+    Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\112825\(Merge to Master) 117410 - Potential Assignment Delete Bug
     Status: 
 
 Merge WIDOJ #116695 
+    Dev Pub: http://aacserver2019/BEASTiLIMS-Master-Arvin-15/Login.aspx
+    Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\120525\(Merge to Master) 116695 - Transfer Date and Time
+    Status: For Testing
+
+Merge KCAFIS #118485
+    Dev Pub: http://aacserver2019/BEASTiLIMS-Master-Arvin-17/Login.aspx
+    Code Review: \\aacserver2019\StaffDirectory\AAC\Development\Code Review\2025\121225\(Merge to Master) 118485 - Need a Print button on Revisions Module
+    Status: For Testing
+
+Merge KCAFIS #117446
     Dev Pub: 
     Code Review: 
-    Status: 
-
+    Status: For Code Review
