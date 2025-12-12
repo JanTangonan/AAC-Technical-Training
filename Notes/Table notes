@@ -34,3 +34,5 @@ select * from TV_CUSTREPORTS
 
 -- for review checklists
 select * from TV_REVLIST    -- contains the review checklist codes and their descriptions, and some flags
+
+-- 
