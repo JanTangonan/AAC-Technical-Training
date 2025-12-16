@@ -1,5 +1,7 @@
 -- for USER OPTIONS
 select * from TV_USEROPT    -- user options table, can be accessed in ADMIN > CONFIGURATION > USER TAB > USER GROUP > PER GROUP VIEW > search for OPTION_RES value 
+DELETE * FROM TV_USEROPT WHERE OPTION_RES = {User option}
+ 
 select * from TV_AUTHCODE   -- auth code table. this where user options are created and sets the access tree
 
 -- for DBGRID
