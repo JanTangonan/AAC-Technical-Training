@@ -1,3 +1,0 @@
-COMPEDQTY 
-
-PLCDBPanel dbpCOMPONENTS = (PLCDBPanel)cp.FindControl("dbpCOMPONENT");
