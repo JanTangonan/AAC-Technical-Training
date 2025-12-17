@@ -1,0 +1,8 @@
+COMPEDQTY 
+
+PLCDBPanel dbpCOMPONENTS = (PLCDBPanel)cp.FindControl("dbpCOMPONENT");
+
+when COMPEDQTY is checked and MANDATORY is T
+    - amount field is required and editable upon edit 
+
+when COMPEDQTY is unchecked and MANDATORY is T
