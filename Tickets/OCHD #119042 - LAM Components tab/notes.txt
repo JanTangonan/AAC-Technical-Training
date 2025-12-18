@@ -6,3 +6,40 @@ when COMPEDQTY is checked and MANDATORY is T
     - amount field is required and editable upon edit 
 
 when COMPEDQTY is unchecked and MANDATORY is T
+
+
+testing: dev pub
+    COMPEDQTY unchecked
+        result: editable
+
+    COMPEDQTY checked
+        result: 
+
+
+SELECT * FROM TV_USEROPT WHERE USERID IN ('*ADMIN','MIKE') AND OPTION_RES = 'COMPEDQTY'
+has result = checked
+has no result = 
+
+testing: local build
+    case 1: COMPEDQTY unchecked 
+        result: 
+            var userOpt = PLCSession.CheckUserOption("COMPEDQTY");  ~ false
+            dbpCOMPONENTS.IsNewRecord   ~ false
+
+            readonly ~ true
+
+            amount field is readonly
+
+    case 2: COMPEDQTY checked
+        result: 
+            var userOpt = PLCSession.CheckUserOption("COMPEDQTY");  ~ true
+            dbpCOMPONENTS.IsNewRecord   ~ false
+
+            readonly ~ false
+
+            amount field is editable
+
+
+amount can be editable when COMPEDQTY useroption is turned on
+amount cant be editable when COMPEDQTY useroption is turned off
+amount can be editable when dbpCOMPONENTS.IsNewRecord = true
