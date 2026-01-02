@@ -1,0 +1,5 @@
+C:\Projects                             - Projects folder   
+C:\Users\AAC\Desktop\patches            - patches folder
+C:\Labsave                              - Labsave folder
+\\aacserver2019\LabSave                 - 2019 Labsave folder
+\\aacserver2019\publish\dev_publish\Arvin - 2019 Dev Pub folder
