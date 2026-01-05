@@ -1,0 +1,9 @@
+QCAdvanced.js
+    CreateClick()
+    CaseExistenceValidation_PreSubmit()
+    ValidateCaseSubmissionFields()
+    validateResubmittedItemContainers()
+
+QCAdvancedUtil.cs
+    CanSavePLCDBPanel()
+    ValidateItems()

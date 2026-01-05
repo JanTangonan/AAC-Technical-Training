@@ -1,0 +1,7 @@
+select  * from TV_JURISDIC Where  "JURISDICTION_CODE" = '73'
+select  * from TV_CASETYPE Where  "CASE_TYPE" = '13'
+select  * from TV_DEPTNAME Where  "DEPARTMENT_CODE" = 'PD0355'
+select  * from TV_SUBTYPE Where  "TYPE_RES" = 'CBSM'
+select  * from TV_ANALYST Where  "ANALYST" = 'MIKE' AND (ACCOUNT_DISABLED <> 'T' OR ACCOUNT_DISABLED IS NULL)
+
+select * from TV_ITEMTYPE where ITEM_TYPE = '"ITEM"'

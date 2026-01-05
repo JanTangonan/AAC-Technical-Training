@@ -38,3 +38,4 @@ select * from TV_CUSTREPORTS
 select * from TV_REVLIST    -- contains the review checklist codes and their descriptions, and some flags
 
 -- 
+select * from TV_EXAMSTAT   -- contains exam status such as Draft Printed, Assigned to Section, Ready for Approval
