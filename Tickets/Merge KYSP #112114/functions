@@ -8,3 +8,8 @@ QCAdvancedUtil.cs
     CanSavePLCDBPanel()
     ValidateItems()
 
+PLC_SessionVars.cs
+    CodeValid()
+    
+PLC_Query.cs
+    SQL
