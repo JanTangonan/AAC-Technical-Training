@@ -4,4 +4,6 @@ select  * from TV_DEPTNAME Where  "DEPARTMENT_CODE" = 'PD0355'
 select  * from TV_SUBTYPE Where  "TYPE_RES" = 'CBSM'
 select  * from TV_ANALYST Where  "ANALYST" = 'MIKE' AND (ACCOUNT_DISABLED <> 'T' OR ACCOUNT_DISABLED IS NULL)
 
-select * from TV_ITEMTYPE where ITEM_TYPE = '"ITEM"'
+qrycodefile.SQL = select * from TV_ITEMTYPE where ITEM_TYPE = '"ITEM"'
+
+

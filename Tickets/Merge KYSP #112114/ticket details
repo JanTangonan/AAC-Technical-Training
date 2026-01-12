@@ -16,4 +16,9 @@ QC > labcase: S25-01640 > new submission >>
     Packaging: One box containing
     Item Type: Brackets
 
+Issue #1: 
+    ValidateItems()
+    ITEMTYPE: [ITEM]
+
+Issue #2:
 
