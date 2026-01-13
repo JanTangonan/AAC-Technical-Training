@@ -6,3 +6,8 @@ LAM > Lab Status Info > Edit
 
 MSQL-VENTURA_DEV: Property and Evidence, Section: Biology, Asset Type: Acid Phosphatase Reagent
 ORCL-NJSPDEV: Central Regional Laboratory, Section: Drug Unit, Asset Type: 1 Lifter bug & tar remover
+
+
+formatFunction = CAST(COL02_VALUE AS DECIMAL(18, 3))
+
+INSERT INTO TV_CALDATA(CAL_DATA_KEY,CHEMICAL_CONTROL_NUMBER,TEMPLATE_ID,RECORDED_BY,RECORDED_DATE,COL01_VALUE,COL02_VALUE) Values ('232','1021821','DR-S','MIKE',to_date('13-Jan-2026 00:00:00','DD-MON-YYYY HH24:MI:SS'),'1','12')
