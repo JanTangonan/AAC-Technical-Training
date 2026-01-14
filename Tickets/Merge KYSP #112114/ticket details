@@ -6,6 +6,7 @@ ORCL-NJSPDEV: Department Case Number = MTX-PANELCOPY001
 
 - Supported codes with square brackets [] on flexbox code condition when loading selected value.
 
+LAB_CODE IN ('SW')
 
 QC > labcase: S25-01640 > new submission >>
     Lab Code: St. Paul Laboratory
@@ -21,4 +22,6 @@ Issue #1:
     ITEMTYPE: [ITEM]
 
 Issue #2:
+
+
 

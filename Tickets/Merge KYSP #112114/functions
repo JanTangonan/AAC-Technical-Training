@@ -10,6 +10,11 @@ QCAdvancedUtil.cs
 
 PLC_SessionVars.cs
     CodeValid()
-    
+    GenerateCodeHeadSQL()
+
+PLCDBPanel.cs
+    LoadRecord()
+    CodeHeadSetValue()
+
 PLC_Query.cs
     SQL
