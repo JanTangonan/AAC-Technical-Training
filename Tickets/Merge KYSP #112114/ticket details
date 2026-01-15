@@ -22,6 +22,7 @@ Issue #1:
     ITEMTYPE: [ITEM]
 
 Issue #2:
-
+    SELECT NARCO_ITEM FROM TV_ITEMTYPE WHERE ITEM_TYPE = '"ITEM"'
+    CheckNarcoSubmission()
 
 

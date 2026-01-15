@@ -11,6 +11,7 @@ QCAdvancedUtil.cs
 PLC_SessionVars.cs
     CodeValid()
     GenerateCodeHeadSQL()
+    CheckNarcoSubmission()
 
 PLCDBPanel.cs
     LoadRecord()
