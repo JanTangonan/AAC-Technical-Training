@@ -21,3 +21,20 @@ Error CASE : KAIZEN-5
 01/06/2026 15:15:01 (137)  : QUERY TIME: 73.7536
 01/06/2026 15:15:01 (140)  : <LC_USES_QC_AUTOCOMPLETE> is expired. Refreshing value from database.
 01/06/2026 15:15:01 (142)  : <p/>********** PLC Application Error **********<p/>LIMS Version : Master Build 1.1-6-2026-NET4.0.30319<p/>Error Message : Field [NARCO_ITEM] - Exception: no rows in result set<p/>Error Page Title : LIMS Error<p/>Session ID : 4jpiclpse55nm3duape2xkn1<p/>Error URL : http://localhost:62965/TAB4Items.aspx<p/>Error Database: MSSQL<p/>Error Proc : PLCQuery.FieldByName<p/>Error SQL : SELECT NARCO_ITEM FROM TV_ITEMTYPE WHERE ITEM_TYPE = &#39;&quot;ITEM&quot;&#39;<p/>Error USER : MIKE<p/>Error CASE : KAIZEN-5<p/>*******************************************<p/><p/>
+
+
+********** PLC Application Error **********
+LIMS Version : Master Build 1.1-15-2026-NET4.0.30319
+Error Message : Field [NARCO_ITEM] - Exception: no rows in result set
+Error Page Title : Item Information
+Session ID : utlmw3prus4x1dacopoyjrny
+Error URL : http://localhost:62965/TAB4Items.aspx
+Error Database: MSSQL
+Error Proc : PLCQuery.FieldByName
+Error SQL : SELECT NARCO_ITEM FROM TV_ITEMTYPE WHERE ITEM_TYPE = '"ITEM"'
+Error USER : MIKE
+Error CASE : 32234234
+*******************************************
+
+
+Invalid object name 'TV_ITMTYPNAME'.
