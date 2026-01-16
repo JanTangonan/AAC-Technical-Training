@@ -38,3 +38,7 @@ Error CASE : 32234234
 
 
 Invalid object name 'TV_ITMTYPNAME'.
+
+Deferred prepare could not be completed.
+Statement(s) could not be prepared.
+Incorrect syntax near 'ITEM'.

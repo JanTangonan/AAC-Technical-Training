@@ -16,3 +16,6 @@ SELECT
 FROM TV_OFFENSE 
 WHERE (OFFENSE_CODE IN ('514.030 ' + char(91) + '21' + char(93) + ' ' + char(91) + '24010' + char(93) + '')) 
 ORDER BY DESCRIPTION
+
+
+char(91) + ITEMchar(93)
